@@ -1,0 +1,8 @@
+ID,Labels,FullName,name,Description
+4:03d53530:0,Anomaly_Source,CPU Saturation,CPU Sat,"CPU is overloaded, leading to degraded performance."
+4:03d53530:1,Anomaly_Source,Memory Saturation,Mem Sat,"System memory is fully utilized, causing slowdowns."
+4:03d53530:2,Anomaly_Source,Network Saturation,Net Sat,"Network bandwidth is fully consumed, affecting communication."
+4:03d53530:3,Anomaly_Source,Service Contention,Svc Cont,Multiple services competing for limited resources.
+4:03d53530:4,Anomaly_Source,Hardware Contention,HW Cont,"Multiple workloads competing for CPU, disk, or memory."
+4:03d53530:5,Anomaly_Source,Communication Latency,Comm Lat,Delay in network communication affecting performance.
+4:03d53530:6,Anomaly_Source,Network Jitter,Net Jitter,Irregular network delays affecting performance.
