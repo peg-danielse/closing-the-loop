@@ -1,0 +1,27 @@
+---
+- name: Install Kubernetes on Ubuntu 22.04 LTS
+  hosts: nodes
+  become: yes
+
+  tasks:
+    - name: Install Kubernetes components
+      apt:
+        name:
+          - kubelet
+          - kubeadm
+          - kubectl
+        state: present
+
+    - name: Enable and start kubelet
+      systemd:
+        name: kubelet
+        enabled: yes
+        state: started
+
+    - name: Initialize Kubernetes master node
+      command: kubeadm init --pod-network-cidr=192.168.0.0/16
+      become: yes
+
+    - name: copy kubectl config to local config file
+      command: cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+      become: yes

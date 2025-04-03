@@ -1,0 +1,29 @@
+- hosts: nodes
+  become: yes
+  tasks:
+
+    - name: Install containerd
+      apt: 
+        name:
+          - containerd
+        state: present
+
+    - name: Generate default containerd configuration
+      shell: |
+        containerd config default > sudo /etc/containerd/config.toml
+      
+      - name: Configure containerd
+      lineinfile:
+        path: /etc/containerd/config.toml
+        line: '{{ item.line }}'
+        regexp: '{{ item.regexp }}'
+        backrefs: true
+      with_items:
+        - line: '\1SystemdCgroup = true'
+          regexp: '^(\s*)SystemdCgroup = (true|false)$'
+          
+    - name: Restart containerd
+      service:
+        name: containerd
+        enabled: true
+        state: restarted

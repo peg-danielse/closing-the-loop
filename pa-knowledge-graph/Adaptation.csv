@@ -1,0 +1,14 @@
+ID,Labels,Full Name,name,Platform,Description
+6,Adaptation,Scaling,Scaling,-,Adjusting resources dynamically to meet demand.
+7,Adaptation,Vertical Scaling,V-Scale,-,"Increasing resources of an existing instance (CPU, RAM)."
+8,Adaptation,Horizontal Scaling,H-Scale,-,Adding/removing instances to handle load changes.
+9,Adaptation,Load Shedding,L-Shed,-,Dropping non-critical requests to maintain service quality.
+10,Adaptation,Load Balancing,L-Bal,-,Distributing traffic efficiently across resources.
+14,Adaptation,Caching,Cache,-,Temporarily storing data for faster retrieval.
+15,Adaptation,Software Caching,SW Cache,-,"Caching implemented in software (e.g., Redis, Memcached)."
+17,Adaptation,HTTP/Service Caching,HTTP Cache,-,Caching HTTP responses for faster delivery.
+18,Adaptation,Migration,Migrate,-,Moving workloads between nodes or environments.
+19,Adaptation,Co-location,Co-loc,-,Placing related services on the same node for efficiency.
+21,Adaptation,Queueing Levels,Queueing,-,Managing request queues to optimize processing.
+68,Adaptation,Changing Network Topology,Net Topo,-,Adjusting network structure to optimize routing.
+70,Adaptation,Traffic Steering,Traffic,-,Directing network traffic based on policies.

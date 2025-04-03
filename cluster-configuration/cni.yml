@@ -1,0 +1,24 @@
+---
+- name: Install calico cni through helm
+  hosts: master
+  become: yes
+
+  tasks:
+    
+    - name: Create namespace for Calico
+      k8s:
+        kind: Namespace
+        name: tigera-operator
+
+    - name: Install Calico with Helm
+      kubernetes.core.helm:
+        namespace: tigera-operator
+        chart_repo_url: https://docs.tigera.io/calico/charts
+        chart_ref: tigera-operator
+        chart_version: v3.29.1
+        name: calico
+        values:
+          installation:
+            calicoNetwork:
+              ipPools:
+                - cidr: "{{ pod_network_cidr }}"

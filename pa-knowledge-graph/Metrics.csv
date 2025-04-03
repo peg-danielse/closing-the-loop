@@ -1,0 +1,15 @@
+ID,name,Full Name,Measurment Tool,Measurement level
+71,CPU %,CPU Utilization,and docker stats,Node/Virtual Machine/Pod
+72,Memory %,Memory Utilization,/proc/meminfo and docker stats,Node/Virtual Machine/Pod
+73,LLC miss,Lasts level Cache hit/miss ratio,perf performance counters,Node/Virtual Machine/Pod
+74,Mbps,Network Throughput,Iperf3 or ifstat,Switch/Router/Host NIC
+75,PD rate,Packet Drop Rate,ifstat,Switch/Router/Host NIC
+76,Retrans,Retransmission counts,ifstat,Switch/Router/Host NIC
+78,link %,Link Utilization,Iperf3 and ifstat,Switch/Router/Host NIC
+79,Request Lat,Request Latency,Locust,Service
+80,Throughput,Requests per Second,Locust,Service
+81,Threads, Thread counts,ps -o thcount <pid>,Node/Virtual Machine/Pod
+82,Disk Write Rate,Disk Write Rate,iostat -d,Node/Virtual Machine
+83,Disk Read Rate,Disk Read Rate,iostat -d,Node/Virtual Machine
+84,Request Span,Request Span Length,Tracing tool like Jaeger or Xray,Application Level
+85,Avg delay,Average Inter Packet Arrival Times,Networking people please help,Switch/Router/Interfaces
