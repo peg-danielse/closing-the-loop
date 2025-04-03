@@ -8,6 +8,8 @@ what has happend where are we going
 
 - Writing ansible playbook to reproduce the cluster configuration.
 
+- Problem was a interface made by nerdctl for connecting and running containers. without my knowledge. The Bird BGP auto ip detect procedure inside the calico-nodes detected this as a pod network where they should have access and atempted to connect to it. however this caused it to continually wait for a responce and not establish any other connections with working networks. 
+
 ## April 2025: week 2
 
 ## April 2025: week 3
