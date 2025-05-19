@@ -1,0 +1,3 @@
+[submodule "ELBD"]
+	path = ELBD
+	url = git@github.com:AXinx/ELBD.git
