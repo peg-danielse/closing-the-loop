@@ -1,19 +1,30 @@
 import os
+import io
 import glob
 import math
 import time
+import json
+import re
 
-import matplotlib.pyplot as plt 
+import requests
+import datetime
+
 import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt 
 
 from scipy.stats import weibull_min
 
-from locust import HttpUser, task, between, LoadTestShape
 from random import randint, choice
+
+from locust import HttpUser, task, between, LoadTestShape
 from locust import events
 from locust.runners import MasterRunner
 
 from weibull import get_n_weibull_variables, compute_weibull_scale
+
+JAEGER_ENDPOINT_FSTRING = "http://spark.lab.uvalight.net:30550/api/traces?limit={limit}&lookback={lookback}&service={service}&start={start}"
+BASE_URL = "http://spark.lab.uvalight.net:31500"
 
 PATH = "./locust/"
 log_file=""
@@ -22,6 +33,9 @@ log_file=""
 def on_test_stop(environment, **_kwargs):
     if not isinstance(environment.runner, MasterRunner):
         return
+
+    end = datetime.datetime.utcnow()
+    start = end - datetime.timedelta(seconds=environment.parsed_options.run_time)
 
     label = environment.parsed_options.csv_prefix
     total_file = f"/home/pager/Documents/closing-the-loop/{label}_responce_log.csv"
@@ -32,6 +46,92 @@ def on_test_stop(environment, **_kwargs):
         for log_name in csv_log_files:
             with open(log_name, 'r') as in_f:
                 f.write(in_f.read())
+
+
+    url = BASE_URL + '/api/v1/label/configuration_name/values'
+    response = requests.get(url)
+    data = response.json()
+    
+    metric_df = None
+    for c in data['data']:
+        url = BASE_URL + '/api/v1/label/revision_name/values'
+        
+        # get the revision names
+        params = {'match[]': f'autoscaler_desired_pods{{namespace_name="default",configuration_name="{c}"}}'}
+
+        response = requests.get(url, params=params)
+
+        data = response.json()
+        print("Revision names:", data['data'])
+
+        url = BASE_URL + '/api/v1/query_range'
+
+        # Autoscaler metrics
+        query = ['sum(autoscaler_requested_pods{{namespace_name="default", configuration_name="{}", revision_name="{}"}})',
+                'sum(autoscaler_terminating_pods{{namespace_name="default", configuration_name="{}", revision_name="{}"}})',
+                'sum(autoscaler_actual_pods{{namespace_name="default", configuration_name="{}", revision_name="{}"}})',
+                'sum(activator_request_concurrency{{namespace_name="default", configuration_name="{}", revision_name="{}"}})',
+                'sum(autoscaler_desired_pods{{namespace_name="default", configuration_name="{}", revision_name="{}"}})',
+                'sum(autoscaler_stable_request_concurrency{{namespace_name="default", configuration_name="{}", revision_name="{}"}})',
+                'sum(autoscaler_panic_request_concurrency{{namespace_name="default", configuration_name="{}", revision_name="{}"}})',
+                'sum(autoscaler_target_concurrency_per_pod{{namespace_name="default", configuration_name="{}", revision_name="{}"}})',
+                'sum(autoscaler_excess_burst_capacity{{namespace_name="default", configuration_name="{}", revision_name="{}"}})']
+                
+        for q in query:
+            params = {'query': q.format(c, data['data'][0]),
+                    'start': start.isoformat() + 'Z',
+                    'end': end.isoformat() + 'Z',
+                    'step': '5s' } # str(math.ceil(int(end.timestamp()) - int(start.timestamp())) / 1000) } # from ceil((end - start) / 1000) 
+
+            response = requests.get(url, params=params)
+
+            result = response.json()
+            result['data']
+
+            match = re.search(r'\b([a-zA-Z_][a-zA-Z0-9_]*)\s*\{\{', q)
+            metric_name = q
+            if match:
+                metric_name = match.group(1)
+
+            # debug metric collection.
+            # with io.open(f'./{label}_{c}_{metric_name}_metric.json', 'w', encoding='utf8') as outfile:
+            #     json.dump(result, outfile,
+            #               indent=4, sort_keys=True,
+            #               separators=(',', ': '), ensure_ascii=False)
+            
+            result_data = {"index":[], f"{c}_{metric_name}":[]}
+            for e in result['data']['result'][0]["values"]:
+                result_data['index'].append(int(e[0]))
+                result_data[f"{c}_{metric_name}"].append(float(e[1]))
+
+            
+            result_df = pd.DataFrame(result_data)
+            
+            if metric_df is None:
+                metric_df = result_df
+                continue 
+
+            metric_df = pd.merge(metric_df, result_df, on='index', how='outer')
+
+    metric_df.to_csv(f"{label}_metrics.csv")
+
+    # get the traces from jaeger save and rename file.
+    url = JAEGER_ENDPOINT_FSTRING.format(limit=str(4000), 
+                                            lookback=str(environment.parsed_options.run_time) , 
+                                            service="frontend", 
+                                            start=int((time.mktime(time.localtime()) - environment.parsed_options.run_time) * 1_000_000))
+
+    print(url)
+
+    data = requests.get(url).json()
+
+    with io.open(f'./{label}_traces.json', 'w', encoding='utf8') as outfile:
+        json.dump(data, outfile,
+                indent=4, sort_keys=True,
+                separators=(',', ': '), ensure_ascii=False)
+
+    
+    return
 
 @events.quitting.add_listener
 def on_quit(environment):
@@ -105,9 +205,6 @@ class HotelUser(HttpUser):
         return f"Cornell_{id}", ''.join(str(i) for i in range(0,9))
 
 
-
-
-
 @events.init_command_line_parser.add_listener
 def _(parser):
     parser.add_argument("--w-shape", type=int,is_required=False, default=1)
@@ -115,16 +212,19 @@ def _(parser):
     parser.add_argument("--w-user-min", type=int, is_required=False, default=100)
     parser.add_argument("--w-user-max", type=int, is_required=False, default=1000)
     parser.add_argument("--w-dt", type=int, is_required=False, default=20)
-
+    parser.add_argument("--w-ls-y", type=int, is_required=False, default=500)
+    
+    
 class WeibullShape(LoadTestShape):
     stages = []
     use_common_options = True
 
-    def plot(self, tmin, tmax, shape_k, scale_lambda, T, N, L):
+    def plot(self, tmin, tmax, shape_k, scale_lambda, N, T, stages):
         # Plot histogram of samples
         plt.figure(figsize=(10, 6))
         bins = np.linspace(tmin, tmax, 100)
-        plt.hist(L, bins=bins, density=True, alpha=0.6, color='lightgreen', edgecolor='black', label="Truncated Weibull Samples")
+        print
+        plt.hist([int(e["load"]) for e in stages], bins=bins, density=True, alpha=0.6, color='lightgreen', edgecolor='black', label="Truncated Weibull Samples")
 
         # Plot analytical truncated PDF
         x_vals = np.linspace(tmin, tmax, 500)
@@ -144,7 +244,13 @@ class WeibullShape(LoadTestShape):
         plt.clf()
 
         # plot users per second
-        plt.plot(np.linspace(0, T, N), L)
+        print(0, len(stages), [int(e["load"]) for e in stages])
+
+        load = [int(e["load"]) for e in stages]
+        print(load)
+
+        x = np.linspace(0, T,len(stages))
+        plt.plot(x, load)
         plt.title("Truncated Weibull Load generation in Users per Second.")
         plt.xlabel("time [S]")
         plt.ylabel("users [#]")
@@ -163,6 +269,8 @@ class WeibullShape(LoadTestShape):
             U_max  = self.runner.environment.parsed_options.w_user_max
             T  = self.runner.environment.parsed_options.run_time
             dt  = self.runner.environment.parsed_options.w_dt
+
+            ls_y  = self.runner.environment.parsed_options.w_ls_y
             
 
             ## magic-kit
@@ -171,11 +279,20 @@ class WeibullShape(LoadTestShape):
             L = get_n_weibull_variables(w_shape, _lambda, U_min, U_max, N)
 
             l_prev = 0
-            for s, l in zip(range(dt,T+dt,dt), L):
-                self.stages.append({"start": s, "load": l, "rate": int(math.ceil(abs((l_prev - l)/dt)))})
+
+
+            # or logspace()
+            offset = np.linspace(U_min, ls_y, N)
+
+            print(offset)
+
+            for s, l, o in zip(range(dt,T+dt,dt), L, offset):
+                self.stages.append({"start": s, "load": int(l + o), "rate": int(math.ceil(abs((l_prev - l)/dt)))})
                 l_prev = l
             
-            self.plot(U_min, U_max, w_shape, _lambda, T, N, L)
+            print(self.stages)
+
+            self.plot(U_min, U_max, w_shape, _lambda, N, T, self.stages)
          
         run_time = self.get_run_time()
 

@@ -1,3 +1,4 @@
+import sys
 import os as os
 import json
 
@@ -43,11 +44,15 @@ with open(PATH + f'{label}_traces.json', 'r') as file:
 rows = []
 for trace in data["data"]:
     row = {"id": trace['traceID']}
+    
     total = 0
+    st = sys.maxsize
     for s in trace["spans"]:
+        st = min(st, s["startTime"])
         total += s["duration"]
         row[s["operationName"]] =  s["duration"] 
-
+    
+    row["startTime"] = st
     row["total"] = total
     rows.append(row)
 
@@ -77,7 +82,7 @@ plt.savefig(PATH + "plots/" + "resp_dist.pdf")
 plt.clf()
 
 # Find outliers using an IsolationForest classifier.
-features = trace_df.select_dtypes(include=["number"]).drop(columns=["total"])
+features = trace_df.select_dtypes(include=["number"]).drop(columns=["total", "startTime"])
 iso_forest = IsolationForest(contamination="auto", random_state=42)
 trace_df["anomaly"] = iso_forest.fit_predict(features)
 
@@ -118,33 +123,56 @@ plt.tight_layout()
 plt.savefig(PATH + "plots/" + f"{label}_trace_dist.png")
 plt.clf()
 
-# feature importance for the prediction.
 import shap
+# feature importance for the prediction.
+def shap_summary(iso_forest, features):
+    all_shap_values = shap.TreeExplainer(iso_forest).shap_values(features)
 
-all_shap_values = shap.TreeExplainer(iso_forest).shap_values(features)
+    # try to explain a specific data points. as a short cut for RCA.
+    anomaly_indices = [428, 399, 402, 434, 304, 321, 420]
+    subset = features.iloc[anomaly_indices]
 
-# try to explain a specific data points. as a short cut for RCA.
-anomaly_indices = [428, 399, 402, 434, 304, 321, 420]
-subset = features.iloc[anomaly_indices]
+    shap_values = shap.TreeExplainer(iso_forest).shap_values(subset)
 
-shap_values = shap.TreeExplainer(iso_forest).shap_values(subset)
+    shap.decision_plot(0, shap_values, feature_names=subset.columns.tolist())#, link='logit') #, feature_order="hclust",)
 
-shap.decision_plot(0, shap_values, feature_names=subset.columns.tolist())#, link='logit') #, feature_order="hclust",)
+    fig = plt.gcf()
+    fig.set_size_inches(18.5, 10.5)
 
-fig = plt.gcf()
-fig.set_size_inches(18.5, 10.5)
+    plt.tight_layout()
+    plt.savefig(PATH + "plots/" + f"{label}_shap_decision_plot.png") 
+    plt.clf()
 
-plt.tight_layout()
-plt.savefig(PATH + "plots/" + f"{label}_shap_decision_plot.png") 
+    # explaination of the shap values themselves.
+    shap.summary_plot(all_shap_values, features)
+    plt.savefig(PATH + "plots/" + f"{label}_shap_feature_importance.png")
+    plt.clf()
+
+    shap.plots.violin(all_shap_values, features=features, plot_type="layered_violin")
+    plt.savefig(PATH + "plots/" + f"{label}_shap_violin_feature_importance.png")
+    plt.clf()
+
+
+
+
+
+
+# make Requests per second x Anomalies per second :) 
+_, ax = plt.subplots(1,1, figsize=(12,5))
+
+history_df["Timestamp"] = pd.to_datetime(history_df['Timestamp'], unit='s')
+
+sns.lineplot(x=history_df['Timestamp'], y=history_df['Requests/s'], label="Requests/s", color="steelblue", ax=ax)
+ax2 = ax.twinx()
+anom_df["startTime"] = pd.to_datetime(anom_df['startTime'], unit='us')
+sns.histplot(data=anom_df, x="startTime", label="Anomaly/s", color="red", bins=500, ax=ax2)
+
+# Optional: Combine legends
+lines, labels = ax.get_legend_handles_labels()
+lines2, labels2 = ax2.get_legend_handles_labels()
+
+ax.legend(lines + lines2, labels + labels2, loc='upper left')
+# ax2.get_legend().remove()
+
+plt.savefig(PATH + "plots/" + f"{label}_anomaly_per_second.png")
 plt.clf()
-
-# explaination of the shap values themselves.
-shap.summary_plot(all_shap_values, features)
-plt.savefig(PATH + "plots/" + f"{label}_shap_feature_importance.png")
-plt.clf()
-
-shap.plots.violin(all_shap_values, features=features, plot_type="layered_violin")
-plt.savefig(PATH + "plots/" + f"{label}_shap_violin_feature_importance.png")
-plt.clf()
-
-

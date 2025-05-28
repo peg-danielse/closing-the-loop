@@ -1,0 +1,6 @@
+---
+- import_playbook: dependencies.yml
+- import_playbook: cri.yml
+- import_playbook: kubernetes.yml
+- import_playbook: cni.yml
+- import_playbook: workers.yml

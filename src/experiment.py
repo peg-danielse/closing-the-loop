@@ -7,8 +7,8 @@ torch.cuda.ipc_collect()
 torch.manual_seed(42)
 torch.cuda.manual_seed_all(42)
 
-model_path = "deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
 model_path = "NovaSky-AI/Sky-T1-7B-Zero"
+model_path = "deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
 
 quantization_config = BitsAndBytesConfig(
     load_in_4bit=True,  # Enable 4-bit quantization
@@ -24,8 +24,9 @@ device = torch.device('cuda')
 model.to(device)
 
 
-input_texts = ['I want you to make a descision about what to do in this situation: I have 3 docker images and a load of 80\% cpu usage on server 1 and 1 docker image and a load of 20% cpu usage on server 2. do you 1: move 1 image, 2: move 2 images, 3: do nothing', 
-               'please generate an example of a JSON structure',
+input_texts = [
+  # 'I want you to make a descision about what to do in this situation: I have 3 docker images and a load of 80\% cpu usage on server 1 and 1 docker image and a load of 20% cpu usage on server 2. do you 1: move 1 image, 2: move 2 images, 3: do nothing', 
+  #              'please generate an example of a JSON structure',
                'I want to ask you questions and get responses in a json format with the some integers detailing the answer to my question and some reasoning to why those where chosen. how can i best ask you to do so?',
                '''{
   "question": "What is the capital of France?",
@@ -42,29 +43,55 @@ input_texts = ['I want you to make a descision about what to do in this situatio
 '''
 can you copy this format and fill in the question marks for me? 
 \\boxed{
-  "question": "What is the capital of France?",
-  "options": [
+  question: "What is the capital of France?",
+  options: [
     "Paris",
     "London",
     "Berlin",
     "Rome"
   ],
-  "correct_answer": "?",
-  "reasoning": "?"
+  correct_answer: "?",
+  reasoning: "?"
 }
+''',
+'''
+<yaml>
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: srv-recommendation
+spec:
+  template:
+    spec:
+      containerConcurrency: 20
+      containers:
+      - command:
+        - recommendation
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-recommendation
+        ports:
+          - name: h2c
+            containerPort: 8085
+        resources:
+          requests:
+            cpu: 100m
+          limits:
+            cpu: 1000m
+<yaml>
+
+could you addapt the yaml file of this knative service to allow for better scaling? my monitoring data showing causing anomalous behaviour.
 '''
 ]
 
-'''En dan nog dit'''
+for input_text in input_texts:
+    inputs = tokenizer.apply_chat_template([{'role': 'user', 'content': input_text }],
+                                           add_generation_prompt=True, return_tensors='pt', return_dict=True).to(device)
 
-print(tokenizer.chat_template)
+    outputs = model.generate(inputs["input_ids"], attention_mask=inputs["attention_mask"], max_length=2000,pad_token_id=tokenizer.eos_token_id, do_sample=True, temperature=0.6)
 
-# for input_text in input_texts:
-#     inputs = tokenizer.apply_chat_template([{'role': 'user', 'content': input_text }],
-#                                            add_generation_prompt=True, return_tensors='pt', return_dict=True).to(device)
-
-#     outputs = model.generate(inputs["input_ids"], attention_mask=inputs["attention_mask"], pad_token_id=tokenizer.eos_token_id, do_sample=True, temperature=0.6)
-
-#     print(tokenizer.decode(outputs[0], skip_special_tokens=True))
-#     print("============================ END ===============================")
+    print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+    print("============================ END ===============================")
 
