@@ -56,3 +56,18 @@ what has happend where are we going
 
 ## may 2025: week 4 
 - SoTA slides for the 9th and 14th months evaluation. (see notes.)
+
+## june 2025: week 1 
+- Trip to Milaan for IPDPS conference.
+- Present the research
+
+## june 2025: week 2 
+- sick
+
+## june 2025: week 3
+- sick + festival. Getting back into it.
+
+## june 2025: week 4
+- Presentation of IPDPS.
+- Working on compiling the anomaly document for LLM adaptation.
+- Testing the system.

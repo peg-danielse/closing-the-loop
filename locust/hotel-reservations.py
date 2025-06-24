@@ -50,70 +50,76 @@ def on_test_stop(environment, **_kwargs):
 
     url = BASE_URL + '/api/v1/label/configuration_name/values'
     response = requests.get(url)
+
+    print(response)
+
     data = response.json()
     
-    metric_df = None
+    total_m_df = None
     for c in data['data']:
         url = BASE_URL + '/api/v1/label/revision_name/values'
         
-        # get the revision names
+        # get the names
         params = {'match[]': f'autoscaler_desired_pods{{namespace_name="default",configuration_name="{c}"}}'}
 
         response = requests.get(url, params=params)
 
-        data = response.json()
-        print("Revision names:", data['data'])
+        revision = response.json()
+        print("Revision name:", revision['data'])
 
         url = BASE_URL + '/api/v1/query_range'
 
         # Autoscaler metrics
-        query = ['sum(autoscaler_requested_pods{{namespace_name="default", configuration_name="{}", revision_name="{}"}})',
-                'sum(autoscaler_terminating_pods{{namespace_name="default", configuration_name="{}", revision_name="{}"}})',
-                'sum(autoscaler_actual_pods{{namespace_name="default", configuration_name="{}", revision_name="{}"}})',
-                'sum(activator_request_concurrency{{namespace_name="default", configuration_name="{}", revision_name="{}"}})',
-                'sum(autoscaler_desired_pods{{namespace_name="default", configuration_name="{}", revision_name="{}"}})',
-                'sum(autoscaler_stable_request_concurrency{{namespace_name="default", configuration_name="{}", revision_name="{}"}})',
-                'sum(autoscaler_panic_request_concurrency{{namespace_name="default", configuration_name="{}", revision_name="{}"}})',
-                'sum(autoscaler_target_concurrency_per_pod{{namespace_name="default", configuration_name="{}", revision_name="{}"}})',
-                'sum(autoscaler_excess_burst_capacity{{namespace_name="default", configuration_name="{}", revision_name="{}"}})']
-                
+        query = ['sum(autoscaler_requested_pods{{namespace_name="default", configuration_name="{config}", revision_name="{revision}"}})',
+                'sum(autoscaler_terminating_pods{{namespace_name="default", configuration_name="{config}", revision_name="{revision}"}})',
+                'sum(autoscaler_actual_pods{{namespace_name="default", configuration_name="{config}", revision_name="{revision}"}})',
+                'sum(activator_request_concurrency{{namespace_name="default", configuration_name="{config}", revision_name="{revision}"}})',
+                'sum(autoscaler_desired_pods{{namespace_name="default", configuration_name="{config}", revision_name="{revision}"}})',
+                'sum(autoscaler_stable_request_concurrency{{namespace_name="default", configuration_name="{config}", revision_name="{revision}"}})',
+                'sum(autoscaler_panic_request_concurrency{{namespace_name="default", configuration_name="{config}", revision_name="{revision}"}})',
+                'sum(autoscaler_target_concurrency_per_pod{{namespace_name="default", configuration_name="{config}", revision_name="{revision}"}})',
+                'sum(autoscaler_excess_burst_capacity{{namespace_name="default", configuration_name="{config}", revision_name="{revision}"}})',
+                'sum(rate(container_cpu_usage_seconds_total{{namespace="default", pod=~"{revision}.*", container != "POD", container != ""}}[1m])) by (container)']
+    
+        metric_df = None
         for q in query:
-            params = {'query': q.format(c, data['data'][0]),
+            fvalues = {"config": c, "revision": revision['data'][0]}
+            params = {'query': q.format_map(fvalues),
                     'start': start.isoformat() + 'Z',
                     'end': end.isoformat() + 'Z',
                     'step': '5s' } # str(math.ceil(int(end.timestamp()) - int(start.timestamp())) / 1000) } # from ceil((end - start) / 1000) 
 
             response = requests.get(url, params=params)
-
             result = response.json()
-            result['data']
 
             match = re.search(r'\b([a-zA-Z_][a-zA-Z0-9_]*)\s*\{\{', q)
             metric_name = q
+            
             if match:
                 metric_name = match.group(1)
-
-            # debug metric collection.
-            # with io.open(f'./{label}_{c}_{metric_name}_metric.json', 'w', encoding='utf8') as outfile:
-            #     json.dump(result, outfile,
-            #               indent=4, sort_keys=True,
-            #               separators=(',', ': '), ensure_ascii=False)
             
             result_data = {"index":[], f"{c}_{metric_name}":[]}
             for e in result['data']['result'][0]["values"]:
                 result_data['index'].append(int(e[0]))
                 result_data[f"{c}_{metric_name}"].append(float(e[1]))
-
             
             result_df = pd.DataFrame(result_data)
             
+            if total_m_df is None:
+                metric_df = result_df
+                total_m_df = result_df
+                continue
+
             if metric_df is None:
                 metric_df = result_df
                 continue 
 
             metric_df = pd.merge(metric_df, result_df, on='index', how='outer')
+            total_m_df = pd.merge(metric_df, result_df, on='index', how='outer')
+        
+        metric_df.to_csv(f"{label}_{c}_metrics.csv")
+    total_m_df.to_csv(f"{label}_total_metrics.csv")
 
-    metric_df.to_csv(f"{label}_metrics.csv")
 
     # get the traces from jaeger save and rename file.
     url = JAEGER_ENDPOINT_FSTRING.format(limit=str(4000), 
@@ -219,12 +225,12 @@ class WeibullShape(LoadTestShape):
     stages = []
     use_common_options = True
 
-    def plot(self, tmin, tmax, shape_k, scale_lambda, N, T, stages):
+    def plot(self, tmin, tmax, shape_k, scale_lambda, N, T, stages, offset):
         # Plot histogram of samples
         plt.figure(figsize=(10, 6))
         bins = np.linspace(tmin, tmax, 100)
         print
-        plt.hist([int(e["load"]) for e in stages], bins=bins, density=True, alpha=0.6, color='lightgreen', edgecolor='black', label="Truncated Weibull Samples")
+        plt.hist([int(e["load"]) - o for e, o in zip(stages, offset)], bins=bins, density=True, alpha=0.6, color='lightgreen', edgecolor='black', label="Truncated Weibull Samples")
 
         # Plot analytical truncated PDF
         x_vals = np.linspace(tmin, tmax, 500)
@@ -292,7 +298,7 @@ class WeibullShape(LoadTestShape):
             
             print(self.stages)
 
-            self.plot(U_min, U_max, w_shape, _lambda, N, T, self.stages)
+            self.plot(U_min, U_max, w_shape, _lambda, N, T, self.stages, offset)
          
         run_time = self.get_run_time()
 
