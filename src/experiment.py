@@ -1,97 +1,43 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 import torch
 
+from fastapi import FastAPI, Request
+from pydantic import BaseModel
+from typing import List, Tuple
+
 torch.cuda.empty_cache()
 torch.cuda.ipc_collect()
 
 torch.manual_seed(42)
 torch.cuda.manual_seed_all(42)
 
-model_path = "NovaSky-AI/Sky-T1-7B-Zero"
 model_path = "deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
 
-quantization_config = BitsAndBytesConfig(
-    load_in_4bit=True,  # Enable 4-bit quantization
-    bnb_4bit_compute_dtype=torch.float16,  # Set compute dtype
-    bnb_4bit_use_double_quant=True,  # Enable double quantization for efficiency
-)
+# quantization_config = BitsAndBytesConfig(
+#     load_in_4bit=True,  # Enable 4-bit quantization
+#     bnb_4bit_compute_dtype=torch.float16,  # Set compute dtype
+#     bnb_4bit_use_double_quant=True,  # Enable double quantization for efficiency
+# )
 
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 
-model = AutoModelForCausalLM.from_pretrained(model_path, quantization_config=quantization_config,)
+model = AutoModelForCausalLM.from_pretrained(model_path)#, quantization_config=quantization_config,)
 device = torch.device('cuda')
 
 model.to(device)
 
+app = FastAPI()
 
-input_texts = [
-  # 'I want you to make a descision about what to do in this situation: I have 3 docker images and a load of 80\% cpu usage on server 1 and 1 docker image and a load of 20% cpu usage on server 2. do you 1: move 1 image, 2: move 2 images, 3: do nothing', 
-  #              'please generate an example of a JSON structure',
-               'I want to ask you questions and get responses in a json format with the some integers detailing the answer to my question and some reasoning to why those where chosen. how can i best ask you to do so?',
-               '''{
-  "question": "What is the capital of France?",
-  "options": [
-    "Paris",
-    "London",
-    "Berlin",
-    "Rome"
-  ],
-  "correct_answer": "?",
-  "reasoning": "?"
-}
-''',
-'''
-can you copy this format and fill in the question marks for me? 
-\\boxed{
-  question: "What is the capital of France?",
-  options: [
-    "Paris",
-    "London",
-    "Berlin",
-    "Rome"
-  ],
-  correct_answer: "?",
-  reasoning: "?"
-}
-''',
-'''
-<yaml>
-apiVersion: serving.knative.dev/v1
-kind: Service
-metadata:
-  name: srv-recommendation
-spec:
-  template:
-    spec:
-      containerConcurrency: 20
-      containers:
-      - command:
-        - recommendation
-        env:
-        - name: DLOG
-          value: DEBUG
-        image: pag3r/hotel-reservations:latest
-        name: hotel-reserv-recommendation
-        ports:
-          - name: h2c
-            containerPort: 8085
-        resources:
-          requests:
-            cpu: 100m
-          limits:
-            cpu: 1000m
-<yaml>
+# Input schema
+class ChatRequest(BaseModel):
+    messages: List[Tuple[str, str]]  # List of (role, content)
+    max_new_tokens: int = 100
 
-could you addapt the yaml file of this knative service to allow for better scaling? my monitoring data showing causing anomalous behaviour.
-'''
-]
-
-for input_text in input_texts:
-    inputs = tokenizer.apply_chat_template([{'role': 'user', 'content': input_text }],
+@app.post("/generate")
+async def generate_text(query: ChatRequest):
+    inputs = tokenizer.apply_chat_template([{'role': e[0], 'content': e[1] } for e in query.messages],
                                            add_generation_prompt=True, return_tensors='pt', return_dict=True).to(device)
-
-    outputs = model.generate(inputs["input_ids"], attention_mask=inputs["attention_mask"], max_length=2000,pad_token_id=tokenizer.eos_token_id, do_sample=True, temperature=0.6)
-
-    print(tokenizer.decode(outputs[0], skip_special_tokens=True))
-    print("============================ END ===============================")
-
+    with torch.no_grad():
+        outputs = model.generate(**inputs, max_new_tokens=query.max_new_tokens)
+    result = tokenizer.decode(outputs[0], skip_special_tokens=True)
+    return {"response": result}
