@@ -89,12 +89,9 @@ def read_metrics():
 # all_shap_values = shap.TreeExplainer(iso_forest).shap_values(features)
 def shap_decisions(iso_forest, features, mark = "_"):
     # try to explain a specific data points. as a short cut for RCA.
-    # anomaly_indices = [428, 399, 402, 434, 304, 321, 420]
-    # subset = features.iloc[anomaly_indices]
-
     shap_values = shap.TreeExplainer(iso_forest).shap_values(features)
     
-    ### visualize the descisions
+    ### visualize the model features and their importance for the decision.
     # shap.decision_plot(0, shap_values, feature_names=features.columns.tolist())#, link='logit') #, feature_order="hclust",)
 
     # fig = plt.gcf()
@@ -132,7 +129,7 @@ def main():
     metric_dfs = read_metrics()    
 
     # Find outliers in the traces using an IsolationForest classifier.
-    # TODO: improve pipeline with the ELBD framework. will look good in the paper.
+    # IMPROVEMENT: improve pipeline with the ELBD framework. will look good in the paper.
     features = trace_df.select_dtypes(include=["number"]).drop(columns=["total"])
     iso_forest = IsolationForest(contamination="auto", random_state=42)
     trace_df["anomaly"] = iso_forest.fit_predict(features)
@@ -140,10 +137,8 @@ def main():
     from operator import itemgetter
     import heapq
 
-    # TODO: decision plot the shap values by clustering similar shap values...
-    # decision plot the shap values for each pattern...
-
     yaml = glob.glob('./experiments/4-gen-doc/yaml/' + '*.yaml')
+    # IMPROVEMENT: decision plot the shap values by clustering similar shap values...
     for p in trace_df["pattern"].unique():
         anomaly_indices = trace_df[(trace_df['pattern'] == p) & (trace_df['anomaly'] == -1)].index.to_list()
 
@@ -152,6 +147,10 @@ def main():
         anom_features = features.iloc[anomaly_indices]
         shapes, names = shap_decisions(iso_forest, anom_features, p)
 
+        yaml = glob.glob('./experiments/4-gen-doc/yaml/' + '*.yaml')
+
+        span_process_Map = {}
+        
         print("###", p, "###")
         for s, ai in zip(shapes, anomaly_indices):
             
@@ -160,11 +159,10 @@ def main():
             print("time:",trace_df["startTime"][ai])
             print("duration:", trace_df["total"][ai] / 1000000)
 
+
             for v in values:
                 print(v[1], names[v[0]])
-                
-                # map to yaml.
-            
+
                 payload = {
                     "messages": [
                         ["system","give one short and concise reasoning and on a new line the answer with no modification"],
@@ -178,10 +176,18 @@ def main():
                 print(response.json()["response"].splitlines()[-1])
                 with open(PATH + "yaml/" + f"{response.json()["response"].splitlines()[-1]}") as f:
                     print(f.read()) 
-            
+    
+                span_process_Map[names[v[0]]] = ""
+
+                # IMRPOVEMENT: map to yaml by searching the entire space using an LLM or more complex NLP.
+                
+                
                 # time series of the selected services.
 
-            print("---")
+        print(span_process_Map)
+
+    #   send generated queries.
+            
 
 if __name__=="__main__":
     main()
