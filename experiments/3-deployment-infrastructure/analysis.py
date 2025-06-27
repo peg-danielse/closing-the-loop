@@ -174,7 +174,6 @@ plt.savefig(PATH + "plots/" + f"{label}_anomaly_per_second.png")
 plt.clf()
 
 # make and investigate the newly create metrics in the metrics.csv
-
 metric_df = pd.read_csv(PATH + f'{label}_metrics.csv', index_col=False).drop('Unnamed: 0', axis=1)
 metrics = metric_df.columns.drop('index')
 

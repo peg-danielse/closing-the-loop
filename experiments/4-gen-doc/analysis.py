@@ -9,11 +9,11 @@ import seaborn as sns
 
 from sklearn.ensemble import IsolationForest
 
-PATH = "./data/4-gen-doc/"
-label = "anomaly-detection-weibull"
+PATH = "./experiments/4-gen-doc/"
+label = "llm-high"
 
 # read stat history
-history_df = pd.read_csv(PATH + f'{label}_stats_history.csv')
+history_df = pd.read_csv(PATH + "data/" + f'{label}_stats_history.csv')
 
 fix, ax = plt.subplots(1,1)
 ax.plot(history_df['Timestamp'], history_df['Requests/s'], label="Requests/s", color="blue")
@@ -30,15 +30,15 @@ ax2.legend(loc="lower right")
 
 plt.grid(True)
 
-plt.savefig(PATH + "plots/" + f"{label}_requests_per_second.png")
+plt.savefig(PATH + "output/" + f"{label}_requests_per_second.png")
 plt.clf()
 
 # read response time data
-resp_df = pd.read_csv(PATH + f'{label}_responce_log.csv')
+resp_df = pd.read_csv(PATH + "data/" + f'{label}_responce_log.csv')
 
 # read Jaeger trace data
 data = {}
-with open(PATH + f'{label}_traces.json', 'r') as file:
+with open(PATH + "data/" + f'{label}_traces.json', 'r') as file:
     data = json.load(file)
 
 rows = []
@@ -78,7 +78,7 @@ for i, e in enumerate(resp_df['name'].unique(), 1):
     ax[i].set_ylabel('responce time [ms]')
 
 plt.tight_layout()
-plt.savefig(PATH + "plots/" + "resp_dist.pdf")
+plt.savefig(PATH + "output/" + "resp_dist.pdf")
 plt.clf()
 
 # Find outliers using an IsolationForest classifier.
@@ -120,7 +120,7 @@ for i, p in enumerate(trace_df["pattern"].unique(), 1):
 
 
 plt.tight_layout()
-plt.savefig(PATH + "plots/" + f"{label}_trace_dist.png")
+plt.savefig(PATH + "output/" + f"{label}_trace_dist.png")
 plt.clf()
 
 import shap
@@ -140,16 +140,16 @@ def shap_summary(iso_forest, features):
     fig.set_size_inches(18.5, 10.5)
 
     plt.tight_layout()
-    plt.savefig(PATH + "plots/" + f"{label}_shap_decision_plot.png") 
+    plt.savefig(PATH + "output/" + f"{label}_shap_decision_plot.png") 
     plt.clf()
 
     # explaination of the shap values themselves.
     shap.summary_plot(all_shap_values, features)
-    plt.savefig(PATH + "plots/" + f"{label}_shap_feature_importance.png")
+    plt.savefig(PATH + "output/" + f"{label}_shap_feature_importance.png")
     plt.clf()
 
     shap.plots.violin(all_shap_values, features=features, plot_type="layered_violin")
-    plt.savefig(PATH + "plots/" + f"{label}_shap_violin_feature_importance.png")
+    plt.savefig(PATH + "output/" + f"{label}_shap_violin_feature_importance.png")
     plt.clf()
 
 # make Requests per second x Anomalies per second :) 
@@ -169,5 +169,31 @@ lines2, labels2 = ax2.get_legend_handles_labels()
 ax.legend(lines + lines2, labels + labels2, loc='upper left')
 # ax2.get_legend().remove()
 
-plt.savefig(PATH + "plots/" + f"{label}_anomaly_per_second.png")
+plt.savefig(PATH + "output/" + f"{label}_anomaly_per_second.png")
 plt.clf()
+
+
+# make and investigate the newly create metrics in the metrics.csv(s)
+
+import glob, re
+
+for n in glob.glob(PATH + "data/" + f'{label}_*_metrics.csv'):
+    match = re.search(r"[^_/]+-[^_]+(?=_metrics\.csv)", n)
+    name = "unknown"
+    if match:
+        name=match.group()
+
+    metric_df = pd.read_csv(n, index_col=False).drop('Unnamed: 0', axis=1)
+    metrics = metric_df.columns.drop('index')
+    metric_df["index"] = pd.to_datetime(metric_df['index'], unit='s')
+
+    print(metric_df)
+    fig, axes = plt.subplots(len(metrics), 1, figsize=(12, 3 * len(metrics)), sharex=True)
+
+    for ax, metric in zip(axes, metrics):
+        sns.lineplot(x=metric_df['index'], y=metric_df[metric], ax=ax)
+        ax.set_title(metric)
+
+    plt.tight_layout()
+    plt.savefig(PATH + 'output/' + f'{label}_{name}_metrics.png')
+    plt.clf()
