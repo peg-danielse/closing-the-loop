@@ -48,7 +48,7 @@ class Prompt(BaseModel):
     # ect.
 
 @app.post("/generate")
-async def generate_text(query: Promt):
+async def generate_text(query: Prompt):
     inputs = tokenizer.apply_chat_template([{'role': e[0], 'content': e[1] } for e in query.messages],
                                            add_generation_prompt=True, return_tensors='pt', return_dict=True).to(device)
     with torch.no_grad():
@@ -57,14 +57,13 @@ async def generate_text(query: Promt):
     return {"response": result}
 
 class File(BaseModel):
-    filehandeler: File
+    filehandeler: str
 
 class MakeKG(BaseModel):
     view : str
     subject: str
 
-
 # LLM scraper
 @app.post("/ragget")
-async def RAG_document(file:File):
+async def RAG_document(file: File):
     return {"response" : "500"}

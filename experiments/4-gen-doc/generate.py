@@ -9,6 +9,7 @@ import seaborn as sns
 
 import shap
 from sklearn.ensemble import IsolationForest
+from datetime import datetime
 
 PATH = "./experiments/4-gen-doc/"
 API_URL = "http://localhost:4242/generate"
@@ -34,7 +35,8 @@ def read_response():
 # read Jaeger trace data
 def read_traces():
     data = {}
-    with open(PATH + "data/" + f'{label}_traces.json', 'r') as file:
+    with open(PATH + "data/" + f'{label}_traces.json', 
+'r') as file:
         data = json.load(file)
 
     rows = []
@@ -138,6 +140,27 @@ def main():
     import heapq
 
     yaml = glob.glob('./experiments/4-gen-doc/yaml/' + '*.yaml')
+
+
+    span_process_Map = {'HTTP GET /hotels': './experiments/4-gen-doc/yaml/frontend-deployment.yaml', 
+    'HTTP GET /recommendations': './experiments/4-gen-doc/yaml/frontend-deployment.yaml', 
+    'HTTP POST /user': './experiments/4-gen-doc/yaml/frontend-deployment.yaml', 
+    'HTTP POST /reservation': './experiments/4-gen-doc/yaml/frontend-deployment.yaml', 
+    
+    'memcached_get_profile': './experiments/4-gen-doc/yaml/memcached-profile-deployment.yaml', 
+    'memcached_capacity_get_multi_number': './experiments/4-gen-doc/yaml/memcached-reservation-deployment.yaml', 
+    'memcached_reserve_get_multi_number': './experiments/4-gen-doc/yaml/memcached-reservation-deployment.yaml', 
+    'memcached_get_multi_rate': './experiments/4-gen-doc/yaml/memcached-rate-deployment.yaml', 
+    
+    '/profile.Profile/GetProfiles': './experiments/4-gen-doc/yaml/srv-profile.yaml', 
+    '/search.Search/Nearby': './experiments/4-gen-doc/yaml/srv-search.yaml', 
+    '/user.User/CheckUser': './experiments/4-gen-doc/yaml/srv-user.yaml', 
+    '/geo.Geo/Nearby': './experiments/4-gen-doc/yaml/srv-geo.yaml', 
+    '/recommendation.Recommendation/GetRecommendations': './experiments/4-gen-doc/yaml/srv-recommendation.yaml', 
+    '/rate.Rate/GetRates': './experiments/4-gen-doc/yaml/srv-rate.yaml', 
+    '/reservation.Reservation/CheckAvailability': './experiments/4-gen-doc/yaml/srv-reservation.yaml', 
+    '/reservation.Reservation/MakeReservation': './experiments/4-gen-doc/yaml/srv-reservation.yaml'}
+    
     # IMPROVEMENT: decision plot the shap values by clustering similar shap values...
     for p in trace_df["pattern"].unique():
         anomaly_indices = trace_df[(trace_df['pattern'] == p) & (trace_df['anomaly'] == -1)].index.to_list()
@@ -146,15 +169,13 @@ def main():
 
         anom_features = features.iloc[anomaly_indices]
         shapes, names = shap_decisions(iso_forest, anom_features, p)
-
-        yaml = glob.glob('./experiments/4-gen-doc/yaml/' + '*.yaml')
-
-        span_process_Map = {}
+        
         
         print("###", p, "###")
         for s, ai in zip(shapes, anomaly_indices):
             
             values = heapq.nsmallest(3, enumerate(s), key=itemgetter(1))
+            # values = enumerate(s)
 
             print("time:",trace_df["startTime"][ai])
             print("duration:", trace_df["total"][ai] / 1000000)
@@ -163,31 +184,69 @@ def main():
             for v in values:
                 print(v[1], names[v[0]])
 
+                # IMRPOVEMENT: map to yaml by searching the entire space using an LLM or more complex NLP.
+                with open(span_process_Map[names[v[0]]]) as f:
+                    print(f.read())                 
+
+
+                # filter unsupported deployment files (NO KNATIVE HORIZONTAL SCALING)
+                if os.path.basename(span_process_Map[names[v[0]]])[:-5] in ["memcached-reservation-deployment", "memcached-rate-deployment", "frontend-deployment", "memcached-profile-deployment"]:
+                    continue
+
+                # time series of the selected service.
+                metric_dfs[os.path.basename(span_process_Map[names[v[0]]])[:-5]]
+                trace_df["startTime"][ai], pd.to_datetime(trace_df["total"][ai], unit='us')
+
+                m_df = metric_dfs[os.path.basename(span_process_Map[names[v[0]]])[:-5]]
+                
+                time_mask = (m_df["index"].dt.second >= (trace_df["total"][ai] / 1000000) +  10) & \
+                            (m_df["index"].dt.second <= 20)
+
+                print(m_df[time_mask])
+
+
+                f_yaml = open(PATH + "yaml/" + f"{os.path.basename(span_process_Map[names[v[0]]])}")
+                    # print(f.read()) 
+                f_glob = open(PATH + "yaml/global.yaml")
+
                 payload = {
                     "messages": [
-                        ["system","give one short and concise reasoning and on a new line the answer with no modification"],
-                        ["user", f"{names[v[0]]} is a span name that maps to which of the following kubernetes service configuration file?"],
-                        ["user", f"{[os.path.basename(y) for y in yaml]}"]
+                        ["system","give one short and concise reasoning and on a new line the answer with only modifications of values."],
+                        ["user", "Please resolve the following anomaly:"],
+                        ["user", 
+                        f'''Please resolve the following anomaly: 
+                          Start time: {metric_dfs[os.path.basename(span_process_Map[names[v[0]]])[:-5]]}, 
+                          Request length: {trace_df['startTime'][ai]} {pd.to_datetime(trace_df['total'][ai], unit='us')} 
+                          <anomalous_trace_csv> 
+                          {trace_df.iloc[[ai]]} 
+                          </anomalous_trace_csv> 
+                          <monitoring_metrics_csv> 
+                          {m_df[time_mask]} 
+                          </monitoring_metrics_csv> 
+                        '''],
+                        ["user", 
+                        f"By updating the following configuration file: \
+                          <yaml>{f_yaml.read()}</yaml> \
+                          \
+                          global configuration file: \
+                          <yaml>{f_glob.read()}<yaml>"] 
                     ],
-                    "max_new_tokens": 1000
+                    "max_new_tokens": 2000
                 }
+
+                print(payload)
+
+                continue
 
                 response = requests.post(API_URL, json=payload)
                 print(response.json()["response"].splitlines()[-1])
-                with open(PATH + "yaml/" + f"{response.json()["response"].splitlines()[-1]}") as f:
-                    print(f.read()) 
+
     
-                span_process_Map[names[v[0]]] = ""
+                #---> apply candidates and celect them.
+                # start population of candidates. measure.           
 
-                # IMRPOVEMENT: map to yaml by searching the entire space using an LLM or more complex NLP.
-                
-                
-                # time series of the selected services.
 
-        print(span_process_Map)
-
-    #   send generated queries.
-            
+                # IMPROVEMENTS ontology -> look at data and update. then use, to store the required knowledge.
 
 if __name__=="__main__":
     main()
