@@ -1,5 +1,6 @@
-import sys, os, json, glob, re, requests
+import sys, os, json, glob, re, requests, time
 import pylcs
+from functools import wraps
 
 import numpy as np
 import pandas as pd
@@ -13,17 +14,23 @@ from datetime import datetime
 
 PATH = "./experiments/4-gen-doc/"
 API_URL = "http://localhost:4242/generate"
-label = "llm-small"
+label = "llm-low"
+
+def report_time(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start = time.perf_counter()
+        result = func(*args, **kwargs)
+        end = time.perf_counter()
+        print(f"{func.__name__} took {end - start:.6f} seconds")
+        return result
+    return wrapper
 
 # read stat history
 def read_history():
     history_df = pd.read_csv(PATH + "data/" + f'{label}_stats_history.csv')
     history_df["Timestamp"] = pd.to_datetime(history_df['Timestamp'], unit='s')
 
-    # history_df['Timestamp']
-    # history_df['Requests/s']
-    # history_df['Timestamp'] 
-    # history_df['User Count']
     return history_df
 
 # read response time data
@@ -35,8 +42,7 @@ def read_response():
 # read Jaeger trace data
 def read_traces():
     data = {}
-    with open(PATH + "data/" + f'{label}_traces.json', 
-'r') as file:
+    with open(PATH + "data/" + f'{label}_traces.json', 'r') as file:
         data = json.load(file)
 
     rows = []
@@ -68,7 +74,6 @@ def read_traces():
 
 def read_metrics():
     metrics = {}
-    # make and investigate the newly create metrics in the metrics.csv(s)
     for n in glob.glob(PATH + "data/" + f'{label}_*_metrics.csv'):
         match = re.search(r"[^_/]+-[^_]+(?=_metrics\.csv)", n)
         name = "unknown"
@@ -79,10 +84,6 @@ def read_metrics():
         metric_columns = metric_df.columns.drop('index')
         metric_df["index"] = pd.to_datetime(metric_df['index'], unit='s')
 
-        # for ax, metric in zip(axes, metrics):
-            # x=metric_df['index'], y=metric_df[metric], ax=ax)
-            # set_title(metric)
-        # print(metric_df)
         metrics[name] = metric_df
     
     return metrics
@@ -119,12 +120,32 @@ def longest_common_substring(s1, s2):
                m[x][y] = 0
    return s1[x_longest - longest: x_longest]
 
+def get_existing_ids(file_path):
+    if not os.path.exists(file_path):
+        return set([0])
+    with open(file_path) as f:
+        content = f.read()
+    return map(int,set(re.findall(r"# --- START: seq=(.+?) ---", content)))
+
+def append_generation(file_path, seq, content):
+    if seq in get_existing_ids(file_path):
+        print(f"Skipped {seq}: already exists.")
+        return
+
+    with open(file_path, "a") as f:
+        f.write(f"# --- START: seq={seq} ---\n")
+        f.write(content + "\n")
+        f.write(f"# --- END: seq={seq} ---\n\n")
 
 # resp_df["response_time"]
 # resp_df['name'].unique()
 #   df = resp_df[resp_df['name'] == e]    
-#   df["response_time"], ax = ax[i])
+#   df["response_time"], ax = ax[i])\
+@report_time
 def main():
+    pd.set_option('display.max_rows', None)
+    pd.set_option('display.max_columns', None)
+
     history_df = read_history()
     responce_df = read_response()
     trace_df = read_traces()
@@ -185,8 +206,8 @@ def main():
                 print(v[1], names[v[0]])
 
                 # IMRPOVEMENT: map to yaml by searching the entire space using an LLM or more complex NLP.
-                with open(span_process_Map[names[v[0]]]) as f:
-                    print(f.read())                 
+                # with open(span_process_Map[names[v[0]]]) as f:
+                    # print(f.read())                 
 
 
                 # filter unsupported deployment files (NO KNATIVE HORIZONTAL SCALING)
@@ -198,55 +219,63 @@ def main():
                 trace_df["startTime"][ai], pd.to_datetime(trace_df["total"][ai], unit='us')
 
                 m_df = metric_dfs[os.path.basename(span_process_Map[names[v[0]]])[:-5]]
-                
-                time_mask = (m_df["index"].dt.second >= (trace_df["total"][ai] / 1000000) +  10) & \
-                            (m_df["index"].dt.second <= 20)
 
-                print(m_df[time_mask])
+                # convert microseconds to timedelta
+                start_time = trace_df["startTime"][ai]
+                duration = pd.to_timedelta(trace_df["total"][ai] + 1000000, unit="us")  # 'us' for microseconds
 
+                start_plus_duration = start_time + duration
+                start_minus_5s = start_time - pd.Timedelta(seconds=10)
+
+                print(start_time)
+                print(duration)
+
+                time_mask = (m_df["index"] >= start_minus_5s) & (m_df["index"] <= start_plus_duration)
+                time_m_df = m_df[time_mask]
 
                 f_yaml = open(PATH + "yaml/" + f"{os.path.basename(span_process_Map[names[v[0]]])}")
                     # print(f.read()) 
                 f_glob = open(PATH + "yaml/global.yaml")
 
+                # IMPROVEMENTS ontology -> look at data and update. then use, to store the required knowledge.
                 payload = {
                     "messages": [
-                        ["system","give one short and concise reasoning and on a new line the answer with only modifications of values."],
-                        ["user", "Please resolve the following anomaly:"],
+                        # ["system", "give one short and concise reasoning then answer with the full yaml file including the fix."],
                         ["user", 
-                        f'''Please resolve the following anomaly: 
-                          Start time: {metric_dfs[os.path.basename(span_process_Map[names[v[0]]])[:-5]]}, 
-                          Request length: {trace_df['startTime'][ai]} {pd.to_datetime(trace_df['total'][ai], unit='us')} 
-                          <anomalous_trace_csv> 
-                          {trace_df.iloc[[ai]]} 
-                          </anomalous_trace_csv> 
-                          <monitoring_metrics_csv> 
-                          {m_df[time_mask]} 
-                          </monitoring_metrics_csv> 
-                        '''],
+f'''Please resolve the following anomaly: \n 
+Anomaly Start time: {start_time} \n 
+Anomaly duration: {duration} \n 
+
+this trace describes the time logged in various parts of the code paths of the microservices                          
+<anomalous_trace_csv> \n 
+{trace_df.iloc[[ai]].to_string()} \n
+</anomalous_trace_csv> \n
+
+The monitoring metrics describe what happend in the system during the anomalous trace.
+<monitoring_metrics_csv> \n
+{time_m_df.to_string()} \n
+</monitoring_metrics_csv> \n
+'''],
                         ["user", 
-                        f"By updating the following configuration file: \
-                          <yaml>{f_yaml.read()}</yaml> \
-                          \
-                          global configuration file: \
-                          <yaml>{f_glob.read()}<yaml>"] 
+f'''give one short and concise reasoning then answer with the full yaml file including the fix: \n
+<yaml> \n
+{f_yaml.read()} \n
+--- 
+{f_glob.read()} \n
+</yaml>'''],
                     ],
                     "max_new_tokens": 2000
                 }
 
-                print(payload)
 
-                continue
+
+                
 
                 response = requests.post(API_URL, json=payload)
-                print(response.json()["response"].splitlines()[-1])
 
+                ids = get_existing_ids(PATH + "output/" + f"{label}_{p}_prompts.json")
+                append_generation(PATH + "output/" + f"{label}_{p}_prompts.json", max(ids) + 1,response.json()["response"]) 
     
-                #---> apply candidates and celect them.
-                # start population of candidates. measure.           
-
-
-                # IMPROVEMENTS ontology -> look at data and update. then use, to store the required knowledge.
 
 if __name__=="__main__":
     main()

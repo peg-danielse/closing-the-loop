@@ -29,6 +29,8 @@ BASE_URL = "http://spark.lab.uvalight.net:31500"
 PATH = "./locust/"
 log_file=""
 
+experiment_label = "unknown"
+
 @events.test_stop.add_listener
 def on_test_stop(environment, **_kwargs):
     if not isinstance(environment.runner, MasterRunner):
@@ -36,6 +38,8 @@ def on_test_stop(environment, **_kwargs):
 
     end = datetime.datetime.utcnow()
     start = end - datetime.timedelta(seconds=environment.parsed_options.run_time)
+
+    print("start", start, "end", end)
 
     label = environment.parsed_options.csv_prefix
     total_file = f"/home/pager/Documents/closing-the-loop/{label}_responce_log.csv"
@@ -83,7 +87,7 @@ def on_test_stop(environment, **_kwargs):
     
         metric_df = None
         for q in query:
-            fvalues = {"config": c, "revision": revision['data'][0]}
+            fvalues = {"config": c, "revision": revision['data'][-1]}
             params = {'query': q.format_map(fvalues),
                     'start': start.isoformat() + 'Z',
                     'end': end.isoformat() + 'Z',
@@ -98,11 +102,19 @@ def on_test_stop(environment, **_kwargs):
             if match:
                 metric_name = match.group(1)
             
-            result_data = {"index":[], f"{c}_{metric_name}":[]}
-            for e in result['data']['result'][0]["values"]:
-                result_data['index'].append(int(e[0]))
-                result_data[f"{c}_{metric_name}"].append(float(e[1]))
-            
+            # if the data collection gets no values for a revision.
+            try:
+                result_data = {"index":[], f"{c}_{metric_name}":[]}
+
+                print(result)
+
+                for e in result['data']['result'][0]["values"]:
+                    result_data['index'].append(int(e[0]))
+                    result_data[f"{c}_{metric_name}"].append(float(e[1]))
+            except Exception as e:
+                print(e)
+                continue
+
             result_df = pd.DataFrame(result_data)
             
             if total_m_df is None:
@@ -150,6 +162,9 @@ def on_quit(environment):
 
 @events.test_start.add_listener
 def on_test_start(environment, **_kwargs):
+    global experiment_label
+    experiment_label = environment.parsed_options.csv_prefix
+
     global log_file
     worker_id = os.getpid()  # or use uuid.uuid4() for uniqueness
     log_file = f"/home/pager/Documents/closing-the-loop/.response_times_{worker_id}.csv"
@@ -157,7 +172,6 @@ def on_test_start(environment, **_kwargs):
 @events.request.add_listener
 def log_request(request_type, name, response_time, response_length, response, **kwargs):
     global log_file
-
 
     with open(log_file, "a") as f:
         f.write(f"{request_type},{name},{response_time},{response_length}, {response.status_code}\n")
@@ -226,6 +240,7 @@ class WeibullShape(LoadTestShape):
     use_common_options = True
 
     def plot(self, tmin, tmax, shape_k, scale_lambda, N, T, stages, offset):
+        global experiment_label
         # Plot histogram of samples
         plt.figure(figsize=(10, 6))
         bins = np.linspace(tmin, tmax, 100)
@@ -246,7 +261,7 @@ class WeibullShape(LoadTestShape):
         plt.legend()
         plt.grid(True)
         
-        plt.savefig(PATH + f"user_count_distribution_{time.time()}.png")
+        plt.savefig(PATH + f"{experiment_label}_user_count_distribution_{time.time()}.png")
         plt.clf()
 
         # plot users per second
@@ -262,7 +277,7 @@ class WeibullShape(LoadTestShape):
         plt.ylabel("users [#]")
         plt.grid(True)
 
-        plt.savefig(PATH + f"users_over_time_{time.time()}.png")
+        plt.savefig(PATH + f"{experiment_label}_users_over_time_{time.time()}.png")
         plt.clf()
    
 
