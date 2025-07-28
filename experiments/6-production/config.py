@@ -1,5 +1,5 @@
 
-PATH = "./experiments/5-closing-time/"
+PATH = "./experiments/6-production"
 
 KUBE_URL = "https://localhost:6443" 
 KUBE_API_TOKEN =  ("eyJhbGciOiJSUzI1NiIsImtpZCI6ImtQQmZaNXU4all2UEVTMWg3Q0lwdmpNcEFLYVdZY2c4S0Y0d3NaRXZyMUkifQ"

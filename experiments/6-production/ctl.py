@@ -65,88 +65,8 @@ def report_time(func):
     return wrapper
 
 
-@report_time
-def generate_configuration_updates(label, loop):
-    if len(glob.glob(PATH + "output/" + f"{label}_{loop}_prompts.json")) != 0:
-        print("Generated configuration updates already exist.", "Skipping...")
-        return
-
-    pd.set_option('display.max_rows', None)
-    pd.set_option('display.max_columns', None)
-
-    history_df = read_history(f"{label}_{loop}")
-    responce_df = read_response(f"{label}_{loop}")
-    trace_df = read_traces(f"{label}_{loop}")
-    metric_dfs = read_metrics(f"{label}_{loop}")
-
-    # IMPROVEMENT: improve pipeline with the ELBD framework. will look good in the paper.
-    # IMPROVEMENT: also perform outlier detection on the monitoring metrics.
-
-    # Find outliers in the traces using an IsolationForest classifier.
-    features = trace_df.select_dtypes(include=["number"]).drop(columns=["total"])
-    iso_forest = IsolationForest(contamination="auto", random_state=42)
-    trace_df["anomaly"] = iso_forest.fit_predict(features)
-
-    # IMPROVEMENT: decision plot the shap values by clustering similar shap values...
-    anomaly_indices = trace_df[(trace_df['anomaly'] == -1)].index.to_list()
-
-    if anomaly_indices == []: 
-        return
-
-    anom_features = features.iloc[anomaly_indices]
-    shapes, names = shap_decisions(iso_forest, anom_features)
-    
-    print(f"Generating configuration changes from {len(anomaly_indices)} anomalies")
-    for s, ai in zip(shapes, anomaly_indices):
-        values = heapq.nsmallest(3, enumerate(s), key=itemgetter(1))
-        for v in values:
-        
-            # IMRPOVEMENT: map to yaml by searching the entire space using an LLM or more complex NLP.
-            # filter unsupported deployment files (ie. THAT DONT HAVE KNATIVE HORIZONTAL SCALING active)
-            if os.path.basename(SPAN_PROCESS_MAP[names[v[0]]])[:-5] in ["memcached-reservation-deployment", "memcached-rate-deployment", "frontend-deployment", "memcached-profile-deployment"]:
-                continue
-
-            m_df = metric_dfs[os.path.basename(SPAN_PROCESS_MAP[names[v[0]]])[:-5]]
-            
-            # convert microseconds to timedelta
-            start_time = trace_df["startTime"][ai]
-            print(start_time)
-            print(m_df)
-            duration = pd.to_timedelta(trace_df["total"][ai] + 1000000, unit="us")  # 'us' for microseconds
-
-            start_plus_duration = start_time + duration
-            start_minus_5s = start_time - pd.Timedelta(seconds=10)
-
-            time_mask = (m_df["index"] >= start_minus_5s) & (m_df["index"] <= start_plus_duration)
-            time_m_df = m_df[time_mask]
-
-            service_config = get_config_content(PATH + f"output/{label}/yaml/{os.path.basename(SPAN_PROCESS_MAP[names[v[0]]])}")[-1]
-            auto_config = get_config_content(PATH + f"output/{label}/yaml/config-autoscaler.yaml")[-1]
-
-
-            service_config = yaml.dump(service_config[1])
-            auto_config = yaml.dump(auto_config[1])
-            
-            pprint(auto_config)
-            pprint(service_config)
-
-            # IMPROVEMENTS ontology -> look at data and update. then use, to store the required knowledge for better generation and context.
-            payload = {
-                "messages": [
-                    # ["system", "give one short and concise reasoning then answer with the full yaml file including the fix."],
-                    ["user", DATA_PROMPT.format(start_time=start_time, duration=duration, trace_df=trace_df.iloc[[ai]].to_string(), monitor_df=time_m_df.to_string())],
-                    ["user", FILE_PROMPT.format(service_file=service_config,global_file=auto_config)]
-                ],
-                "max_new_tokens": 2000
-            }
-
-            response = requests.post(GEN_API_URL, json=payload)
-
-            seq = get_existing_seq(PATH + f"output/{label}_{loop}_prompts.json")
-            append_generation(PATH + f"output/{label}_{loop}_prompts.json", max(seq) + 1,response.json()["response"]) 
-
-def locust_load_test(label, exp_time = "5m"): # todo add all loadtest configurations
-    if len(glob.glob(PATH + "data/" + f"{label}/{label}_*")) != 0:
+def locust_load_test(label, base_label, exp_time = "5m"): # todo add all loadtest configurations
+    if len(glob.glob(PATH + "output/" + f"{base_label}/data/{label}_*")) != 0:
         print(f"loadtest using label: {label} already exists.", "skipping...")
         return
 
@@ -178,59 +98,9 @@ def locust_load_test(label, exp_time = "5m"): # todo add all loadtest configurat
     experiment_files = glob.glob(f"./{label}_*")
     print("analysing the loadtest files...", experiment_files)
 
-    os.makedirs(PATH + f"data/{label}", exist_ok=True)
+    os.makedirs(PATH + f"{base_label}/data/{label}", exist_ok=True)
     for file in experiment_files:
-        shutil.move(file, PATH + "data/" + f"{label}/")
-
-
-@report_time
-def apply_and_measure(configurations: List, label, loop, t="5m"):
-    client = get_k8s_api_client()
-    reset_k8s(client, PATH + f"output/{label}/yaml/*.yaml" )
-
-    seqs = list(get_existing_seq(PATH + "output/" + f"{label}_{loop}_performance.json"))
-    print(seqs)
-
-    for sol in configurations:
-        if (int(sol[0]) in seqs):
-            print(f"already evaluated configuration {sol[0]}, skipping...")
-            continue
-        
-        try:
-            docs = yaml.safe_load_all(sol[1])
-
-            names = []
-            for d in docs:
-                apply_yaml_configuration(d, client)
-                names = names + [d.get('metadata', {}).get('name')]
-
-            print(f"applied updates to: {", ".join(names)}")
-            print("waiting to update the configuration...")
-            time.sleep(60)
-
-            # Locust!
-            experiment_label = f"{label}_{loop}-{sol[0]}-{"-".join(names)}"
-            locust_load_test(experiment_label, t)
-
-            # KPI's 
-            config_performance = get_kpi_list(experiment_label, names[0])
-            print(config_performance)
-            
-            config_performance['service_names'] = names
-
-            append_generation(PATH + "output/" + f"{label}_{loop}_performance.json", sol[0], str(config_performance))
-
-            reset_k8s(client, PATH + f"output/{label}/yaml/*.yaml" )
-
-        except Exception as e:
-            for d in docs:
-                print(d)
-
-            print(e)
-
-            append_generation(PATH + "output/" + f"{label}_{loop}_performance.json", sol[0], str(e)) 
-
-            continue
+        shutil.move(file, PATH + f"{base_label}/data/{label}/")
 
 
 # setting options for printing the anomaly data in the prompt
@@ -242,18 +112,18 @@ def generate_and_measure(label, loop, t="10m"):
     messages = []
 
     client = get_k8s_api_client()
-    reset_k8s(client, PATH + f"output/{label}/yaml/*.yaml" )
+    reset_k8s(client, PATH + f"/output/{label}/config" )
 
     try:
-        history_df = read_history(f"{label}_{loop}")
-        responce_df = read_response(f"{label}_{loop}")
-        trace_df = read_traces(f"{label}_{loop}")
-        metric_dfs = read_metrics(f"{label}_{loop}")
+        history_df = read_history(f"{label}_{loop}", label)
+        responce_df = read_response(f"{label}_{loop}", label)
+        trace_df = read_traces(f"{label}_{loop}", label)
+        metric_dfs = read_metrics(f"{label}_{loop}", label)
     except FileNotFoundError as fnfe:
-        shutil.rmtree(PATH + "data/" + f"{label}_{loop}")
+        shutil.rmtree(PATH + f"/output/{base_label}/{label}_{loop}")
     
         print("reading the test data failed... retrying load test")
-        locust_load_test(f"{label}_{loop}")
+        locust_load_test(f"{label}_{loop}", label)
 
 
     # IMPROVEMENT: improve pipeline with the ELBD framework. will look good in the paper.
@@ -287,7 +157,7 @@ def generate_and_measure(label, loop, t="10m"):
     print(f"Generating and Measuring configuration changes from {len(sorted_list)} anomalies")
     for s, ai, l in sorted_list:
         
-        if ai in get_existing_seq(PATH + f"output/{label}_{loop}_prompts.json"):
+        if ai in get_existing_seq(PATH + f"output/{label}/{label}_{loop}_prompts.json"):
             print(f"skipping... {ai}")
             continue
 
@@ -299,8 +169,8 @@ def generate_and_measure(label, loop, t="10m"):
         values = heapq.nsmallest(2, enumerate(s), key=itemgetter(1))
         for v in values:
             # filter unsupported deployment files (ie. THAT DONT HAVE KNATIVE HORIZONTAL SCALING active)
-            if os.path.basename(SPAN_PROCESS_MAP[names[v[0]]])[:-5] in ["memcached-reservation-deployment", "memcached-rate-deployment", "frontend-deployment", "memcached-profile-deployment"]:
-                continue
+            # if os.path.basename(SPAN_PROCESS_MAP[names[v[0]]])[:-5] in ["memcached-reservation-deployment", "memcached-rate-deployment", "frontend-deployment", "memcached-profile-deployment"]:
+                # continue
 
             print("resolving anomaly for: ", names[v[0]])
             m_df = metric_dfs[os.path.basename(SPAN_PROCESS_MAP[names[v[0]]])[:-5]]
@@ -315,8 +185,8 @@ def generate_and_measure(label, loop, t="10m"):
             time_mask = (m_df["index"] >= start_minus_5s) & (m_df["index"] <= start_plus_duration)
             time_m_df = m_df[time_mask]
 
-            service_config = get_config_content(PATH + f"output/{label}/yaml/{os.path.basename(SPAN_PROCESS_MAP[names[v[0]]])}")[-1]
-            auto_config = get_config_content(PATH + f"output/{label}/yaml/config-autoscaler.yaml")[-1]
+            service_config = get_config_content(PATH + f"/output/{label}/config/{os.path.basename(SPAN_PROCESS_MAP[names[v[0]]])}")[-1]
+            auto_config = get_config_content(PATH + f"/output/{label}/config/config-autoscaler.yaml")[-1]
 
             service_config = yaml.dump(service_config[1])
             auto_config = yaml.dump(auto_config[1])
@@ -359,7 +229,7 @@ def generate_and_measure(label, loop, t="10m"):
                     print(d)
                 print(e)
 
-                append_generation(PATH + "output/" + f"{label}_{loop}_performance.json", ai, str(e)) 
+                append_generation(PATH + "/output/" + f"{label}/{label}_{loop}_performance.json", ai, str(e)) 
                 messages.append(["user", "the folowing error was produced: " + str(e)])
 
                 break
@@ -388,11 +258,11 @@ def generate_and_measure(label, loop, t="10m"):
                 print(config_performance)
                 
                 config_performance['service_names'] = service_names
-                append_generation(PATH + "output/" + f"{label}_{loop}_performance.json", ai, str(config_performance))
+                append_generation(PATH + "/output/" + f"{label}/{label}_{loop}_performance.json", ai, str(config_performance))
                 
                 messages.append(["user", RESULT_PROMPT.format(performance=str(config_performance))])
 
-                reset_k8s(client, PATH + f"output/{label}/yaml/*.yaml" )
+                reset_k8s(client, PATH + f"/output/{label}/config/*.yaml" )
 
             break
 
@@ -409,7 +279,7 @@ def evolve(label : str, i: int):
     configs = load_generated_configurations(f"{label}_{i}")
     configs = [(i, yaml.safe_load_all(sol)) for i, sol in configs]
 
-    trails = get_generation_content_perf(PATH + f"output/{label}_{i}_performance.json")
+    trails = get_generation_content_perf(PATH + f"/output/{label}/{label}_{i}_performance.json")
     perfs = [(i, yaml.safe_load(p)) for i, p in trails]
     perfs = [(i, p) for i, p in perfs if "Audit-Id" not in p]
 
@@ -451,7 +321,7 @@ def evolve(label : str, i: int):
             best[n] = (p[0], docs, p[2])
 
     for service_name, (s, c, p) in best.items():
-        fp = f"{PATH}output/{label}/yaml/{service_name}.yaml"
+        fp = f"{PATH}/output/{label}/config/{service_name}.yaml"
         for d in c:
             print("/n/n #### new config")
             print(d)
@@ -462,23 +332,23 @@ def evolve(label : str, i: int):
 
 @report_time
 def main():
-    LABEL = "behind"
+    LABEL = "alias"
     
     os.makedirs(PATH + f"output/{LABEL}", exist_ok=True)
-    if(glob.glob(PATH + f"output/{LABEL}/yaml/*.yaml") == []):
-        shutil.copytree(PATH + "yaml", PATH + f"output/{LABEL}/yaml", dirs_exist_ok = True)
+    if(glob.glob(PATH + f"output/{LABEL}/config/*.yaml") == []):
+        shutil.copytree(PATH + "base_config", PATH + f"/output/{LABEL}/config", dirs_exist_ok = True)
     else:
         print("base configuration files exist... skipping")
 
     print("Entering optimization loop:")
-    for i in range(4, 5):
+    for i in range(0, 5):
         print(f"########################### Loop: {i} ###########################")
 
         print("Load test to analyse present anomalies in the current configuration")
         client = get_k8s_api_client()
-        reset_k8s(client, PATH + f"output/{LABEL}/")
+        reset_k8s(client, PATH + f"output/{LABEL}/config")
         
-        locust_load_test(f"{LABEL}_{i}", '10m')
+        locust_load_test(label=f"{LABEL}_{i}", base_label=LABEL, time='10m')
 
         print("Generate possible changes to mitigate then Apply and measure the changes")
         generate_and_measure(LABEL, i, '10m')
