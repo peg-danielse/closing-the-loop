@@ -1,0 +1,9 @@
+Method,Name,Error,Occurrences
+GET,/recommendations,"gaierror(-3, 'Temporary failure in name resolution')",42
+GET,/hotels,HTTPError('500 Server Error: Internal Server Error for url: /hotels'),3073
+GET,/hotels,"gaierror(-3, 'Temporary failure in name resolution')",57
+GET,/hotels,"OSError(113, 'No route to host')",13
+GET,/recommendations,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to spark.lab.uvalight.net timed out. (connect timeout=None)')",8
+GET,/hotels,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to spark.lab.uvalight.net timed out. (connect timeout=None)')",11
+GET,/recommendations,"OSError(113, 'No route to host')",9
+POST,/user,"gaierror(-3, 'Temporary failure in name resolution')",4

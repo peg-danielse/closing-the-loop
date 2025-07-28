@@ -1,0 +1,154 @@
+# --- START: seq=208 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'b7c0b7db-604d-47c1-9dcd-052584844a52', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Mon, 21 Jul 2025 14:46:16 GMT', 'Content-Length': '260'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"config.webhook.serving.knative.dev\" denied the request: validation failed: max-scale-down-rate = 1, must be greater than 1.0","reason":"BadRequest","code":400}
+
+
+# --- END: seq=208 ---
+
+# --- START: seq=509 ---
+{'max_throughput': 234.6, 'total_errors': 38921, 'total_anomaly_count': 35, 'changed_service_anomaly_count': 9, 'service_max_cpu_usage': 0.9546084185814694, 'total_max_cpu_usage': nan, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=509 ---
+
+# --- START: seq=257 ---
+{'max_throughput': 211.1, 'total_errors': 38527, 'total_anomaly_count': 41, 'changed_service_anomaly_count': 20, 'service_max_cpu_usage': 1.1108817402826334, 'total_max_cpu_usage': nan, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=257 ---
+
+# --- START: seq=142 ---
+{'max_throughput': 186.9, 'total_errors': 39140, 'total_anomaly_count': 36, 'changed_service_anomaly_count': 3, 'service_max_cpu_usage': 0.4217002924482261, 'total_max_cpu_usage': 1.332474524768088, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=142 ---
+
+# --- START: seq=520 ---
+{'max_throughput': 232.8, 'total_errors': 36669, 'total_anomaly_count': 58, 'changed_service_anomaly_count': 20, 'service_max_cpu_usage': 1.1927637381255205, 'total_max_cpu_usage': 5.495570551128555, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=520 ---
+
+# --- START: seq=209 ---
+{'max_throughput': 230.1, 'total_errors': 38793, 'total_anomaly_count': 40, 'changed_service_anomaly_count': 3, 'service_max_cpu_usage': 0.8812528311857672, 'total_max_cpu_usage': nan, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=209 ---
+
+# --- START: seq=514 ---
+{'max_throughput': 185.0, 'total_errors': 15448, 'total_anomaly_count': 14, 'changed_service_anomaly_count': 4, 'service_max_cpu_usage': 0.2003953985157544, 'total_max_cpu_usage': nan, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=514 ---
+
+# --- START: seq=342 ---
+{'max_throughput': 179.9, 'total_errors': 54432, 'total_anomaly_count': 49, 'changed_service_anomaly_count': 11, 'service_max_cpu_usage': 0.4135994087548466, 'total_max_cpu_usage': nan, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=342 ---
+
+# --- START: seq=331 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'bb45bd91-f31d-49a5-8bc6-ca73e21b5315', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Mon, 21 Jul 2025 21:28:50 GMT', 'Content-Length': '260'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"config.webhook.serving.knative.dev\" denied the request: validation failed: max-scale-down-rate = 1, must be greater than 1.0","reason":"BadRequest","code":400}
+
+
+# --- END: seq=331 ---
+
+# --- START: seq=150 ---
+{'max_throughput': 166.9, 'total_errors': 51569, 'total_anomaly_count': 30, 'changed_service_anomaly_count': 9, 'service_max_cpu_usage': 0.0163985909727836, 'total_max_cpu_usage': 0.7077836652750207, 'service_names': ['srv-reservation', 'config-autoscaler']}
+# --- END: seq=150 ---
+
+# --- START: seq=557 ---
+{'max_throughput': 169.0, 'total_errors': 41515, 'total_anomaly_count': 35, 'changed_service_anomaly_count': 12, 'service_max_cpu_usage': 0.1843828643802421, 'total_max_cpu_usage': nan, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=557 ---
+
+# --- START: seq=207 ---
+{'max_throughput': 161.5, 'total_errors': 38775, 'total_anomaly_count': 42, 'changed_service_anomaly_count': 17, 'service_max_cpu_usage': 0.2267847228586162, 'total_max_cpu_usage': nan, 'service_names': ['srv-reservation', 'config-autoscaler']}
+# --- END: seq=207 ---
+
+# --- START: seq=44 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'cd364a76-ddeb-4917-922d-238f96948d28', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Mon, 21 Jul 2025 22:16:48 GMT', 'Content-Length': '341'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 110 \u003c= 100.0 \u003c= 1000: spec.template.metadata.annotations.autoscaling.knative.dev/panic-threshold-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=44 ---
+
+# --- START: seq=326 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '8eb89bcb-a3a7-4fb0-8cd5-e1b28f10e023', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Mon, 21 Jul 2025 22:18:14 GMT', 'Content-Length': '341'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 110 \u003c= 100.0 \u003c= 1000: spec.template.metadata.annotations.autoscaling.knative.dev/panic-threshold-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=326 ---
+
+# --- START: seq=236 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'be068062-fe9c-4c13-8e79-99349bad8eb2', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Mon, 21 Jul 2025 22:19:32 GMT', 'Content-Length': '260'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"config.webhook.serving.knative.dev\" denied the request: validation failed: max-scale-down-rate = 1, must be greater than 1.0","reason":"BadRequest","code":400}
+
+
+# --- END: seq=236 ---
+
+# --- START: seq=390 ---
+{'max_throughput': 176.0, 'total_errors': 58902, 'total_anomaly_count': 40, 'changed_service_anomaly_count': 14, 'service_max_cpu_usage': 0.0977516817751767, 'total_max_cpu_usage': 1.7374907878479293, 'service_names': ['srv-reservation', 'config-autoscaler']}
+# --- END: seq=390 ---
+
+# --- START: seq=472 ---
+{'max_throughput': 164.2, 'total_errors': 59691, 'total_anomaly_count': 33, 'changed_service_anomaly_count': 11, 'service_max_cpu_usage': 0.0789002766200005, 'total_max_cpu_usage': 1.4144386293527254, 'service_names': ['srv-profile', 'config-autoscaler']}
+# --- END: seq=472 ---
+
+# --- START: seq=211 ---
+{'max_throughput': 176.3, 'total_errors': 42873, 'total_anomaly_count': 34, 'changed_service_anomaly_count': 9, 'service_max_cpu_usage': 0.0835720090531029, 'total_max_cpu_usage': nan, 'service_names': ['srv-reservation', 'config-autoscaler']}
+# --- END: seq=211 ---
+
+# --- START: seq=32 ---
+{'max_throughput': 167.4, 'total_errors': 44337, 'total_anomaly_count': 33, 'changed_service_anomaly_count': 1, 'service_max_cpu_usage': 0.0905861453851613, 'total_max_cpu_usage': nan, 'service_names': ['srv-geo', 'config-autoscaler']}
+# --- END: seq=32 ---
+
+# --- START: seq=48 ---
+{'max_throughput': 173.9, 'total_errors': 30414, 'total_anomaly_count': 48, 'changed_service_anomaly_count': 22, 'service_max_cpu_usage': 0.2809423523383028, 'total_max_cpu_usage': nan, 'service_names': ['srv-reservation', 'config-autoscaler']}
+# --- END: seq=48 ---
+
+# --- START: seq=299 ---
+{'max_throughput': 173.0, 'total_errors': 43433, 'total_anomaly_count': 45, 'changed_service_anomaly_count': 21, 'service_max_cpu_usage': 0.2148518861675829, 'total_max_cpu_usage': nan, 'service_names': ['srv-reservation', 'config-autoscaler']}
+# --- END: seq=299 ---
+
+# --- START: seq=99 ---
+{'max_throughput': 161.5, 'total_errors': 41065, 'total_anomaly_count': 31, 'changed_service_anomaly_count': 12, 'service_max_cpu_usage': 0.2552578055815075, 'total_max_cpu_usage': 5.345595563387205, 'service_names': ['srv-reservation', 'config-autoscaler']}
+# --- END: seq=99 ---
+
+# --- START: seq=272 ---
+{'max_throughput': 172.5, 'total_errors': 35929, 'total_anomaly_count': 33, 'changed_service_anomaly_count': 6, 'service_max_cpu_usage': nan, 'total_max_cpu_usage': nan, 'service_names': ['srv-reservation', 'config-autoscaler']}
+# --- END: seq=272 ---
+
+# --- START: seq=582 ---
+{'max_throughput': 165.1, 'total_errors': 61011, 'total_anomaly_count': 46, 'changed_service_anomaly_count': 12, 'service_max_cpu_usage': 0.051699977126278, 'total_max_cpu_usage': nan, 'service_names': ['srv-reservation', 'config-autoscaler']}
+# --- END: seq=582 ---
+
+# --- START: seq=566 ---
+{'max_throughput': 173.7, 'total_errors': 64717, 'total_anomaly_count': 47, 'changed_service_anomaly_count': 6, 'service_max_cpu_usage': 0.230523198667345, 'total_max_cpu_usage': nan, 'service_names': ['srv-user', 'config-autoscaler']}
+# --- END: seq=566 ---
+
+# --- START: seq=106 ---
+{'max_throughput': 172.6, 'total_errors': 54516, 'total_anomaly_count': 38, 'changed_service_anomaly_count': 12, 'service_max_cpu_usage': 0.0695727219663797, 'total_max_cpu_usage': nan, 'service_names': ['srv-profile', 'config-autoscaler']}
+# --- END: seq=106 ---
+
+# --- START: seq=156 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'e5e93462-0c0d-4500-9e21-19e34ec588d9', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 01:18:37 GMT', 'Content-Length': '260'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"config.webhook.serving.knative.dev\" denied the request: validation failed: max-scale-down-rate = 1, must be greater than 1.0","reason":"BadRequest","code":400}
+
+
+# --- END: seq=156 ---
+
+# --- START: seq=434 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '13639b5f-31d7-433c-b77e-f14225f8ebce', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 01:21:14 GMT', 'Content-Length': '260'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"config.webhook.serving.knative.dev\" denied the request: validation failed: max-scale-down-rate = 1, must be greater than 1.0","reason":"BadRequest","code":400}
+
+
+# --- END: seq=434 ---
+
+# --- START: seq=293 ---
+mapping values are not allowed here
+  in "<unicode string>", line 11, column 50:
+     ... ders: HTTPHeaderDict({'Audit-Id': '13639b5f-31d7-433c-b77e-f1422 ... 
+                                         ^
+# --- END: seq=293 ---
+

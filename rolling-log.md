@@ -1,7 +1,7 @@
 # CTL: Rolling log
 
 ## before April 2025 CTL:
-what has happend where are we going
+what is kubernetes. how can we do something new with it. INTENT BASED COMPUTING.
 
 ## April 2025: week 1
 - calico *.*.3 doesnt work and has a issue with creating the calico-typha containers which breaks the whole system since it is not able to interact with storage and get configutation files.
@@ -71,3 +71,20 @@ what has happend where are we going
 - Presentation of IPDPS.
 - Working on compiling the anomaly document for LLM adaptation.
 - Testing the system.
+
+## july 2025: week 1 
+- experimenting with the ctl framework doing updates to prompt engineering and evolution of the environment
+- closed the loop
+
+## july 2025: week 2 
+- experimenting with the ctl framework updates to history and generation pipeline
+- got access to the gpu vm for efficient debugging
+
+## july 2025: week 3
+- somehow cluster broke. might be related to the openstack updates (not sure).
+- reconfigured the whole environment on a newly created vm.
+
+## july 2025: week 4
+- fixed bug that stopped loadtesting (change in go version cause uname passwd missmatch in the user service)
+
+## august 2025

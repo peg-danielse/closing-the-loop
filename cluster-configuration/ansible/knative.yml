@@ -1,0 +1,32 @@
+kubectl apply -f https://github.com/knative/operator/releases/download/knative-v1.18.1/operator.yaml
+
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: knative-serving
+---
+apiVersion: operator.knative.dev/v1beta1
+kind: KnativeServing
+metadata:
+  name: knative-serving
+  namespace: knative-serving
+# FIRST WITHOUT THEN UPDATE THE SPEC.
+spec:
+  config:
+    istio:
+      local-gateways: |
+        - name: knative-local-gateway
+          namespace: knative-serving
+          service: knative-local-gateway.istio-system.svc.cluster.local
+
+---
+# update bpfloadbalancing to disabled
+kubectl get felixconfiguration -o yaml
+
+install istio.
+
+---
+# sslip.io for routing the functions.
+kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.18.1/serving-default-domain.yaml
+

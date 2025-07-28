@@ -1,0 +1,228 @@
+# --- START: seq=0 ---
+
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: srv-search
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/window: "60s"
+        autoscaling.knative.dev/stable-window: "60s"  # Default: 60s, Duration, 6s <= value <= 1h
+        autoscaling.knative.dev/panic-window-percentage: "10.0" # Possible values: float, 1.0 <= value <= 100.0
+        autoscaling.knative.dev/panic-threshold-percentage: "200.0" # Default: 200.0, Possible values: float, 110.0 <= value <= 1000.0
+        
+        autoscaling.knative.dev/initial-scale: "1"
+        
+        autoscaling.knative.dev/min-scale: "0" # 0 = no min
+        autoscaling.knative.dev/max-scale: "0" # 0 = no max
+        autoscaling.knative.dev/scale-down-delay: "0s" # Duration, 0s <= value <= 1h
+        
+        
+        autoscaling.knative.dev/activation-scale: "5"
+        
+        # autoscaling.knative.dev/class: "hpa.autoscaling.knative.dev"
+        autoscaling.knative.dev/metric: "concurrency" # "concurrency", "rps", "cpu"*, "memory"*. *requires hpa.autoscaling
+        autoscaling.knative.dev/target: "100" 
+        autoscaling.knative.dev/target-utilization-percentage: "70" # hotness of the target value to scale on.
+    spec:
+      containers:
+      - command:
+        - search
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-search
+        ports:
+          - name: h2c
+            containerPort: 8082
+        resources:
+          requests:
+            cpu: 100m
+          limits:
+            cpu: 1000m
+
+---
+
+{
+  'changed_service_anomaly_count': 0,
+  'max_throughput': 0,
+  'service_max_cpu_usage': 0,
+  'total_anomaly_count': 0,
+  'total_errors': 0,
+  'total_max_cpu_usage': 0
+}
+# --- END: seq=0 ---
+# --- START: seq=1 ---
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: srv-search
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/activation-scale: '5'
+        autoscaling.knative.dev/initial-scale: '1'
+        autoscaling.knative.dev/max-scale: '10'
+        autoscaling.knative.dev/metric: concurrency
+        autoscaling.knative.dev/min-scale: '0'
+        autoscaling.knative.dev/panic-threshold-percentage: '200.0'
+        autoscaling.knative.dev/panic-window-percentage: '20.0'
+        autoscaling.knative.dev/scale-down-delay: 10s
+        autoscaling.knative.dev/stable-window: 60s
+        autoscaling.knative.dev/target: '100'
+        autoscaling.knative.dev/target-utilization-percentage: '70'
+        autoscaling.knative.dev/window: 60s
+    spec:
+      containers:
+      - command:
+        - search
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-search
+        ports:
+        - containerPort: 8082
+          name: h2c
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+
+---
+{'max_throughput': 9.9, 'total_errors': 221, 'total_anomaly_count': 4, 'changed_service_anomaly_count': 2, 'service_max_cpu_usage': 0.1677937934378535, 'total_max_cpu_usage': 1.0415940445094178, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=1 ---
+
+# --- START: seq=2 ---
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: srv-search
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/activation-scale: '5'
+        autoscaling.knative.dev/initial-scale: '1'
+        autoscaling.knative.dev/max-scale: '10'
+        autoscaling.knative.dev/metric: concurrency
+        autoscaling.knative.dev/min-scale: '0'
+        autoscaling.knative.dev/panic-threshold-percentage: '200.0'
+        autoscaling.knative.dev/panic-window-percentage: '10.0'
+        autoscaling.knative.dev/scale-down-delay: 10s
+        autoscaling.knative.dev/stable-window: 60s
+        autoscaling.knative.dev/target: '200'
+        autoscaling.knative.dev/target-utilization-percentage: '70'
+        autoscaling.knative.dev/window: 60s
+    spec:
+      containers:
+      - command:
+        - search
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-search
+        ports:
+        - containerPort: 8082
+          name: h2c
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+
+---
+{'max_throughput': 147.5, 'total_errors': 14346, 'total_anomaly_count': 22, 'changed_service_anomaly_count': 4, 'service_max_cpu_usage': 0.9459039591665264, 'total_max_cpu_usage': 'nan', 'service_names': ['srv-search']}
+# --- END: seq=2 ---
+
+# --- START: seq=3 ---
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: srv-search
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/activation-scale: '5'
+        autoscaling.knative.dev/initial-scale: '1'
+        autoscaling.knative.dev/max-scale: '10'
+        autoscaling.knative.dev/metric: concurrency
+        autoscaling.knative.dev/panic-threshold-percentage: '200.0'
+        autoscaling.knative.dev/panic-window-percentage: '10.0'
+        autoscaling.knative.dev/scale-down-delay: 0s
+        autoscaling.knative.dev/stable-window: 60s
+        autoscaling.knative.dev/target: '100'
+        autoscaling.knative.dev/target-utilization-percentage: '70'
+        autoscaling.knative.dev/window: 60s
+    spec:
+      containers:
+      - command:
+        - search
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-search
+        ports:
+        - containerPort: 8082
+          name: h2c
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+
+---
+{'max_throughput': 147.1, 'total_errors': 7107, 'total_anomaly_count': 26, 'changed_service_anomaly_count': 6, 'service_max_cpu_usage': 1.0562275744790257, 'total_max_cpu_usage': 'nan', 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=3 ---
+
+# --- START: seq=4 ---
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: srv-search
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/activation-scale: '5'
+        autoscaling.knative.dev/initial-scale: '1'
+        autoscaling.knative.dev/max-scale: '5'
+        autoscaling.knative.dev/metric: concurrency
+        autoscaling.knative.dev/min-scale: '0'
+        autoscaling.knative.dev/panic-threshold-percentage: '200.0'
+        autoscaling.knative.dev/panic-window-percentage: '10.0'
+        autoscaling.knative.dev/scale-down-delay: 0s
+        autoscaling.knative.dev/stable-window: 60s
+        autoscaling.knative.dev/target: '50'
+        autoscaling.knative.dev/target-utilization-percentage: '70'
+        autoscaling.knative.dev/window: 60s
+    spec:
+      containers:
+      - command:
+        - search
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-search
+        ports:
+        - containerPort: 8082
+          name: h2c
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+
+---
+{'max_throughput': 140.9, 'total_errors': 7743, 'total_anomaly_count': 21, 'changed_service_anomaly_count': 5, 'service_max_cpu_usage': 1.0547231086032385, 'total_max_cpu_usage': 'nan', 'service_names': ['srv-search']}
+# --- END: seq=4 ---
+

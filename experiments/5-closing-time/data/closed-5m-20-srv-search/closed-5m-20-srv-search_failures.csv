@@ -1,0 +1,5 @@
+Method,Name,Error,Occurrences
+POST,/reservation,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to spark.lab.uvalight.net timed out. (connect timeout=None)')",1
+GET,/hotels,HTTPError('500 Server Error: Internal Server Error for url: /hotels'),884
+GET,/recommendations,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to spark.lab.uvalight.net timed out. (connect timeout=None)')",15
+GET,/hotels,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to spark.lab.uvalight.net timed out. (connect timeout=None)')",15

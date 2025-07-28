@@ -1,0 +1,660 @@
+# --- START: seq=1 ---
+{'max_throughput': 160.4, 'total_errors': 0, 'total_anomaly_count': 61, 'changed_service_anomaly_count': 19, 'service_max_cpu_usage': 1.1967601168835311, 'total_max_cpu_usage': 6.182383360695971
+}
+# --- END: seq=1 ---
+
+# --- START: seq=2 ---
+{'max_throughput': 147.8, 'total_errors': 69, 'total_anomaly_count': 60, 'changed_service_anomaly_count': 21, 'service_max_cpu_usage': 0.2896363043810439, 'total_max_cpu_usage': 6.413187808094773
+}
+# --- END: seq=2 ---
+
+# --- START: seq=3 ---
+[Errno 2
+] No such file or directory: './experiments/5-closing-time/data/closed-5m-10m-3-srv-profile-config-autoscaler/closed-5m-10m-3-srv-profile-config-autoscaler_traces.json'
+# --- END: seq=3 ---
+
+# --- START: seq=4 ---
+{'max_throughput': 153.0, 'total_errors': 136, 'total_anomaly_count': 57, 'changed_service_anomaly_count': 4, 'service_max_cpu_usage': 0.0299750719133273, 'total_max_cpu_usage': 6.536814855685911
+}
+# --- END: seq=4 ---
+
+# --- START: seq=5 ---
+[Errno 2
+] No such file or directory: './experiments/5-closing-time/data/closed-5m-10m-5-srv-profile-config-autoscaler/closed-5m-10m-5-srv-profile-config-autoscaler_traces.json'
+# --- END: seq=5 ---
+
+# --- START: seq=6 ---
+{'max_throughput': 142.5, 'total_errors': 5734, 'total_anomaly_count': 12, 'changed_service_anomaly_count': 3, 'service_max_cpu_usage': 3.629006711785243, 'total_max_cpu_usage': 5.356685187323638
+}
+# --- END: seq=6 ---
+
+# --- START: seq=7 ---
+{'max_throughput': 165.1, 'total_errors': 2979, 'total_anomaly_count': 50, 'changed_service_anomaly_count': 13, 'service_max_cpu_usage': 4.33214931740044, 'total_max_cpu_usage': 6.103437389184308
+}
+# --- END: seq=7 ---
+
+# --- START: seq=8 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'bda9b90f-b650-4b31-8bf5-186cb209d6d9', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+    13 Jul 2025 10: 50: 47 GMT', 'Content-Length': '352'
+})
+HTTP response body: {
+    "kind": "Status",
+    "apiVersion": "v1",
+    "metadata": {},
+    "status": "Failure",
+    "message": "admission webhook \"webhook.serving.knative.dev\" denied the request: mutation failed: cannot decode incoming new object: json: cannot unmarshal string into Go struct field Container.spec.template.spec.containers.command of type []string",
+    "reason": "BadRequest",
+    "code": 400
+}
+
+
+# --- END: seq=8 ---
+
+# --- START: seq=9 ---
+{'max_throughput': 162.0, 'total_errors': 78, 'total_anomaly_count': 64, 'changed_service_anomaly_count': 8, 'service_max_cpu_usage': 0.0430429873131923, 'total_max_cpu_usage': 6.358189631128379
+}
+# --- END: seq=9 ---
+
+# --- START: seq=10 ---
+[Errno 2
+] No such file or directory: './experiments/5-closing-time/data/closed-5m-10m-10-srv-geo/closed-5m-10m-10-srv-geo_traces.json'
+# --- END: seq=10 ---
+
+# --- START: seq=11 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '989155bf-8297-4146-964d-fb4b23dc9ca2', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+    13 Jul 2025 11: 24: 00 GMT', 'Content-Length': '340'
+})
+HTTP response body: {
+    "kind": "Status",
+    "apiVersion": "v1",
+    "metadata": {},
+    "status": "Failure",
+    "message": "admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 110 \u003c= 50.0 \u003c= 1000: spec.template.metadata.annotations.autoscaling.knative.dev/panic-threshold-percentage",
+    "reason": "BadRequest",
+    "code": 400
+}
+
+
+# --- END: seq=11 ---
+
+# --- START: seq=12 ---
+{'max_throughput': 162.8, 'total_errors': 30698, 'total_anomaly_count': 31, 'changed_service_anomaly_count': 9, 'service_max_cpu_usage': 2.6011693553744397, 'total_max_cpu_usage': 3.980798433405447
+}
+# --- END: seq=12 ---
+
+# --- START: seq=13 ---
+{'max_throughput': 161.9, 'total_errors': 9325, 'total_anomaly_count': 71, 'changed_service_anomaly_count': 15, 'service_max_cpu_usage': 4.684276782012968, 'total_max_cpu_usage': 6.468494334191744
+}
+# --- END: seq=13 ---
+
+# --- START: seq=14 ---
+{'max_throughput': 155.2, 'total_errors': 547, 'total_anomaly_count': 71, 'changed_service_anomaly_count': 18, 'service_max_cpu_usage': 1.2146494966269468, 'total_max_cpu_usage': 6.365413519928014
+}
+# --- END: seq=14 ---
+
+# --- START: seq=15 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'ab7f58e7-92b7-4d74-975f-6b72fc497ad1', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+    13 Jul 2025 12: 14: 48 GMT', 'Content-Length': '352'
+})
+HTTP response body: {
+    "kind": "Status",
+    "apiVersion": "v1",
+    "metadata": {},
+    "status": "Failure",
+    "message": "admission webhook \"webhook.serving.knative.dev\" denied the request: mutation failed: cannot decode incoming new object: json: cannot unmarshal string into Go struct field Container.spec.template.spec.containers.command of type []string",
+    "reason": "BadRequest",
+    "code": 400
+}
+
+
+# --- END: seq=15 ---
+
+# --- START: seq=16 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'a3a61216-8da9-40c1-b092-8d99e56293a8', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+    13 Jul 2025 12: 14: 48 GMT', 'Content-Length': '352'
+})
+HTTP response body: {
+    "kind": "Status",
+    "apiVersion": "v1",
+    "metadata": {},
+    "status": "Failure",
+    "message": "admission webhook \"webhook.serving.knative.dev\" denied the request: mutation failed: cannot decode incoming new object: json: cannot unmarshal string into Go struct field Container.spec.template.spec.containers.command of type []string",
+    "reason": "BadRequest",
+    "code": 400
+}
+
+
+# --- END: seq=16 ---
+
+# --- START: seq=17 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '44301961-8ebe-4e07-ac99-cd00568866ce', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+    13 Jul 2025 12: 14: 48 GMT', 'Content-Length': '352'
+})
+HTTP response body: {
+    "kind": "Status",
+    "apiVersion": "v1",
+    "metadata": {},
+    "status": "Failure",
+    "message": "admission webhook \"webhook.serving.knative.dev\" denied the request: mutation failed: cannot decode incoming new object: json: cannot unmarshal string into Go struct field Container.spec.template.spec.containers.command of type []string",
+    "reason": "BadRequest",
+    "code": 400
+}
+
+
+# --- END: seq=17 ---
+
+# --- START: seq=18 ---
+{'max_throughput': 165.3, 'total_errors': 10473, 'total_anomaly_count': 22, 'changed_service_anomaly_count': 3, 'service_max_cpu_usage': 4.283287898496197, 'total_max_cpu_usage': 6.177478594138426
+}
+# --- END: seq=18 ---
+
+# --- START: seq=19 ---
+{'max_throughput': 125.9, 'total_errors': 1944, 'total_anomaly_count': 9, 'changed_service_anomaly_count': 3, 'service_max_cpu_usage': 0.1704355378041983, 'total_max_cpu_usage': 0.359376835774353
+}
+# --- END: seq=19 ---
+
+# --- START: seq=19 ---
+(409)
+Reason: Conflict
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '4ebe3eb6-90a6-434c-8a92-48fae58fb6d7', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+    13 Jul 2025 12: 39: 58 GMT', 'Content-Length': '362'
+})
+HTTP response body: {
+    "kind": "Status",
+    "apiVersion": "v1",
+    "metadata": {},
+    "status": "Failure",
+    "message": "Operation cannot be fulfilled on services.serving.knative.dev \"srv-search\": the object has been modified; please apply your changes to the latest version and try again",
+    "reason": "Conflict",
+    "details": {
+        "name": "srv-search",
+        "group": "serving.knative.dev",
+        "kind": "services"
+    },
+    "code": 409
+}
+
+
+# --- END: seq=19 ---
+
+# --- START: seq=20 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '55dd4ddf-d890-4cd6-a47b-6d81a7b3c970', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+    13 Jul 2025 12: 39: 58 GMT', 'Content-Length': '352'
+})
+HTTP response body: {
+    "kind": "Status",
+    "apiVersion": "v1",
+    "metadata": {},
+    "status": "Failure",
+    "message": "admission webhook \"webhook.serving.knative.dev\" denied the request: mutation failed: cannot decode incoming new object: json: cannot unmarshal string into Go struct field Container.spec.template.spec.containers.command of type []string",
+    "reason": "BadRequest",
+    "code": 400
+}
+
+
+# --- END: seq=20 ---
+
+# --- START: seq=21 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '90360ecc-6f2c-40fd-a275-86294a3835ad', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+    13 Jul 2025 12: 39: 58 GMT', 'Content-Length': '352'
+})
+HTTP response body: {
+    "kind": "Status",
+    "apiVersion": "v1",
+    "metadata": {},
+    "status": "Failure",
+    "message": "admission webhook \"webhook.serving.knative.dev\" denied the request: mutation failed: cannot decode incoming new object: json: cannot unmarshal string into Go struct field Container.spec.template.spec.containers.command of type []string",
+    "reason": "BadRequest",
+    "code": 400
+}
+
+
+# --- END: seq=21 ---
+
+# --- START: seq=22 ---
+{'max_throughput': 83.8, 'total_errors': 461, 'total_anomaly_count': 6, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.0013092594051088, 'total_max_cpu_usage': 0.15729709485504698
+}
+# --- END: seq=22 ---
+
+# --- START: seq=23 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '0e4a33c5-ed86-40b8-8c7a-074d492e50d0', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+    13 Jul 2025 12: 52: 40 GMT', 'Content-Length': '352'
+})
+HTTP response body: {
+    "kind": "Status",
+    "apiVersion": "v1",
+    "metadata": {},
+    "status": "Failure",
+    "message": "admission webhook \"webhook.serving.knative.dev\" denied the request: mutation failed: cannot decode incoming new object: json: cannot unmarshal string into Go struct field Container.spec.template.spec.containers.command of type []string",
+    "reason": "BadRequest",
+    "code": 400
+}
+
+
+# --- END: seq=23 ---
+
+# --- START: seq=24 ---
+Command '['/home/pager/Documents/closing-the-loop/venv/bin/locust', '--processes', '16', '-f', 'locust/hotel-reservations.py', '-H', 'http: //spark.lab.uvalight.net:30505', '-t', '10m', '--csv', 'closed-5m-10m-24-srv-reservation', '--headless']' timed out after 1200 seconds
+# --- END: seq=24 ---
+
+# --- START: seq=25 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '27565ee8-33f5-492b-83e5-a3b5fc1e1d1f', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+        13 Jul 2025 13: 13: 40 GMT', 'Content-Length': '352'
+    })
+HTTP response body: {
+        "kind": "Status",
+        "apiVersion": "v1",
+        "metadata": {},
+        "status": "Failure",
+        "message": "admission webhook \"webhook.serving.knative.dev\" denied the request: mutation failed: cannot decode incoming new object: json: cannot unmarshal string into Go struct field Container.spec.template.spec.containers.command of type []string",
+        "reason": "BadRequest",
+        "code": 400
+    }
+
+
+# --- END: seq=25 ---
+
+# --- START: seq=26 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '227dc0f0-1f5e-4a07-b7f3-f0f4276603b9', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+        13 Jul 2025 13: 13: 40 GMT', 'Content-Length': '352'
+    })
+HTTP response body: {
+        "kind": "Status",
+        "apiVersion": "v1",
+        "metadata": {},
+        "status": "Failure",
+        "message": "admission webhook \"webhook.serving.knative.dev\" denied the request: mutation failed: cannot decode incoming new object: json: cannot unmarshal string into Go struct field Container.spec.template.spec.containers.command of type []string",
+        "reason": "BadRequest",
+        "code": 400
+    }
+
+
+# --- END: seq=26 ---
+
+# --- START: seq=27 ---
+[Errno 2
+    ] No such file or directory: './experiments/5-closing-time/data/closed-5m-10m-27-srv-rate/closed-5m-10m-27-srv-rate_traces.json'
+# --- END: seq=27 ---
+
+# --- START: seq=28 ---
+{'max_throughput': 154.4, 'total_errors': 30548, 'total_anomaly_count': 32, 'changed_service_anomaly_count': 1, 'service_max_cpu_usage': 0.0843023110437356, 'total_max_cpu_usage': nan
+    }
+# --- END: seq=28 ---
+
+# --- START: seq=28 ---
+(409)
+Reason: Conflict
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '62dbe06d-80ff-40e3-a6de-39b70e383167', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+        13 Jul 2025 13: 39: 27 GMT', 'Content-Length': '356'
+    })
+HTTP response body: {
+        "kind": "Status",
+        "apiVersion": "v1",
+        "metadata": {},
+        "status": "Failure",
+        "message": "Operation cannot be fulfilled on services.serving.knative.dev \"srv-geo\": the object has been modified; please apply your changes to the latest version and try again",
+        "reason": "Conflict",
+        "details": {
+            "name": "srv-geo",
+            "group": "serving.knative.dev",
+            "kind": "services"
+        },
+        "code": 409
+    }
+
+
+# --- END: seq=28 ---
+
+# --- START: seq=29 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '488451d7-27f8-4d3a-a6d1-44e17327d3ff', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+        13 Jul 2025 13: 39: 27 GMT', 'Content-Length': '352'
+    })
+HTTP response body: {
+        "kind": "Status",
+        "apiVersion": "v1",
+        "metadata": {},
+        "status": "Failure",
+        "message": "admission webhook \"webhook.serving.knative.dev\" denied the request: mutation failed: cannot decode incoming new object: json: cannot unmarshal string into Go struct field Container.spec.template.spec.containers.command of type []string",
+        "reason": "BadRequest",
+        "code": 400
+    }
+
+
+# --- END: seq=29 ---
+
+# --- START: seq=30 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '3c2fbe02-25e1-496f-ac23-e0e9c0bd59b1', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+        13 Jul 2025 13: 39: 27 GMT', 'Content-Length': '335'
+    })
+HTTP response body: {
+        "kind": "Status",
+        "apiVersion": "v1",
+        "metadata": {},
+        "status": "Failure",
+        "message": "admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: max-scale=2 is less than activation-scale=5: spec.template.metadata.annotations.autoscaling.knative.dev/activation-scale",
+        "reason": "BadRequest",
+        "code": 400
+    }
+
+
+# --- END: seq=30 ---
+
+# --- START: seq=31 ---
+{'max_throughput': 153.9, 'total_errors': 29515, 'total_anomaly_count': 28, 'changed_service_anomaly_count': 13, 'service_max_cpu_usage': 0.0955028877263143, 'total_max_cpu_usage': 0.6434355065403369
+    }
+# --- END: seq=31 ---
+
+# --- START: seq=32 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'd5735d4a-755a-4215-9913-d29aca4a126b', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+        13 Jul 2025 13: 56: 43 GMT', 'Content-Length': '393'
+    })
+HTTP response body: {
+        "kind": "Status",
+        "apiVersion": "v1",
+        "metadata": {},
+        "status": "Failure",
+        "message": "admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: invalid value: 1000.0: spec.template.metadata.annotations.autoscaling.knative.dev/max-scale\ninvalid value: cpu: spec.template.metadata.annotations.autoscaling.knative.dev/metric",
+        "reason": "BadRequest",
+        "code": 400
+    }
+
+
+# --- END: seq=32 ---
+
+# --- START: seq=33 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '1fa68255-606c-42b7-b022-6a099f54ccb1', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+        13 Jul 2025 13: 56: 43 GMT', 'Content-Length': '306'
+    })
+HTTP response body: {
+        "kind": "Status",
+        "apiVersion": "v1",
+        "metadata": {},
+        "status": "Failure",
+        "message": "admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: invalid value: 1000.0: spec.template.metadata.annotations.autoscaling.knative.dev/max-scale",
+        "reason": "BadRequest",
+        "code": 400
+    }
+
+
+# --- END: seq=33 ---
+
+# --- START: seq=34 ---
+{'max_throughput': 149.6, 'total_errors': 0, 'total_anomaly_count': 71, 'changed_service_anomaly_count': 29, 'service_max_cpu_usage': 0.271972071646208, 'total_max_cpu_usage': 5.772310712449528
+    }
+# --- END: seq=34 ---
+
+# --- START: seq=35 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '66b773b0-b081-4818-aaee-9793dacc2e7d', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+        13 Jul 2025 14: 11: 22 GMT', 'Content-Length': '352'
+    })
+HTTP response body: {
+        "kind": "Status",
+        "apiVersion": "v1",
+        "metadata": {},
+        "status": "Failure",
+        "message": "admission webhook \"webhook.serving.knative.dev\" denied the request: mutation failed: cannot decode incoming new object: json: cannot unmarshal string into Go struct field Container.spec.template.spec.containers.command of type []string",
+        "reason": "BadRequest",
+        "code": 400
+    }
+
+
+# --- END: seq=35 ---
+
+# --- START: seq=36 ---
+{'max_throughput': 138.9, 'total_errors': 7641, 'total_anomaly_count': 10, 'changed_service_anomaly_count': 3, 'service_max_cpu_usage': 1.7340202838024523, 'total_max_cpu_usage': 2.683045166133813
+    }
+# --- END: seq=36 ---
+
+# --- START: seq=37 ---
+{'max_throughput': 155.3, 'total_errors': 26409, 'total_anomaly_count': 73, 'changed_service_anomaly_count': 4, 'service_max_cpu_usage': 0.122764394642931, 'total_max_cpu_usage': 5.918894394477236
+    }
+# --- END: seq=37 ---
+
+# --- START: seq=38 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '61608c09-a027-4355-a0c1-394474e1a051', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+        13 Jul 2025 14: 41: 10 GMT', 'Content-Length': '352'
+    })
+HTTP response body: {
+        "kind": "Status",
+        "apiVersion": "v1",
+        "metadata": {},
+        "status": "Failure",
+        "message": "admission webhook \"webhook.serving.knative.dev\" denied the request: mutation failed: cannot decode incoming new object: json: cannot unmarshal string into Go struct field Container.spec.template.spec.containers.command of type []string",
+        "reason": "BadRequest",
+        "code": 400
+    }
+
+
+# --- END: seq=38 ---
+
+# --- START: seq=39 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'c98e0119-2875-46f9-8881-928e86952cf9', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+        13 Jul 2025 14: 41: 10 GMT', 'Content-Length': '427'
+    })
+HTTP response body: {
+        "kind": "Status",
+        "apiVersion": "v1",
+        "metadata": {},
+        "status": "Failure",
+        "message": "admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 110 \u003c= 20.0 \u003c= 1000: spec.template.metadata.annotations.autoscaling.knative.dev/panic-threshold-percentage\ninvalid value: cpu: spec.template.metadata.annotations.autoscaling.knative.dev/metric",
+        "reason": "BadRequest",
+        "code": 400
+    }
+
+
+# --- END: seq=39 ---
+
+# --- START: seq=40 ---
+{'max_throughput': 152.4, 'total_errors': 16091, 'total_anomaly_count': 56, 'changed_service_anomaly_count': 14, 'service_max_cpu_usage': 4.293557859648628, 'total_max_cpu_usage': 5.9184119539102245
+    }
+# --- END: seq=40 ---
+
+# --- START: seq=41 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'd815f82b-0061-4424-bcb9-f38d78b3a7c2', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+        13 Jul 2025 14: 56: 48 GMT', 'Content-Length': '341'
+    })
+HTTP response body: {
+        "kind": "Status",
+        "apiVersion": "v1",
+        "metadata": {},
+        "status": "Failure",
+        "message": "admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 110 \u003c= 100.0 \u003c= 1000: spec.template.metadata.annotations.autoscaling.knative.dev/panic-threshold-percentage",
+        "reason": "BadRequest",
+        "code": 400
+    }
+
+
+# --- END: seq=41 ---
+
+# --- START: seq=43 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'f41ca5c3-3537-4db1-a5a4-779cd260e3c2', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+        13 Jul 2025 14: 56: 48 GMT', 'Content-Length': '430'
+    })
+HTTP response body: {
+        "kind": "Status",
+        "apiVersion": "v1",
+        "metadata": {},
+        "status": "Failure",
+        "message": "admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 110 \u003c= 50.0 \u003c= 1000: spec.template.metadata.annotations.autoscaling.knative.dev/panic-threshold-percentage\ninvalid value: 0.5: spec.template.metadata.annotations.autoscaling.knative.dev/min-scale",
+        "reason": "BadRequest",
+        "code": 400
+    }
+
+
+# --- END: seq=43 ---
+
+# --- START: seq=44 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '294b72cc-014b-4cc9-b8fc-997a22c29893', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Sun,
+        13 Jul 2025 14: 56: 48 GMT', 'Content-Length': '335'
+    })
+HTTP response body: {
+        "kind": "Status",
+        "apiVersion": "v1",
+        "metadata": {},
+        "status": "Failure",
+        "message": "admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: max-scale=4 is less than activation-scale=5: spec.template.metadata.annotations.autoscaling.knative.dev/activation-scale",
+        "reason": "BadRequest",
+        "code": 400
+    }
+
+
+# --- END: seq=44 ---
+
+# --- START: seq=45 ---
+{'max_throughput': 149.7, 'total_errors': 3, 'total_anomaly_count': 77, 'changed_service_anomaly_count': 16, 'service_max_cpu_usage': 0.0795159033056443, 'total_max_cpu_usage': 6.739909117795104
+    }
+# --- END: seq=45 ---
+
+# --- START: seq=46 ---
+{'max_throughput': 173.2, 'total_errors': 98, 'total_anomaly_count': 58, 'changed_service_anomaly_count': 26, 'service_max_cpu_usage': 0.3618433872583818, 'total_max_cpu_usage': 6.886029592414175
+    }
+# --- END: seq=46 ---
+
+# --- START: seq=47 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '94843f38-871f-4662-8bab-38ad1a570e08', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Mon,
+        14 Jul 2025 10: 04: 10 GMT', 'Content-Length': '340'
+    })
+HTTP response body: {
+        "kind": "Status",
+        "apiVersion": "v1",
+        "metadata": {},
+        "status": "Failure",
+        "message": "admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 110 \u003c= 50.0 \u003c= 1000: spec.template.metadata.annotations.autoscaling.knative.dev/panic-threshold-percentage",
+        "reason": "BadRequest",
+        "code": 400
+    }
+
+
+# --- END: seq=47 ---
+
+# --- START: seq=48 ---
+[Errno 2] No such file or directory: './experiments/5-closing-time/data/closed-5m-10m-48-srv-profile-config-autoscaler/closed-5m-10m-48-srv-profile-config-autoscaler_traces.json'
+# --- END: seq=48 ---
+
+# --- START: seq=49 ---
+{'max_throughput': 241.6, 'total_errors': 14031, 'total_anomaly_count': 75, 'changed_service_anomaly_count': 15, 'service_max_cpu_usage': 4.78472995619101, 'total_max_cpu_usage': 6.754487406990293}
+# --- END: seq=49 ---
+
+# --- START: seq=50 ---
+{'max_throughput': 207.5, 'total_errors': 10830, 'total_anomaly_count': 41, 'changed_service_anomaly_count': 9, 'service_max_cpu_usage': 4.486936036396042, 'total_max_cpu_usage': 6.457850572071901}
+# --- END: seq=50 ---
+
+# --- START: seq=51 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '4bef0540-dc64-4fec-b9dd-7dac680431dc', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Mon, 14 Jul 2025 14:37:41 GMT', 'Content-Length': '341'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 110 \u003c= 100.0 \u003c= 1000: spec.template.metadata.annotations.autoscaling.knative.dev/panic-threshold-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=51 ---
+
+# --- START: seq=52 ---
+{'max_throughput': 182.6, 'total_errors': 1078, 'total_anomaly_count': 59, 'changed_service_anomaly_count': 18, 'service_max_cpu_usage': 1.1636203782950132, 'total_max_cpu_usage': nan}
+# --- END: seq=52 ---
+
+# --- START: seq=53 ---
+{'max_throughput': 181.3, 'total_errors': 383, 'total_anomaly_count': 57, 'changed_service_anomaly_count': 15, 'service_max_cpu_usage': 0.0885814551006708, 'total_max_cpu_usage': 6.751692527286061}
+# --- END: seq=53 ---
+
+# --- START: seq=54 ---
+{'max_throughput': 218.0, 'total_errors': 11908, 'total_anomaly_count': 36, 'changed_service_anomaly_count': 7, 'service_max_cpu_usage': 4.624479687858757, 'total_max_cpu_usage': 6.6651452661637345}
+# --- END: seq=54 ---
+
+# --- START: seq=55 ---
+{'max_throughput': 222.5, 'total_errors': 21898, 'total_anomaly_count': 73, 'changed_service_anomaly_count': 25, 'service_max_cpu_usage': 0.2394764935888299, 'total_max_cpu_usage': 5.663755180501052}
+# --- END: seq=55 ---
+
+# --- START: seq=56 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '85d5267e-9067-42b6-9c77-47c61b087b76', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Mon, 14 Jul 2025 15:28:26 GMT', 'Content-Length': '260'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"config.webhook.serving.knative.dev\" denied the request: validation failed: max-scale-down-rate = 1, must be greater than 1.0","reason":"BadRequest","code":400}
+
+
+# --- END: seq=56 ---
+
+# --- START: seq=57 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '7833410b-f222-4167-926f-1aec12045c39', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Mon, 14 Jul 2025 15:28:26 GMT', 'Content-Length': '352'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"webhook.serving.knative.dev\" denied the request: mutation failed: cannot decode incoming new object: json: cannot unmarshal string into Go struct field Container.spec.template.spec.containers.command of type []string","reason":"BadRequest","code":400}
+
+
+# --- END: seq=57 ---
+
+# --- START: seq=58 ---
+{'max_throughput': 189.0, 'total_errors': 865, 'total_anomaly_count': 47, 'changed_service_anomaly_count': 27, 'service_max_cpu_usage': 0.3817817749803106, 'total_max_cpu_usage': 6.888906631614974}
+# --- END: seq=58 ---
+
+# --- START: seq=59 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '83fe8d50-1dbf-45bd-9acc-5a628abc68c3', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Mon, 14 Jul 2025 15:41:09 GMT', 'Content-Length': '352'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"webhook.serving.knative.dev\" denied the request: mutation failed: cannot decode incoming new object: json: cannot unmarshal string into Go struct field Container.spec.template.spec.containers.command of type []string","reason":"BadRequest","code":400}
+
+
+# --- END: seq=59 ---
+
+# --- START: seq=60 ---
+{'max_throughput': 184.9, 'total_errors': 211, 'total_anomaly_count': 70, 'changed_service_anomaly_count': 14, 'service_max_cpu_usage': 1.321506702191377, 'total_max_cpu_usage': 6.669315256841478}
+# --- END: seq=60 ---
+
+# --- START: seq=61 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '94670297-e25d-4d53-a21a-e159e6f1bcc1', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Mon, 14 Jul 2025 15:53:53 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 1 \u003c= 150.0 \u003c= 100: spec.template.metadata.annotations.autoscaling.knative.dev/panic-window-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=61 ---
+
+# --- START: seq=62 ---
+{'max_throughput': 204.8, 'total_errors': 37471, 'total_anomaly_count': 45, 'changed_service_anomaly_count': 8, 'service_max_cpu_usage': 2.7812515092697407, 'total_max_cpu_usage': nan}
+# --- END: seq=62 ---
+
+# --- START: seq=63 ---
+{'max_throughput': 165.9, 'total_errors': 146, 'total_anomaly_count': 47, 'changed_service_anomaly_count': 20, 'service_max_cpu_usage': 1.2731721207378903, 'total_max_cpu_usage': nan}
+# --- END: seq=63 ---
+

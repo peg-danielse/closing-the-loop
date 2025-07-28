@@ -23,8 +23,8 @@ from locust.runners import MasterRunner
 
 from weibull import get_n_weibull_variables, compute_weibull_scale
 
-JAEGER_ENDPOINT_FSTRING = "http://spark.lab.uvalight.net:30550/api/traces?limit={limit}&lookback={lookback}&service={service}&start={start}"
-BASE_URL = "http://spark.lab.uvalight.net:31500"
+JAEGER_ENDPOINT_FSTRING = "http://145.100.135.11:30550/api/traces?limit={limit}&lookback={lookback}&service={service}&start={start}"
+PROMETHEUS_BASE_URL = "http://145.100.135.11:31207"
 
 PATH = "./locust/"
 log_file=""
@@ -52,16 +52,16 @@ def on_test_stop(environment, **_kwargs):
                 f.write(in_f.read())
 
 
-    url = BASE_URL + '/api/v1/label/configuration_name/values'
+    url = PROMETHEUS_BASE_URL + '/api/v1/label/configuration_name/values'
     response = requests.get(url)
 
-    print(response)
 
     data = response.json()
+    print(data)
     
     total_m_df = None
     for c in data['data']:
-        url = BASE_URL + '/api/v1/label/revision_name/values'
+        url = PROMETHEUS_BASE_URL + '/api/v1/label/revision_name/values'
         
         # get the names
         params = {'match[]': f'autoscaler_desired_pods{{namespace_name="default",configuration_name="{c}"}}'}
@@ -71,7 +71,7 @@ def on_test_stop(environment, **_kwargs):
         revision = response.json()
         print("Revision name:", revision['data'])
 
-        url = BASE_URL + '/api/v1/query_range'
+        url = PROMETHEUS_BASE_URL + '/api/v1/query_range'
 
         # Autoscaler metrics
         query = ['sum(autoscaler_requested_pods{{namespace_name="default", configuration_name="{config}", revision_name="{revision}"}})',
@@ -95,6 +95,8 @@ def on_test_stop(environment, **_kwargs):
 
             response = requests.get(url, params=params)
             result = response.json()
+
+            print(result)
 
             match = re.search(r'\b([a-zA-Z_][a-zA-Z0-9_]*)\s*\{\{', q)
             metric_name = q

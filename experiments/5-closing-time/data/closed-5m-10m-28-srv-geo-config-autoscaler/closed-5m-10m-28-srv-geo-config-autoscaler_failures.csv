@@ -1,0 +1,5 @@
+Method,Name,Error,Occurrences
+GET,/recommendations,"gaierror(-3, 'Temporary failure in name resolution')",1
+GET,/hotels,HTTPError('500 Server Error: Internal Server Error for url: /hotels'),30511
+GET,/hotels,"OSError(113, 'No route to host')",23
+GET,/recommendations,"OSError(113, 'No route to host')",13

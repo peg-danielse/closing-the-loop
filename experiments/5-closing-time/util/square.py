@@ -8,18 +8,8 @@ from kubernetes import client, config
 import warnings
 warnings.filterwarnings('ignore', message="Unverified HTTPS request*")
 
-KUBE_URL = "https://localhost:6443" 
-KUBE_API_TOKEN =  ("eyJhbGciOiJSUzI1NiIsImtpZCI6ImtQQmZaNXU4all2UEVTMWg3Q0lwdmpNcEFLYVdZY2c4S0Y0d3NaRXZyMUkifQ"
-                   ".eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uY"
-                   "W1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImRlZmF"
-                   "1bHQtdG9rZW4iLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGVmY"
-                   "XVsdCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6ImEwOTA0OGRiLTM"
-                   "1OTItNGQ2OS1hMmY3LWU5MDM0Y2M1Y2U2NyIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDpkZWZhdWx0OmRlZ"
-                   "mF1bHQifQ.yXjIcIA4uL4gASdj5TE1v4hiHAKROka58RG7MAJOlXGQkekYVTkzc3rM0tmOMClEEED9kAZTb6Tdp1u2"
-                   "2b9zBs4Qoil58wQ-ehlH4HMJG573lPRBVoq5kB3l3rKpwsWsfXpqm4xvWxlBxT6tZT9UZNTTcYUkLjnshGwsaE55NZ"
-                   "M7TG4YIeslRj3CAT-gOGWFQxIt1QFhZUor3D6JHrDznLPYB5iAeqXbOuvPClILtlmXoVftp3hmOGtlYwH8uWox9YHI"
-                   "_WECYrYEXp92a7yn7iq953hwD2lp22vozPDb_a5cTxC3AaSqv9FUTRby-fS8bpuXhKuyd-yLe9YqZTzk8Q")
-
+from config import PATH, KUBE_URL, KUBE_API_TOKEN
+from .sequence import get_config_content
 
 def update_globals(update, api_client):
     try:
@@ -37,8 +27,7 @@ def update_globals(update, api_client):
 
         return True
     except Exception as e:
-        print(e)
-        return False
+        raise
 
 
 def update_knative_service(update, api_client):
@@ -85,7 +74,6 @@ def update_knative_service(update, api_client):
         return True
 
     except Exception as e:
-        print(e)
         raise
         
 
@@ -103,12 +91,14 @@ def apply_yaml_configuration(doc, api_client):
     return
 
 
-def reset_k8s(api_client):
-    originals = glob.glob('./experiments/4-gen-doc/yaml/' + '*.yaml')
-    for o in originals:
-        with open(o) as f:
-            doc = yaml.safe_load(f)
-            apply_yaml_configuration(doc, api_client)
+def reset_k8s(api_client, path = PATH):
+    files = glob.glob(path + "yaml/*.yaml")
+
+
+    for f in files:
+        s, c, p = get_config_content(f)[-1]
+        
+        apply_yaml_configuration(c, api_client)
 
     print("waiting to fully accept initial configuration...")
     time.sleep(60)

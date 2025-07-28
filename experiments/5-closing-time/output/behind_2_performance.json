@@ -1,0 +1,215 @@
+# --- START: seq=113 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '77ea1ad6-99d4-47bc-abc1-e486ed3fb3fe', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 13:21:45 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 1 \u003c= 300.0 \u003c= 100: spec.template.metadata.annotations.autoscaling.knative.dev/panic-window-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=113 ---
+
+# --- START: seq=516 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'b7a7f1ee-1597-4ab2-81ef-2c8aca486d69', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 13:23:13 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 1 \u003c= 300.0 \u003c= 100: spec.template.metadata.annotations.autoscaling.knative.dev/panic-window-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=516 ---
+
+# --- START: seq=630 ---
+{'max_throughput': 142.8, 'total_errors': 17437, 'total_anomaly_count': 24, 'changed_service_anomaly_count': 6, 'service_max_cpu_usage': 2.5378447802868007, 'total_max_cpu_usage': nan, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=630 ---
+
+# --- START: seq=168 ---
+{'max_throughput': 163.8, 'total_errors': 18514, 'total_anomaly_count': 34, 'changed_service_anomaly_count': 5, 'service_max_cpu_usage': 1.2039944680883827, 'total_max_cpu_usage': nan, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=168 ---
+
+# --- START: seq=88 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '2800c412-bc60-44e6-b155-a05fb0123d08', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 13:54:33 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 1 \u003c= 300.0 \u003c= 100: spec.template.metadata.annotations.autoscaling.knative.dev/panic-window-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=88 ---
+
+# --- START: seq=430 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '974412cf-3f85-41d7-a4bc-636e8299c99b', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 13:56:39 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 1 \u003c= 300.0 \u003c= 100: spec.template.metadata.annotations.autoscaling.knative.dev/panic-window-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=430 ---
+
+# --- START: seq=96 ---
+{'max_throughput': 164.6, 'total_errors': 25349, 'total_anomaly_count': 73, 'changed_service_anomaly_count': 36, 'service_max_cpu_usage': 3.701557602084895, 'total_max_cpu_usage': nan, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=96 ---
+
+# --- START: seq=461 ---
+{'max_throughput': 154.6, 'total_errors': 11584, 'total_anomaly_count': 38, 'changed_service_anomaly_count': 18, 'service_max_cpu_usage': 4.460454590888966, 'total_max_cpu_usage': nan, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=461 ---
+
+# --- START: seq=343 ---
+{'max_throughput': 168.8, 'total_errors': 45159, 'total_anomaly_count': 40, 'changed_service_anomaly_count': 10, 'service_max_cpu_usage': nan, 'total_max_cpu_usage': nan, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=343 ---
+
+# --- START: seq=183 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'caac5fd2-837f-43b7-b7ce-63b4fd827983', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 14:47:03 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 1 \u003c= 300.0 \u003c= 100: spec.template.metadata.annotations.autoscaling.knative.dev/panic-window-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=183 ---
+
+# --- START: seq=64 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '5e5769cf-80eb-43c5-97aa-b0cf0996426d', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 14:48:31 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 1 \u003c= 300.0 \u003c= 100: spec.template.metadata.annotations.autoscaling.knative.dev/panic-window-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=64 ---
+
+# --- START: seq=133 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'a0bae642-3c5e-4bb9-9932-a23af941b50d', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 14:50:04 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 1 \u003c= 300.0 \u003c= 100: spec.template.metadata.annotations.autoscaling.knative.dev/panic-window-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=133 ---
+
+# --- START: seq=580 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '9c0215ad-a760-4cac-90f2-1fbbc58eb94c', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 14:52:19 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 1 \u003c= 300.0 \u003c= 100: spec.template.metadata.annotations.autoscaling.knative.dev/panic-window-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=580 ---
+
+# --- START: seq=598 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '39837ff4-2a4e-4b52-8114-b41d3106de0e', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 14:53:40 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 1 \u003c= 200.0 \u003c= 100: spec.template.metadata.annotations.autoscaling.knative.dev/panic-window-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=598 ---
+
+# --- START: seq=440 ---
+{'max_throughput': 178.8, 'total_errors': 50769, 'total_anomaly_count': 42, 'changed_service_anomaly_count': 16, 'service_max_cpu_usage': nan, 'total_max_cpu_usage': nan, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=440 ---
+
+# --- START: seq=264 ---
+{'max_throughput': 154.4, 'total_errors': 36888, 'total_anomaly_count': 30, 'changed_service_anomaly_count': 10, 'service_max_cpu_usage': nan, 'total_max_cpu_usage': nan, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=264 ---
+
+# --- START: seq=458 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '942a9ae6-8f81-43f1-a306-12844a099460', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 15:29:27 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 1 \u003c= 200.0 \u003c= 100: spec.template.metadata.annotations.autoscaling.knative.dev/panic-window-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=458 ---
+
+# --- START: seq=159 ---
+{'max_throughput': 175.6, 'total_errors': 49648, 'total_anomaly_count': 41, 'changed_service_anomaly_count': 3, 'service_max_cpu_usage': 0.0858632143930183, 'total_max_cpu_usage': nan, 'service_names': ['srv-geo', 'config-autoscaler']}
+# --- END: seq=159 ---
+
+# --- START: seq=539 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '74fd8dba-3cf2-4f86-8700-b7391d05d044', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 15:48:42 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 1 \u003c= 200.0 \u003c= 100: spec.template.metadata.annotations.autoscaling.knative.dev/panic-window-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=539 ---
+
+# --- START: seq=551 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'a3d52cb5-5d96-4755-b4a5-554d10bf4c04', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 15:50:02 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 1 \u003c= 300.0 \u003c= 100: spec.template.metadata.annotations.autoscaling.knative.dev/panic-window-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=551 ---
+
+# --- START: seq=626 ---
+{'max_throughput': 176.2, 'total_errors': 41604, 'total_anomaly_count': 39, 'changed_service_anomaly_count': 11, 'service_max_cpu_usage': 0.0567560566743977, 'total_max_cpu_usage': 3.512215649396526, 'service_names': ['srv-profile', 'config-autoscaler']}
+# --- END: seq=626 ---
+
+# --- START: seq=483 ---
+{'max_throughput': 157.0, 'total_errors': 36479, 'total_anomaly_count': 37, 'changed_service_anomaly_count': 15, 'service_max_cpu_usage': 0.1676910905331295, 'total_max_cpu_usage': nan, 'service_names': ['srv-reservation', 'config-autoscaler']}
+# --- END: seq=483 ---
+
+# --- START: seq=208 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '4da289bf-e92e-4fb8-979f-d052e6b4037a', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 16:21:12 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 1 \u003c= 300.0 \u003c= 100: spec.template.metadata.annotations.autoscaling.knative.dev/panic-window-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=208 ---
+
+# --- START: seq=432 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '7f5d9b0b-0758-4d96-921b-7ae0516fdfae', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 16:22:38 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 1 \u003c= 300.0 \u003c= 100: spec.template.metadata.annotations.autoscaling.knative.dev/panic-window-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=432 ---
+
+# --- START: seq=663 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '6fe5d69e-f302-4969-8bfd-96514ff37439', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 16:24:45 GMT', 'Content-Length': '340'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 110 \u003c= 70.0 \u003c= 1000: spec.template.metadata.annotations.autoscaling.knative.dev/panic-threshold-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=663 ---
+
+# --- START: seq=216 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '18b4c969-03af-4b3c-ab7d-4faace5ba3f6', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 16:26:16 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 1 \u003c= 300.0 \u003c= 100: spec.template.metadata.annotations.autoscaling.knative.dev/panic-window-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=216 ---
+
+# --- START: seq=152 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '7d24dff5-2f19-4bff-8aee-9f192c678aa9', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 16:27:46 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 1 \u003c= 300.0 \u003c= 100: spec.template.metadata.annotations.autoscaling.knative.dev/panic-window-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=152 ---
+
+# --- START: seq=646 ---
+{'max_throughput': 118.8, 'total_errors': 8523, 'total_anomaly_count': 20, 'changed_service_anomaly_count': 5, 'service_max_cpu_usage': 1.1808731573015336, 'total_max_cpu_usage': nan, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=646 ---
+
+# --- START: seq=290 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'ec640fea-b036-46f2-9650-abd74518fc8f', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 16:43:41 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 1 \u003c= 300.0 \u003c= 100: spec.template.metadata.annotations.autoscaling.knative.dev/panic-window-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=290 ---
+
+# --- START: seq=401 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'e2694d9f-0c0b-4735-995f-228b0f3b14f5', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 16:46:35 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 1 \u003c= 300.0 \u003c= 100: spec.template.metadata.annotations.autoscaling.knative.dev/panic-window-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=401 ---
+

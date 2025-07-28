@@ -1,0 +1,2 @@
+Method,Name,Error,Occurrences
+GET,/hotels,"gaierror(-3, 'Temporary failure in name resolution')",2

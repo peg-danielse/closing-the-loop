@@ -9,24 +9,28 @@ from sklearn.ensemble import IsolationForest
 from typing import List, Tuple
 
 from datetime import datetime
+from functools import wraps
+from operator import itemgetter
+
+from config import PATH, SPAN_PROCESS_MAP
 
 # read stat history
 def read_history(label):
-    history_df = pd.read_csv(PATH + "data/" + f'{label}_stats_history.csv')
+    history_df = pd.read_csv(PATH + "data/" + f"{label}/" + f'{label}_stats_history.csv')
     history_df["Timestamp"] = pd.to_datetime(history_df['Timestamp'], unit='s')
 
     return history_df
 
 # read response time data
 def read_response(label):
-    resp_df = pd.read_csv(PATH + "data/" + f'{label}_responce_log.csv')
+    resp_df = pd.read_csv(PATH + "data/" + f"{label}/" + f'{label}_responce_log.csv')
     
     return resp_df
 
 # read Jaeger trace data
 def read_traces(label):
     data = {}
-    with open(PATH + "data/" + f'{label}_traces.json', 'r') as file:
+    with open(PATH + "data/" f"{label}/" + f'{label}_traces.json', 'r') as file:
         data = json.load(file)
 
     rows = []
@@ -58,7 +62,7 @@ def read_traces(label):
 
 def read_metrics(label):
     metrics = {}
-    for n in glob.glob(PATH + "data/" + f'{label}_*_metrics.csv'):
+    for n in glob.glob(PATH + "data/" f"{label}/" + f'{label}_*_metrics.csv'):
         match = re.search(r"[^_/]+-[^_]+(?=_metrics\.csv)", n)
         name = "unknown"
         if match:
@@ -110,7 +114,6 @@ def get_kpi_list(label:str, service) -> List:
                 continue
 
             service_anomaly_count[service_name] = service_anomaly_count.get(service_name, 0) + 1
-            break
 
     service_max_cpu_usage = max(metric_dfs[service].get(f"{service}_container_cpu_usage_seconds_total", [0]))
     

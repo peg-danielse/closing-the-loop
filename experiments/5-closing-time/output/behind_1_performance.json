@@ -1,0 +1,96 @@
+# --- START: seq=585 ---
+{'max_throughput': 157.9, 'total_errors': 4960, 'total_anomaly_count': 59, 'changed_service_anomaly_count': 15, 'service_max_cpu_usage': 4.063226217774907, 'total_max_cpu_usage': 5.950620529836288, 'service_names': ['srv-rate']}
+# --- END: seq=585 ---
+
+# --- START: seq=318 ---
+{'max_throughput': 179.3, 'total_errors': 66952, 'total_anomaly_count': 43, 'changed_service_anomaly_count': 18, 'service_max_cpu_usage': 0.5395008905964029, 'total_max_cpu_usage': nan, 'service_names': ['srv-rate']}
+# --- END: seq=318 ---
+
+# --- START: seq=268 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '08b06ac1-3154-4db0-9e8c-980c5e1fcb6e', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 08:59:32 GMT', 'Content-Length': '330'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: invalid value: 0: spec.template.metadata.annotations.autoscaling.knative.dev/initial-scale=0 not allowed by cluster","reason":"BadRequest","code":400}
+
+
+# --- END: seq=268 ---
+
+# --- START: seq=462 ---
+{'max_throughput': 136.1, 'total_errors': 9571, 'total_anomaly_count': 20, 'changed_service_anomaly_count': 6, 'service_max_cpu_usage': 3.4201814741688947, 'total_max_cpu_usage': 5.086709851349047, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=462 ---
+
+# --- START: seq=143 ---
+{'max_throughput': 164.8, 'total_errors': 9950, 'total_anomaly_count': 72, 'changed_service_anomaly_count': 15, 'service_max_cpu_usage': 4.233224138669285, 'total_max_cpu_usage': 6.205589512481142, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=143 ---
+
+# --- START: seq=492 ---
+{'max_throughput': 178.7, 'total_errors': 71584, 'total_anomaly_count': 48, 'changed_service_anomaly_count': 9, 'service_max_cpu_usage': nan, 'total_max_cpu_usage': nan, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=492 ---
+
+# --- START: seq=24 ---
+{'max_throughput': 133.3, 'total_errors': 9201, 'total_anomaly_count': 19, 'changed_service_anomaly_count': 2, 'service_max_cpu_usage': 3.137690916023111, 'total_max_cpu_usage': nan, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=24 ---
+
+# --- START: seq=311 ---
+{'max_throughput': 143.6, 'total_errors': 11543, 'total_anomaly_count': 19, 'changed_service_anomaly_count': 3, 'service_max_cpu_usage': 3.638734309711212, 'total_max_cpu_usage': nan, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=311 ---
+
+# --- START: seq=21 ---
+{'max_throughput': 163.5, 'total_errors': 13256, 'total_anomaly_count': 50, 'changed_service_anomaly_count': 11, 'service_max_cpu_usage': nan, 'total_max_cpu_usage': nan, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=21 ---
+
+# --- START: seq=236 ---
+{'max_throughput': 151.7, 'total_errors': 9853, 'total_anomaly_count': 52, 'changed_service_anomaly_count': 5, 'service_max_cpu_usage': 0.0360988843937721, 'total_max_cpu_usage': 5.639274956093539, 'service_names': ['srv-geo', 'config-autoscaler']}
+# --- END: seq=236 ---
+
+# --- START: seq=701 ---
+{'max_throughput': 174.6, 'total_errors': 37408, 'total_anomaly_count': 35, 'changed_service_anomaly_count': 3, 'service_max_cpu_usage': 0.0647037027048892, 'total_max_cpu_usage': nan, 'service_names': ['srv-geo', 'config-autoscaler']}
+# --- END: seq=701 ---
+
+# --- START: seq=649 ---
+{'max_throughput': 163.3, 'total_errors': 30506, 'total_anomaly_count': 52, 'changed_service_anomaly_count': 22, 'service_max_cpu_usage': 0.2067977273146525, 'total_max_cpu_usage': nan, 'service_names': ['srv-reservation', 'config-autoscaler']}
+# --- END: seq=649 ---
+
+# --- START: seq=599 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '73c633a6-d9b7-4406-b41f-8887fb5dab2b', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 11:22:12 GMT', 'Content-Length': '340'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 110 \u003c= 90.0 \u003c= 1000: spec.template.metadata.annotations.autoscaling.knative.dev/panic-threshold-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=599 ---
+
+# --- START: seq=339 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '95c576b3-86bc-4100-8731-88cf4743998a', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 11:23:50 GMT', 'Content-Length': '340'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 110 \u003c= 90.0 \u003c= 1000: spec.template.metadata.annotations.autoscaling.knative.dev/panic-threshold-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=339 ---
+
+# --- START: seq=596 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '94e89d45-fc06-4f52-b98b-9d1871691bae', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': '46a71a1d-4c44-4925-9623-86b8fde843d7', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'a23ea1fa-f029-4707-939d-2c8599f1a4a8', 'Date': 'Tue, 22 Jul 2025 11:25:11 GMT', 'Content-Length': '340'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: expected 110 \u003c= 90.0 \u003c= 1000: spec.template.metadata.annotations.autoscaling.knative.dev/panic-threshold-percentage","reason":"BadRequest","code":400}
+
+
+# --- END: seq=596 ---
+
+# --- START: seq=263 ---
+{'max_throughput': 177.0, 'total_errors': 51511, 'total_anomaly_count': 42, 'changed_service_anomaly_count': 8, 'service_max_cpu_usage': 0.0575808984105045, 'total_max_cpu_usage': 5.850616858595572, 'service_names': ['srv-profile', 'config-autoscaler']}
+# --- END: seq=263 ---
+
+# --- START: seq=598 ---
+{'max_throughput': 176.7, 'total_errors': 49006, 'total_anomaly_count': 39, 'changed_service_anomaly_count': 6, 'service_max_cpu_usage': 0.0566278304249676, 'total_max_cpu_usage': nan, 'service_names': ['srv-recommendation', 'config-autoscaler']}
+# --- END: seq=598 ---
+
+# --- START: seq=594 ---
+{'max_throughput': 156.2, 'total_errors': 12626, 'total_anomaly_count': 14, 'changed_service_anomaly_count': 4, 'service_max_cpu_usage': 2.9809310468538346, 'total_max_cpu_usage': nan, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=594 ---
+
+# --- START: seq=97 ---
+{'max_throughput': 114.2, 'total_errors': 9278, 'total_anomaly_count': 14, 'changed_service_anomaly_count': 1, 'service_max_cpu_usage': 0.0240963155786944, 'total_max_cpu_usage': nan, 'service_names': ['srv-recommendation', 'config-autoscaler']}
+# --- END: seq=97 ---
+
