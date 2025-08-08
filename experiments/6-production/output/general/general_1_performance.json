@@ -1,0 +1,84 @@
+# --- START: seq=4200 ---
+{'max_throughput': 510.4, 'total_errors': 0, 'total_anomaly_count': 5, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 2.005519872333351}
+# --- END: seq=4200 ---
+
+# --- START: seq=4201 ---
+{'max_throughput': 510.4, 'total_errors': 0, 'total_anomaly_count': 5, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.321327627289442, 'total_max_cpu_usage': 2.005519872333351}
+# --- END: seq=4201 ---
+
+# --- START: seq=4202 ---
+{'max_throughput': 510.4, 'total_errors': 0, 'total_anomaly_count': 5, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.2312300775261305, 'total_max_cpu_usage': 2.005519872333351}
+# --- END: seq=4202 ---
+
+# --- START: seq=4203 ---
+{'max_throughput': 510.4, 'total_errors': 0, 'total_anomaly_count': 5, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.0131187266263447, 'total_max_cpu_usage': 2.005519872333351}
+# --- END: seq=4203 ---
+
+# --- START: seq=4204 ---
+{'max_throughput': 510.4, 'total_errors': 0, 'total_anomaly_count': 5, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.2016881065396216, 'total_max_cpu_usage': 2.005519872333351}
+# --- END: seq=4204 ---
+
+# --- START: seq=4205 ---
+{'max_throughput': 510.4, 'total_errors': 0, 'total_anomaly_count': 5, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 2.005519872333351}
+# --- END: seq=4205 ---
+
+# --- START: seq=4206 ---
+{'max_throughput': 510.4, 'total_errors': 0, 'total_anomaly_count': 5, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 2.005519872333351}
+# --- END: seq=4206 ---
+
+# --- START: seq=4207 ---
+{'max_throughput': 510.4, 'total_errors': 0, 'total_anomaly_count': 5, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 2.005519872333351}
+# --- END: seq=4207 ---
+
+# --- START: seq=4208 ---
+{'max_throughput': 510.4, 'total_errors': 0, 'total_anomaly_count': 5, 'changed_service_anomaly_count': 4, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 2.005519872333351}
+# --- END: seq=4208 ---
+
+# --- START: seq=4209 ---
+{'max_throughput': 510.4, 'total_errors': 0, 'total_anomaly_count': 5, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 2.005519872333351}
+# --- END: seq=4209 ---
+
+# --- START: seq=4210 ---
+{'max_throughput': 510.4, 'total_errors': 0, 'total_anomaly_count': 5, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.1129548402181437, 'total_max_cpu_usage': 2.005519872333351}
+# --- END: seq=4210 ---
+
+# --- START: seq=4211 ---
+{'max_throughput': 510.4, 'total_errors': 0, 'total_anomaly_count': 5, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 2.005519872333351}
+# --- END: seq=4211 ---
+
+# --- START: seq=4212 ---
+{'max_throughput': 510.4, 'total_errors': 0, 'total_anomaly_count': 5, 'changed_service_anomaly_count': 1, 'service_max_cpu_usage': 0.1246896192558584, 'total_max_cpu_usage': 2.005519872333351}
+# --- END: seq=4212 ---
+
+# --- START: seq=4213 ---
+{'max_throughput': 510.4, 'total_errors': 0, 'total_anomaly_count': 5, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 2.005519872333351}
+# --- END: seq=4213 ---
+
+# --- START: seq=4214 ---
+{'max_throughput': 510.4, 'total_errors': 0, 'total_anomaly_count': 5, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 1.0005108748778102, 'total_max_cpu_usage': 2.005519872333351}
+# --- END: seq=4214 ---
+
+# --- START: seq=4215 ---
+{'max_throughput': 510.4, 'total_errors': 0, 'total_anomaly_count': 5, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 2.005519872333351}
+# --- END: seq=4215 ---
+
+# --- START: seq=295 ---
+{'max_throughput': 504.6, 'total_errors': 1, 'total_anomaly_count': 20, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.949714746333948, 'service_names': ['frontend']}
+# --- END: seq=295 ---
+
+# --- START: seq=384 ---
+{'max_throughput': 510.4, 'total_errors': 2, 'total_anomaly_count': 5, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 2.0018957181723978, 'service_names': ['frontend']}
+# --- END: seq=384 ---
+
+# --- START: seq=478 ---
+{'max_throughput': 504.3, 'total_errors': 1, 'total_anomaly_count': 6, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 2.0239152548678003, 'service_names': ['frontend']}
+# --- END: seq=478 ---
+
+# --- START: seq=103 ---
+'kind'
+# --- END: seq=103 ---
+
+# --- START: seq=408 ---
+{'max_throughput': 505.7, 'total_errors': 2, 'total_anomaly_count': 17, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.900222148640888, 'service_names': ['frontend']}
+# --- END: seq=408 ---
+

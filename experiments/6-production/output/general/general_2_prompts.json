@@ -1,0 +1,1302 @@
+# --- START: seq=4200 ---
+```yaml 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: memcached-profile
+  name: memcached-profile
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: memcached-profile
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+        sidecar.istio.io/statsInclusionPrefixes: cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager
+        sidecar.istio.io/statsInclusionRegexps: http.*
+      creationTimestamp: null
+      labels:
+        io.kompose.service: memcached-profile
+    spec:
+      containers:
+      - env:
+        - name: MEMCACHED_CACHE_SIZE
+          value: '128'
+        - name: MEMCACHED_THREADS
+          value: '2'
+        image: memcached
+        name: hotel-reserv-profile-mmc
+        ports:
+        - containerPort: 11211
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+      restartPolicy: Always
+status: {}
+```
+# --- END: seq=4200 ---
+
+# --- START: seq=4201 ---
+```yaml 
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: srv-search
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/activation-scale: '5'
+        autoscaling.knative.dev/initial-scale: '1'
+        autoscaling.knative.dev/max-scale: '0'
+        autoscaling.knative.dev/metric: concurrency
+        autoscaling.knative.dev/min-scale: '0'
+        autoscaling.knative.dev/panic-threshold-percentage: '200.0'
+        autoscaling.knative.dev/panic-window-percentage: '10.0'
+        autoscaling.knative.dev/scale-down-delay: 0s
+        autoscaling.knative.dev/stable-window: 60s
+        autoscaling.knative.dev/target: '100'
+        autoscaling.knative.dev/target-utilization-percentage: '70'
+        autoscaling.knative.dev/window: 60s
+    spec:
+      containers:
+      - command:
+        - search
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-search
+        ports:
+        - containerPort: 8082
+          name: h2c
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+```
+# --- END: seq=4201 ---
+
+# --- START: seq=4202 ---
+```yaml 
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: srv-profile
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/activation-scale: '5'
+        autoscaling.knative.dev/initial-scale: '1'
+        autoscaling.knative.dev/max-scale: '5'
+        autoscaling.knative.dev/metric: concurrency
+        autoscaling.knative.dev/min-scale: '0'
+        autoscaling.knative.dev/panic-threshold-percentage: '150.0'
+        autoscaling.knative.dev/panic-window-percentage: '10.0'
+        autoscaling.knative.dev/scale-down-delay: 0s
+        autoscaling.knative.dev/stable-window: 60s
+        autoscaling.knative.dev/target: '200'
+        autoscaling.knative.dev/target-utilization-percentage: '70'
+        autoscaling.knative.dev/window: 60s
+    spec:
+      containers:
+      - command:
+        - profile
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-profile
+        ports:
+        - containerPort: 8081
+          name: h2c
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+```
+# --- END: seq=4202 ---
+
+# --- START: seq=4203 ---
+```yaml 
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: srv-user
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/activation-scale: '5'
+        autoscaling.knative.dev/initial-scale: '1'
+        autoscaling.knative.dev/max-scale: '0'
+        autoscaling.knative.dev/metric: concurrency
+        autoscaling.knative.dev/min-scale: '0'
+        autoscaling.knative.dev/panic-threshold-percentage: '200.0'
+        autoscaling.knative.dev/panic-window-percentage: '10.0'
+        autoscaling.knative.dev/scale-down-delay: 0s
+        autoscaling.knative.dev/stable-window: 60s
+        autoscaling.knative.dev/target: '100'
+        autoscaling.knative.dev/target-utilization-percentage: '70'
+        autoscaling.knative.dev/window: 60s
+    spec:
+      containers:
+      - command:
+        - user
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-user
+        ports:
+        - containerPort: 8086
+          name: h2c
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+```
+# --- END: seq=4203 ---
+
+# --- START: seq=4204 ---
+```yaml 
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: srv-geo
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/activation-scale: '5'
+        autoscaling.knative.dev/initial-scale: '1'
+        autoscaling.knative.dev/max-scale: '0'
+        autoscaling.knative.dev/metric: concurrency
+        autoscaling.knative.dev/min-scale: '0'
+        autoscaling.knative.dev/panic-threshold-percentage: '200.0'
+        autoscaling.knative.dev/panic-window-percentage: '10.0'
+        autoscaling.knative.dev/scale-down-delay: 0s
+        autoscaling.knative.dev/stable-window: 60s
+        autoscaling.knative.dev/target: '100'
+        autoscaling.knative.dev/target-utilization-percentage: '70'
+        autoscaling.knative.dev/window: 60s
+    spec:
+      containers:
+      - command:
+        - geo
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-geo
+        ports:
+        - containerPort: 8083
+          name: h2c
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+```
+# --- END: seq=4204 ---
+
+# --- START: seq=4205 ---
+```yaml 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: memcached-profile
+  name: memcached-profile
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: memcached-profile
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+        sidecar.istio.io/statsInclusionPrefixes: cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager
+        sidecar.istio.io/statsInclusionRegexps: http.*
+      creationTimestamp: null
+      labels:
+        io.kompose.service: memcached-profile
+    spec:
+      containers:
+      - env:
+        - name: MEMCACHED_CACHE_SIZE
+          value: '128'
+        - name: MEMCACHED_THREADS
+          value: '2'
+        image: memcached
+        name: hotel-reserv-profile-mmc
+        ports:
+        - containerPort: 11211
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+      restartPolicy: Always
+status: {}
+```
+# --- END: seq=4205 ---
+
+# --- START: seq=4206 ---
+```yaml 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: memcached-reserve
+  name: memcached-reserve
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: memcached-reserve
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+        sidecar.istio.io/statsInclusionPrefixes: cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager
+        sidecar.istio.io/statsInclusionRegexps: http.*
+      creationTimestamp: null
+      labels:
+        io.kompose.service: memcached-reserve
+    spec:
+      containers:
+      - env:
+        - name: MEMCACHED_CACHE_SIZE
+          value: '128'
+        - name: MEMCACHED_THREADS
+          value: '2'
+        image: memcached
+        name: hotel-reserv-reservation-mmc
+        ports:
+        - containerPort: 11211
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+      restartPolicy: Always
+status: {}
+```
+# --- END: seq=4206 ---
+
+# --- START: seq=4207 ---
+```yaml 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: memcached-reserve
+  name: memcached-reserve
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: memcached-reserve
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+        sidecar.istio.io/statsInclusionPrefixes: cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager
+        sidecar.istio.io/statsInclusionRegexps: http.*
+      creationTimestamp: null
+      labels:
+        io.kompose.service: memcached-reserve
+    spec:
+      containers:
+      - env:
+        - name: MEMCACHED_CACHE_SIZE
+          value: '128'
+        - name: MEMCACHED_THREADS
+          value: '2'
+        image: memcached
+        name: hotel-reserv-reservation-mmc
+        ports:
+        - containerPort: 11211
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+      restartPolicy: Always
+status: {}
+```
+# --- END: seq=4207 ---
+
+# --- START: seq=4208 ---
+```yaml 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: frontend
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: frontend
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+        sidecar.istio.io/statsInclusionPrefixes: cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager
+        sidecar.istio.io/statsInclusionRegexps: http.*
+      creationTimestamp: null
+      labels:
+        io.kompose.service: frontend
+    spec:
+      containers:
+      - command:
+        - frontend
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-frontend
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            cpu: 5000m
+          requests:
+            cpu: 200m
+      restartPolicy: Always
+status: {}
+```
+# --- END: seq=4208 ---
+
+# --- START: seq=4209 ---
+```yaml 
+apiVersion: v1
+data:
+  enable-scale-to-zero: 'true'
+  max-scale-down-rate: '2.0'
+  max-scale-up-rate: '500.0'
+  scale-to-zero-grace-period: 30s
+  scale-to-zero-pod-retention-period: 0s
+kind: ConfigMap
+metadata:
+  name: config-autoscaler
+  namespace: knative-serving
+```
+# --- END: seq=4209 ---
+
+# --- START: seq=4210 ---
+```yaml 
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: srv-recommendation
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/activation-scale: '5'
+        autoscaling.knative.dev/initial-scale: '1'
+        autoscaling.knative.dev/max-scale: '0'
+        autoscaling.knative.dev/metric: concurrency
+        autoscaling.knative.dev/min-scale: '0'
+        autoscaling.knative.dev/panic-threshold-percentage: '200.0'
+        autoscaling.knative.dev/panic-window-percentage: '10.0'
+        autoscaling.knative.dev/scale-down-delay: 0s
+        autoscaling.knative.dev/stable-window: 60s
+        autoscaling.knative.dev/target: '100'
+        autoscaling.knative.dev/target-utilization-percentage: '70'
+        autoscaling.knative.dev/window: 60s
+    spec:
+      containers:
+      - command:
+        - recommendation
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-recommendation
+        ports:
+        - containerPort: 8085
+          name: h2c
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+```
+# --- END: seq=4210 ---
+
+# --- START: seq=4211 ---
+```yaml 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: memcached-rate
+  name: memcached-rate
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: memcached-rate
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+        sidecar.istio.io/statsInclusionPrefixes: cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager
+        sidecar.istio.io/statsInclusionRegexps: http.*
+      creationTimestamp: null
+      labels:
+        io.kompose.service: memcached-rate
+    spec:
+      containers:
+      - env:
+        - name: MEMCACHED_CACHE_SIZE
+          value: '128'
+        - name: MEMCACHED_THREADS
+          value: '2'
+        image: memcached
+        name: hotel-reserv-rate-mmc
+        ports:
+        - containerPort: 11211
+        resources:
+          limits:
+            cpu: 2000m
+          requests:
+            cpu: 200m
+      restartPolicy: Always
+status: {}
+```
+# --- END: seq=4211 ---
+
+# --- START: seq=4212 ---
+```yaml 
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: srv-reservation
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/activation-scale: '5'
+        autoscaling.knative.dev/initial-scale: '1'
+        autoscaling.knative.dev/max-scale: '0'
+        autoscaling.knative.dev/metric: concurrency
+        autoscaling.knative.dev/min-scale: '0'
+        autoscaling.knative.dev/panic-threshold-percentage: '200.0'
+        autoscaling.knative.dev/panic-window-percentage: '10.0'
+        autoscaling.knative.dev/scale-down-delay: 0s
+        autoscaling.knative.dev/stable-window: 60s
+        autoscaling.knative.dev/target: '100'
+        autoscaling.knative.dev/target-utilization-percentage: '70'
+        autoscaling.knative.dev/window: 60s
+    spec:
+      containers:
+      - command:
+        - reservation
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-reservation
+        ports:
+        - containerPort: 8087
+          name: h2c
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+```
+# --- END: seq=4212 ---
+
+# --- START: seq=4213 ---
+```yaml 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: frontend
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: frontend
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+        sidecar.istio.io/statsInclusionPrefixes: cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager
+        sidecar.istio.io/statsInclusionRegexps: http.*
+      creationTimestamp: null
+      labels:
+        io.kompose.service: frontend
+    spec:
+      containers:
+      - command:
+        - frontend
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-frontend
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            cpu: 5000m
+          requests:
+            cpu: 200m
+      restartPolicy: Always
+status: {}
+```
+# --- END: seq=4213 ---
+
+# --- START: seq=4214 ---
+```yaml 
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: srv-rate
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/initial-scale: '1'
+        autoscaling.knative.dev/max-scale: '0'
+        autoscaling.knative.dev/metric: concurrency
+        autoscaling.knative.dev/min-scale: '0'
+        autoscaling.knative.dev/panic-threshold-percentage: '200.0'
+        autoscaling.knative.dev/panic-window-percentage: '10.0'
+        autoscaling.knative.dev/scale-down-delay: 0s
+        autoscaling.knative.dev/stable-window: 60s
+        autoscaling.knative.dev/target: '100'
+        autoscaling.knative.dev/target-utilization-percentage: '70'
+        autoscaling.knative.dev/window: 60s
+    spec:
+      containers:
+      - command:
+        - rate
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-rate
+        ports:
+        - containerPort: 8084
+          name: h2c
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+```
+# --- END: seq=4214 ---
+
+# --- START: seq=4215 ---
+```yaml 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: memcached-rate
+  name: memcached-rate
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: memcached-rate
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+        sidecar.istio.io/statsInclusionPrefixes: cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager
+        sidecar.istio.io/statsInclusionRegexps: http.*
+      creationTimestamp: null
+      labels:
+        io.kompose.service: memcached-rate
+    spec:
+      containers:
+      - env:
+        - name: MEMCACHED_CACHE_SIZE
+          value: '128'
+        - name: MEMCACHED_THREADS
+          value: '2'
+        image: memcached
+        name: hotel-reserv-rate-mmc
+        ports:
+        - containerPort: 11211
+        resources:
+          limits:
+            cpu: 2000m
+          requests:
+            cpu: 200m
+      restartPolicy: Always
+status: {}
+```
+# --- END: seq=4215 ---
+
+# --- START: seq=1243 ---
+ 
+Knative scaling can be changed using the following parameters:
+
+Metrics: The metric configuration defines which metric type is watched by the Autoscaler. 
+- Per-revision annotation key: autoscaling.knative.dev/metric. 
+- Possible values: "concurrency", "rps". changes the 
+
+"Concurrency": determines the number of simultaneous requests that can be processed by each replica of an application at any given time.
+"rps": requests-per-second per replica of an application. Your revision must also be configured to use the rps.
+
+Targets: Configuring a target provide the Autoscaler with a value that it tries to maintain for the configured metric for a revision. 
+- Per-revision annotation key: autoscaling.knative.dev/target
+- Possible values: An integer (metric agnostic).
+
+Lower bound: controls the minimum number of replicas that each Revision should have.
+- Per-revision annotation key: autoscaling.knative.dev/min-scale
+- Possible values: integer
+- Default: 0 if scale-to-zero is enabled
+
+Upper bound: This value controls the maximum number of replicas that each revision should have.
+- Per-revision annotation key: autoscaling.knative.dev/max-scale
+- Possible values: integer
+- Default: 0 which means unlimited
+
+Scale Down Delay: specifies a time window which must pass at reduced concurrency before a scale-down decision is applied. This can be useful, for example, to keep containers around for a configurable duration to avoid a cold start penalty.
+- Per-revision annotation key: autoscaling.knative.dev/scale-down-delay
+- Possible values: Duration, 0s <= value <= 1h
+- Default: 0s (no delay)
+
+Stable window: defines the sliding time window over which metrics are averaged to provide the input for scaling decisions when the autoscaler is not in Panic mode.
+- Per-revision annotation key: autoscaling.knative.dev/window
+- Possible values: Duration, 6s <= value <= 1h
+- Default: 60s
+
+Panic window: defined as a percentage of the stable window to assure that both are relative to each other. This value indicates how the window over which historical data is evaluated will shrink upon entering panic mode.
+- Per-revision annotation key: autoscaling.knative.dev/panic-window-percentage
+- Possible values: float, 1.0 <= value <= 100.0
+- Default: 10.0
+
+Panic mode threshold: This threshold defines when the Autoscaler will move from stable mode into panic mode. This value is a percentage of the traffic that the current amount of replicas can handle.
+- Global key: panic-threshold-percentage
+- Per-revision annotation key: autoscaling.knative.dev/panic-threshold-percentage
+- Possible values: float, 110.0 <= value <= 1000.0
+- Default: 200.0
+
+Scale up rate: determines the maximum ratio of desired to existing pods. For example, with a value of 2.0, the revision can only scale from N to 2*N pods in one evaluation cycle.
+- Global key: max-scale-up-rate
+- Possible values: float
+- Default: 1000.0
+
+Scale down rate: This setting determines the maximum ratio of existing to desired pods. For example, with a value of 2.0, the revision can only scale from N to N/2 pods in one evaluation cycle.
+- Global key: max-scale-down-rate
+- Possible values: float
+- Default: 2.0
+
+all services (memcached, frontend) are fixed to a replica count of 1. change the vertical scaling instead if performance issues arrise here. increase and decrease by only small amounts
+<｜User｜>Please resolve the following anomaly: 
+
+Anomaly Start time: 2025-08-02 17:46:51.595093 
+
+Anomaly duration: 0 days 00:00:02.187150 
+
+
+this trace describes the time logged in various parts of the code paths of the microservices                          
+<anomalous_trace_csv> 
+ 
+                    id  /rate.Rate/GetRates  /search.Search/Nearby  /reservation.Reservation/CheckAvailability  memcached_capacity_get_multi_number  memcached_reserve_get_multi_number  /geo.Geo/Nearby  memcached_get_multi_rate  HTTP GET /hotels  memcached_get_profile  /profile.Profile/GetProfiles                  startTime    total  /recommendation.Recommendation/GetRecommendations  HTTP GET /recommendations  /user.User/CheckUser  HTTP POST /user  HTTP POST /reservation  /reservation.Reservation/MakeReservation             pattern  anomaly
+1243  0024e9737ee6a9ce                  0.0                    0.0                                         0.0                                  0.0                                 0.0              0.0                       0.0               0.0                    0.0                           0.0 2025-08-02 17:46:51.595093  1187150                                                0.0                        0.0                 378.0              0.0                403345.0                                  391054.0  000001010010000011       -1 
+
+</anomalous_trace_csv> 
+
+
+The monitoring metrics describe what happend in the system during the anomalous trace.
+<monitoring_metrics_csv> 
+
+                        Error
+0  no metrics for the service 
+
+</monitoring_metrics_csv> 
+
+<｜User｜>give one short and concise reasoning then answer with the corrected yaml file to mitigate the anomaly: 
+
+<yaml> 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: frontend
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: frontend
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+        sidecar.istio.io/statsInclusionPrefixes: cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager
+        sidecar.istio.io/statsInclusionRegexps: http.*
+      creationTimestamp: null
+      labels:
+        io.kompose.service: frontend
+    spec:
+      containers:
+      - command:
+        - frontend
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-frontend
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            cpu: 5000m
+          requests:
+            cpu: 200m
+      restartPolicy: Always
+status: {}
+ 
+
+--- 
+apiVersion: v1
+data:
+  enable-scale-to-zero: 'true'
+  max-scale-down-rate: '2.0'
+  max-scale-up-rate: '500.0'
+  scale-to-zero-grace-period: 30s
+  scale-to-zero-pod-retention-period: 0s
+kind: ConfigMap
+metadata:
+  name: config-autoscaler
+  namespace: knative-serving
+ 
+
+</yaml><｜Assistant｜><think>
+Okay, I need to figure out how to fix the anomaly in the system based on the provided information. The user mentioned that all services (memcached, frontend) are fixed to a replica count of 1, but performance issues have arisen. They want to address this by changing the vertical scaling instead of increasing or decreasing by large amounts.
+
+First, looking at the YAML file provided, I see that the frontend deployment has a replica count of 1, and the autoscaler configuration has max-scale-up-rate set to 500.0 and max-scale-down-rate to 2.0. The issue is that during the anomaly, the system couldn't scale properly, leading to performance problems.
+
+I remember that the autoscaler uses these rates to determine how quickly it can scale up or down. A high max-scale-up-rate allows for rapid scaling up, which could cause issues if the system isn't designed to handle it. Similarly, a high max-scale-down-rate can lead to sudden drops in replicas, which might not be handled well by the system, causing delays or errors.
+
+To mitigate the performance issues, I should adjust these rates to smaller values. Lowering the max-scale-up-rate will make scaling up less abrupt, preventing a sudden surge in traffic that might overwhelm the system. Similarly, reducing the max-scale-down-rate will make scaling down more gradual, which can help in maintaining service availability during peak times.
+
+So, I'll set the max-scale-up-rate to 500.0 and max-scale-down-rate to 2.0 as per the current configuration. Wait, no, the user mentioned that the current setup is causing issues, so maybe I should lower these values further. Perhaps setting max-scale-up-rate to 200.0 and max-scale-down-rate to 1.0 would be more conservative, allowing the system to scale more smoothly.
+
+I should also ensure that the scale-to-zero is enabled so that the system can downscale when necessary without leaving pods hanging. The enable-scale-to-zero is already set to 'true', which is good.
+
+In summary, the problem is that the autoscaler is scaling too rapidly, causing performance issues. By adjusting the scale rates to be more moderate, the system should handle traffic fluctuations better without causing the same problems again.
+</think>
+
+To address the performance issues, we'll adjust the scaling rates to ensure smoother traffic handling.
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: frontend
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: frontend
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+        sidecar.istio.io/statsInclusionPrefixes: cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager
+        sidecar.istio.io/statsInclusionRegexps: http.*
+      creationTimestamp: null
+      labels:
+        io.kompose.service: frontend
+    spec:
+      containers:
+      - command:
+        - frontend
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-frontend
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            cpu: 5000m
+          requests:
+            cpu: 200m
+      restartPolicy: Always
+status: {}
+
+---
+apiVersion: v1
+data:
+  enable-scale-to-zero: 'true'
+  max-scale-down-rate: '1.0'
+  max-scale-up-rate: '200.0'
+  scale-to-zero-grace-period: 30s
+  scale-to-zero-pod-retention-period: 0s
+kind: ConfigMap
+metadata:
+  name: config-autoscaler
+  namespace: knative-serving
+```
+# --- END: seq=1243 ---
+
+# --- START: seq=670 ---
+ 
+Knative scaling can be changed using the following parameters:
+
+Metrics: The metric configuration defines which metric type is watched by the Autoscaler. 
+- Per-revision annotation key: autoscaling.knative.dev/metric. 
+- Possible values: "concurrency", "rps". changes the 
+
+"Concurrency": determines the number of simultaneous requests that can be processed by each replica of an application at any given time.
+"rps": requests-per-second per replica of an application. Your revision must also be configured to use the rps.
+
+Targets: Configuring a target provide the Autoscaler with a value that it tries to maintain for the configured metric for a revision. 
+- Per-revision annotation key: autoscaling.knative.dev/target
+- Possible values: An integer (metric agnostic).
+
+Lower bound: controls the minimum number of replicas that each Revision should have.
+- Per-revision annotation key: autoscaling.knative.dev/min-scale
+- Possible values: integer
+- Default: 0 if scale-to-zero is enabled
+
+Upper bound: This value controls the maximum number of replicas that each revision should have.
+- Per-revision annotation key: autoscaling.knative.dev/max-scale
+- Possible values: integer
+- Default: 0 which means unlimited
+
+Scale Down Delay: specifies a time window which must pass at reduced concurrency before a scale-down decision is applied. This can be useful, for example, to keep containers around for a configurable duration to avoid a cold start penalty.
+- Per-revision annotation key: autoscaling.knative.dev/scale-down-delay
+- Possible values: Duration, 0s <= value <= 1h
+- Default: 0s (no delay)
+
+Stable window: defines the sliding time window over which metrics are averaged to provide the input for scaling decisions when the autoscaler is not in Panic mode.
+- Per-revision annotation key: autoscaling.knative.dev/window
+- Possible values: Duration, 6s <= value <= 1h
+- Default: 60s
+
+Panic window: defined as a percentage of the stable window to assure that both are relative to each other. This value indicates how the window over which historical data is evaluated will shrink upon entering panic mode.
+- Per-revision annotation key: autoscaling.knative.dev/panic-window-percentage
+- Possible values: float, 1.0 <= value <= 100.0
+- Default: 10.0
+
+Panic mode threshold: This threshold defines when the Autoscaler will move from stable mode into panic mode. This value is a percentage of the traffic that the current amount of replicas can handle.
+- Global key: panic-threshold-percentage
+- Per-revision annotation key: autoscaling.knative.dev/panic-threshold-percentage
+- Possible values: float, 110.0 <= value <= 1000.0
+- Default: 200.0
+
+Scale up rate: determines the maximum ratio of desired to existing pods. For example, with a value of 2.0, the revision can only scale from N to 2*N pods in one evaluation cycle.
+- Global key: max-scale-up-rate
+- Possible values: float
+- Default: 1000.0
+
+Scale down rate: This setting determines the maximum ratio of existing to desired pods. For example, with a value of 2.0, the revision can only scale from N to N/2 pods in one evaluation cycle.
+- Global key: max-scale-down-rate
+- Possible values: float
+- Default: 2.0
+
+all services (memcached, frontend) are fixed to a replica count of 1. change the vertical scaling instead if performance issues arrise here. increase and decrease by only small amounts
+<｜User｜>Please resolve the following anomaly: 
+
+Anomaly Start time: 2025-08-02 17:46:51.595093 
+
+Anomaly duration: 0 days 00:00:02.187150 
+
+
+this trace describes the time logged in various parts of the code paths of the microservices                          
+<anomalous_trace_csv> 
+ 
+                    id  /rate.Rate/GetRates  /search.Search/Nearby  /reservation.Reservation/CheckAvailability  memcached_capacity_get_multi_number  memcached_reserve_get_multi_number  /geo.Geo/Nearby  memcached_get_multi_rate  HTTP GET /hotels  memcached_get_profile  /profile.Profile/GetProfiles                  startTime    total  /recommendation.Recommendation/GetRecommendations  HTTP GET /recommendations  /user.User/CheckUser  HTTP POST /user  HTTP POST /reservation  /reservation.Reservation/MakeReservation             pattern  anomaly
+1243  0024e9737ee6a9ce                  0.0                    0.0                                         0.0                                  0.0                                 0.0              0.0                       0.0               0.0                    0.0                           0.0 2025-08-02 17:46:51.595093  1187150                                                0.0                        0.0                 378.0              0.0                403345.0                                  391054.0  000001010010000011       -1 
+
+</anomalous_trace_csv> 
+
+
+The monitoring metrics describe what happend in the system during the anomalous trace.
+<monitoring_metrics_csv> 
+
+                        Error
+0  no metrics for the service 
+
+</monitoring_metrics_csv> 
+
+<｜User｜>give one short and concise reasoning then answer with the corrected yaml file to mitigate the anomaly: 
+
+<yaml> 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: frontend
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: frontend
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+        sidecar.istio.io/statsInclusionPrefixes: cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager
+        sidecar.istio.io/statsInclusionRegexps: http.*
+      creationTimestamp: null
+      labels:
+        io.kompose.service: frontend
+    spec:
+      containers:
+      - command:
+        - frontend
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-frontend
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            cpu: 5000m
+          requests:
+            cpu: 200m
+      restartPolicy: Always
+status: {}
+ 
+
+--- 
+apiVersion: v1
+data:
+  enable-scale-to-zero: 'true'
+  max-scale-down-rate: '2.0'
+  max-scale-up-rate: '500.0'
+  scale-to-zero-grace-period: 30s
+  scale-to-zero-pod-retention-period: 0s
+kind: ConfigMap
+metadata:
+  name: config-autoscaler
+  namespace: knative-serving
+ 
+
+</yaml><｜Assistant｜>
+
+To address the performance issues, we'll adjust the scaling rates to ensure smoother traffic handling.
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: frontend
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: frontend
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+        sidecar.istio.io/statsInclusionPrefixes: cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager
+        sidecar.istio.io/statsInclusionRegexps: http.*
+      creationTimestamp: null
+      labels:
+        io.kompose.service: frontend
+    spec:
+      containers:
+      - command:
+        - frontend
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-frontend
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            cpu: 5000m
+          requests:
+            cpu: 200m
+      restartPolicy: Always
+status: {}
+
+---
+apiVersion: v1
+data:
+  enable-scale-to-zero: 'true'
+  max-scale-down-rate: '1.0'
+  max-scale-up-rate: '200.0'
+  scale-to-zero-grace-period: 30s
+  scale-to-zero-pod-retention-period: 0s
+kind: ConfigMap
+metadata:
+  name: config-autoscaler
+  namespace: knative-serving
+```<｜User｜>the folowing error was produced: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'd6b0f97c-efe3-4298-9386-7b5e2c44eee2', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b7893084-19b7-431d-9ddc-f75ccbbac163', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'd5b7ccb8-eaf7-4ee2-b6f9-fdc0c0ff65cc', 'Date': 'Sat, 02 Aug 2025 17:53:39 GMT', 'Content-Length': '260'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"config.webhook.serving.knative.dev\" denied the request: validation failed: max-scale-down-rate = 1, must be greater than 1.0","reason":"BadRequest","code":400}
+
+<｜User｜>Please resolve the following anomaly: 
+
+Anomaly Start time: 2025-08-02 17:50:40.965002 
+
+Anomaly duration: 0 days 00:00:02.115234 
+
+
+this trace describes the time logged in various parts of the code paths of the microservices                          
+<anomalous_trace_csv> 
+ 
+                   id  /rate.Rate/GetRates  /search.Search/Nearby  /reservation.Reservation/CheckAvailability  memcached_capacity_get_multi_number  memcached_reserve_get_multi_number  /geo.Geo/Nearby  memcached_get_multi_rate  HTTP GET /hotels  memcached_get_profile  /profile.Profile/GetProfiles                  startTime    total  /recommendation.Recommendation/GetRecommendations  HTTP GET /recommendations  /user.User/CheckUser  HTTP POST /user  HTTP POST /reservation  /reservation.Reservation/MakeReservation             pattern  anomaly
+670  00f5d1692cb8d573             110430.0               120967.0                                     51958.0                                  6.0                                 5.0          10516.0                       1.0          436646.0                    3.0                      221886.0 2025-08-02 17:50:40.965002  1115234                                                0.0                        0.0                   0.0              0.0                     0.0                                       0.0  111010101000111111       -1 
+
+</anomalous_trace_csv> 
+
+
+The monitoring metrics describe what happend in the system during the anomalous trace.
+<monitoring_metrics_csv> 
+
+                  index  srv-profile_autoscaler_requested_pods  srv-profile_autoscaler_terminating_pods  srv-profile_autoscaler_actual_pods  srv-profile_activator_request_concurrency  srv-profile_autoscaler_desired_pods  srv-profile_autoscaler_stable_request_concurrency  srv-profile_autoscaler_panic_request_concurrency  srv-profile_autoscaler_target_concurrency_per_pod  srv-profile_autoscaler_excess_burst_capacity  srv-profile_container_cpu_usage_seconds_total
+113 2025-08-02 17:50:31                                    5.0                                      0.0                                 5.0                                        0.0                                  5.0                                           0.841128                                          0.937455                                              140.0                                         788.0                                       0.204064
+114 2025-08-02 17:50:36                                    5.0                                      0.0                                 5.0                                        0.0                                  5.0                                           0.841128                                          0.937455                                              140.0                                         788.0                                       0.223705
+115 2025-08-02 17:50:41                                    5.0                                      0.0                                 5.0                                        0.0                                  5.0                                           0.841128                                          0.937455                                              140.0                                         788.0                                       0.229523 
+
+</monitoring_metrics_csv> 
+
+<｜User｜>give one short and concise reasoning then answer with the corrected yaml file to mitigate the anomaly: 
+
+<yaml> 
+
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: srv-profile
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/activation-scale: '5'
+        autoscaling.knative.dev/initial-scale: '1'
+        autoscaling.knative.dev/max-scale: '5'
+        autoscaling.knative.dev/metric: concurrency
+        autoscaling.knative.dev/min-scale: '0'
+        autoscaling.knative.dev/panic-threshold-percentage: '150.0'
+        autoscaling.knative.dev/panic-window-percentage: '10.0'
+        autoscaling.knative.dev/scale-down-delay: 0s
+        autoscaling.knative.dev/stable-window: 60s
+        autoscaling.knative.dev/target: '200'
+        autoscaling.knative.dev/target-utilization-percentage: '70'
+        autoscaling.knative.dev/window: 60s
+    spec:
+      containers:
+      - command:
+        - profile
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-profile
+        ports:
+        - containerPort: 8081
+          name: h2c
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+ 
+
+--- 
+apiVersion: v1
+data:
+  enable-scale-to-zero: 'true'
+  max-scale-down-rate: '2.0'
+  max-scale-up-rate: '500.0'
+  scale-to-zero-grace-period: 30s
+  scale-to-zero-pod-retention-period: 0s
+kind: ConfigMap
+metadata:
+  name: config-autoscaler
+  namespace: knative-serving
+ 
+
+</yaml><｜Assistant｜><think>
+Okay, so I'm trying to fix this problem with the microservices. The user mentioned that there's an error related to the max-scale-down-rate being set incorrectly. Let me see what's going on.
+
+First, looking at the error message: it says "max-scale-down-rate = 1, must be greater than 1.0". That means the system expects max-scale-down-rate to be greater than 1, but it's set to 1.0, which is exactly 1, so it's invalid.
+
+Now, why is this happening? The user provided some YAML files. In the ConfigMap, the max-scale-down-rate is set to '2.0'. Wait, but in the Service file, the max-scale is set to '5'. Maybe there's a conflict or a mismatch between these configurations.
+
+I remember that in Knative, the max-scale-down-rate controls how much the Autoscaler can scale down. If it's set too low, the system might not scale down when it should, causing issues. The default is 2.0, which is good for most cases. But the error suggests that the value is being set to 1, which is too low.
+
+Looking at the Service YAML, the max-scale is set to 5, which is fine. But the ConfigMap has max-scale-down-rate as '2.0'. Maybe the issue is that the ConfigMap is overriding or conflicting with the Service's scaling settings.
+
+Wait, in the ConfigMap, there's no key for max-scale-down-rate. Oh, no, actually, looking again, the ConfigMap does have max-scale-down-rate set to '2.0'. But the error says it's 1.0. That's confusing. Maybe there's a different configuration file or a bug in the way these are applied.
+
+Alternatively, perhaps the Service's max-scale is being interpreted differently. I should check the documentation again. Oh, right, the max-scale in the Service is a global setting, but the max-scale-down-rate is specific to the Autoscaler. They might be separate but related.
+
+Wait, the error message is from the admission webhook, which means the Kubernetes API server is rejecting the request because the value is invalid. So the problem is that somewhere, the max-scale-down-rate is being set to 1.0, but the system expects it to be greater than 1.0.
+
+Looking back at the user's YAML, in the ConfigMap, it's set to '2.0', which is correct. So maybe the issue is elsewhere. Perhaps another ConfigMap or a different component is overriding this value. Or maybe the user made a typo in their configuration.
+
+Alternatively, maybe the Service's max-scale is conflicting with the ConfigMap's settings. I should make sure that all scaling parameters are consistent across different components.
+
+To fix this, I'll adjust the ConfigMap's max-scale-down-rate to a value greater than 1.0, like 2.0, and ensure that the Service's max-scale is set appropriately. Also, I'll double-check that the values in the YAML files are correct and that there are no conflicting settings.
+
+So, the corrected ConfigMap should have max-scale-down-rate: 2.0, and the Service should have max-scale: 5, which should resolve the error. I'll update the YAML accordingly.
+</think>
+
+The error occurs because the `max-scale-down-rate` is set to 1.0, which is invalid as it must be greater than 1.0. This is likely due to a configuration mismatch between the Service and ConfigMap. To fix this, ensure both the Service and ConfigMap have consistent and valid scaling settings.
+
+```yaml
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: srv-profile
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/activation-scale: '5'
+        autoscaling.knative.dev/initial-scale: '1'
+        autoscaling.knative.dev/max-scale: '5'
+        autoscaling.knative.dev/metric: concurrency
+        autoscaling.knative.dev/min-scale: '0'
+        autoscaling.knative.dev/panic-threshold-percentage: '150.0'
+        autoscaling.knative.dev/panic-window-percentage: '10.0'
+        autoscaling.knative.dev/scale-down-delay: 0s
+        autoscaling.knative.dev/stable-window: 60s
+        autoscaling.knative.dev/target: '200'
+        autoscaling.knative.dev/target-utilization-percentage: '70'
+        autoscaling.knative.dev/window: 60s
+    spec:
+      containers:
+      - command:
+        - profile
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-profile
+        ports:
+        - containerPort: 8081
+          name: h2c
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+
+---
+apiVersion: v1
+data:
+  enable-scale-to-zero: 'true'
+  max-scale-down-rate: '2.0'
+  max-scale-up-rate: '500.0'
+  scale-to-zero-grace-period: 30s
+  scale-to-zero-pod-retention-period: 0s
+kind: ConfigMap
+metadata:
+  name: config-autoscaler
+  namespace: knative-serving
+```
+# --- END: seq=670 ---
+

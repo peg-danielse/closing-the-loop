@@ -1,0 +1,72 @@
+# --- START: seq=376 ---
+{'max_throughput': 185.6, 'total_errors': 1931, 'total_anomaly_count': 33, 'changed_service_anomaly_count': 5, 'service_max_cpu_usage': 1.039815113488747, 'total_max_cpu_usage': nan, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=376 ---
+
+# --- START: seq=114 ---
+{'max_throughput': 174.9, 'total_errors': 3846, 'total_anomaly_count': 32, 'changed_service_anomaly_count': 6, 'service_max_cpu_usage': nan, 'total_max_cpu_usage': nan, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=114 ---
+
+# --- START: seq=575 ---
+{'max_throughput': 178.4, 'total_errors': 2211, 'total_anomaly_count': 30, 'changed_service_anomaly_count': 10, 'service_max_cpu_usage': nan, 'total_max_cpu_usage': nan, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=575 ---
+
+# --- START: seq=549 ---
+{'max_throughput': 215.9, 'total_errors': 4169, 'total_anomaly_count': 26, 'changed_service_anomaly_count': 6, 'service_max_cpu_usage': 0.4613991491365004, 'total_max_cpu_usage': nan, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=549 ---
+
+# --- START: seq=288 ---
+{'max_throughput': 198.4, 'total_errors': 4204, 'total_anomaly_count': 28, 'changed_service_anomaly_count': 9, 'service_max_cpu_usage': 0.4434956825840505, 'total_max_cpu_usage': nan, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=288 ---
+
+# --- START: seq=127 ---
+{'max_throughput': 238.8, 'total_errors': 4033, 'total_anomaly_count': 34, 'changed_service_anomaly_count': 7, 'service_max_cpu_usage': nan, 'total_max_cpu_usage': nan, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=127 ---
+
+# --- START: seq=611 ---
+{'max_throughput': 184.2, 'total_errors': 7027, 'total_anomaly_count': 33, 'changed_service_anomaly_count': 7, 'service_max_cpu_usage': 0.4668110677686665, 'total_max_cpu_usage': nan, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=611 ---
+
+# --- START: seq=4 ---
+{'max_throughput': 185.1, 'total_errors': 2885, 'total_anomaly_count': 29, 'changed_service_anomaly_count': 4, 'service_max_cpu_usage': 0.4314992984645454, 'total_max_cpu_usage': nan, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=4 ---
+
+# --- START: seq=116 ---
+{'max_throughput': 203.4, 'total_errors': 4048, 'total_anomaly_count': 24, 'changed_service_anomaly_count': 7, 'service_max_cpu_usage': 0.4586307157294231, 'total_max_cpu_usage': nan, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=116 ---
+
+# --- START: seq=20 ---
+{'max_throughput': 196.3, 'total_errors': 3356, 'total_anomaly_count': 32, 'changed_service_anomaly_count': 11, 'service_max_cpu_usage': nan, 'total_max_cpu_usage': nan, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=20 ---
+
+# --- START: seq=155 ---
+{'max_throughput': 268.0, 'total_errors': 5087, 'total_anomaly_count': 31, 'changed_service_anomaly_count': 1, 'service_max_cpu_usage': 0.0666668369518944, 'total_max_cpu_usage': nan, 'service_names': ['srv-geo', 'config-autoscaler']}
+# --- END: seq=155 ---
+
+# --- START: seq=253 ---
+{'max_throughput': 165.6, 'total_errors': 2552, 'total_anomaly_count': 23, 'changed_service_anomaly_count': 12, 'service_max_cpu_usage': 0.3908710936637856, 'total_max_cpu_usage': nan, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=253 ---
+
+# --- START: seq=252 ---
+{'max_throughput': 188.9, 'total_errors': 2526, 'total_anomaly_count': 28, 'changed_service_anomaly_count': 9, 'service_max_cpu_usage': 1.4006638179695203, 'total_max_cpu_usage': nan, 'service_names': ['srv-reservation', 'config-autoscaler']}
+# --- END: seq=252 ---
+
+# --- START: seq=191 ---
+{'max_throughput': 196.2, 'total_errors': 2730, 'total_anomaly_count': 34, 'changed_service_anomaly_count': 7, 'service_max_cpu_usage': 0.4521903031353912, 'total_max_cpu_usage': nan, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=191 ---
+
+# --- START: seq=121 ---
+{'max_throughput': 272.9, 'total_errors': 5281, 'total_anomaly_count': 29, 'changed_service_anomaly_count': 3, 'service_max_cpu_usage': 0.0961944493857923, 'total_max_cpu_usage': nan, 'service_names': ['srv-geo', 'config-autoscaler']}
+# --- END: seq=121 ---
+
+# --- START: seq=126 ---
+{'max_throughput': 182.0, 'total_errors': 3364, 'total_anomaly_count': 35, 'changed_service_anomaly_count': 15, 'service_max_cpu_usage': 1.3037448352544865, 'total_max_cpu_usage': nan, 'service_names': ['srv-reservation', 'config-autoscaler']}
+# --- END: seq=126 ---
+
+# --- START: seq=394 ---
+{'max_throughput': 193.0, 'total_errors': 4788, 'total_anomaly_count': 27, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': nan, 'service_names': ['memcached-rate', 'config-autoscaler']}
+# --- END: seq=394 ---
+
+# --- START: seq=165 ---
+{'max_throughput': 218.4, 'total_errors': 3142, 'total_anomaly_count': 24, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': nan, 'service_names': ['memcached-rate', 'config-autoscaler']}
+# --- END: seq=165 ---
+

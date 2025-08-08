@@ -1,0 +1,68 @@
+# --- START: seq=4200 ---
+{'max_throughput': 587.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.980865158510754}
+# --- END: seq=4200 ---
+
+# --- START: seq=4201 ---
+{'max_throughput': 587.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.3341240911435014, 'total_max_cpu_usage': 1.980865158510754}
+# --- END: seq=4201 ---
+
+# --- START: seq=4202 ---
+{'max_throughput': 587.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.2362330138830236, 'total_max_cpu_usage': 1.980865158510754}
+# --- END: seq=4202 ---
+
+# --- START: seq=4203 ---
+{'max_throughput': 587.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.0174284880908274, 'total_max_cpu_usage': 1.980865158510754}
+# --- END: seq=4203 ---
+
+# --- START: seq=4204 ---
+{'max_throughput': 587.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.1784485173943023, 'total_max_cpu_usage': 1.980865158510754}
+# --- END: seq=4204 ---
+
+# --- START: seq=4205 ---
+{'max_throughput': 587.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.980865158510754}
+# --- END: seq=4205 ---
+
+# --- START: seq=4206 ---
+{'max_throughput': 587.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.980865158510754}
+# --- END: seq=4206 ---
+
+# --- START: seq=4207 ---
+{'max_throughput': 587.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.980865158510754}
+# --- END: seq=4207 ---
+
+# --- START: seq=4208 ---
+{'max_throughput': 587.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 1, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.980865158510754}
+# --- END: seq=4208 ---
+
+# --- START: seq=4209 ---
+{'max_throughput': 587.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.980865158510754}
+# --- END: seq=4209 ---
+
+# --- START: seq=4210 ---
+{'max_throughput': 587.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.0998541422098554, 'total_max_cpu_usage': 1.980865158510754}
+# --- END: seq=4210 ---
+
+# --- START: seq=4211 ---
+{'max_throughput': 587.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.980865158510754}
+# --- END: seq=4211 ---
+
+# --- START: seq=4212 ---
+{'max_throughput': 587.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.1126634138010002, 'total_max_cpu_usage': 1.980865158510754}
+# --- END: seq=4212 ---
+
+# --- START: seq=4213 ---
+{'max_throughput': 587.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.980865158510754}
+# --- END: seq=4213 ---
+
+# --- START: seq=4214 ---
+{'max_throughput': 587.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 1.0021134919882435, 'total_max_cpu_usage': 1.980865158510754}
+# --- END: seq=4214 ---
+
+# --- START: seq=4215 ---
+{'max_throughput': 587.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.980865158510754}
+# --- END: seq=4215 ---
+
+# --- START: seq=245 ---
+{'max_throughput': 586.2, 'total_errors': 1, 'total_anomaly_count': 49, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 2.0309395954019105, 'service_names': ['frontend']}
+# --- END: seq=245 ---
+

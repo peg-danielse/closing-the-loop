@@ -11,15 +11,15 @@ import glob, re
 
 from sklearn.ensemble import IsolationForest
 
-PATH = "./experiments/5-closing-time/"
-LABEL = "close"
+PATH = "./experiments/6-production/"
+LABEL = "general"
 
 
-for i in range(4,5):
+for i in range(0,5):
 
     label = f"{LABEL}_{i}"
     # read stat history
-    history_df = pd.read_csv(PATH + "data/" + f'{label}/{label}_stats_history.csv')
+    history_df = pd.read_csv(PATH + f"output/{LABEL}/data/{label}/{label}_stats_history.csv")
 
     fix, ax = plt.subplots(1,1)
     ax.plot(history_df['Timestamp'], history_df['Requests/s'], label="Requests/s", color="blue")
@@ -36,15 +36,15 @@ for i in range(4,5):
 
     plt.grid(True)
 
-    plt.savefig(PATH + "output/" + f"{label}_requests_per_second.png")
+    plt.savefig(PATH + f"output/{LABEL}/" + f"{label}_requests_per_second.png")
     plt.clf()
 
     # read response time data
-    resp_df = pd.read_csv(PATH + "data/" + f'{label}/{label}_responce_log.csv')
+    resp_df = pd.read_csv(PATH + f"output/{LABEL}/data/{label}/{label}_responce_log.csv")
 
     # read Jaeger trace data
     data = {}
-    with open(PATH + "data/" + f'{label}/{label}_traces.json', 'r') as file:
+    with open(PATH + f"output/{LABEL}/data/{label}/{label}_traces.json", 'r') as file:
         data = json.load(file)
 
     rows = []
@@ -146,12 +146,12 @@ for i in range(4,5):
         fig.set_size_inches(18.5, 10.5)
 
         plt.tight_layout()
-        plt.savefig(PATH + "output/" + f"{label}_shap_decision_plot.png") 
+        plt.savefig(PATH + "output/" + f"{LABEL}/{label}_shap_decision_plot.png") 
         plt.clf()
 
         # explaination of the shap values themselves.
         shap.summary_plot(all_shap_values, features)
-        plt.savefig(PATH + "output/" + f"{label}_shap_feature_importance.png")
+        plt.savefig(PATH + "output/" + f"{LABEL}/{label}_shap_feature_importance.png")
         plt.clf()
 
         shap.plots.violin(all_shap_values, features=features, plot_type="layered_violin")
@@ -175,7 +175,7 @@ for i in range(4,5):
     ax.legend(lines + lines2, labels + labels2, loc='upper left')
     # ax2.get_legend().remove()
 
-    plt.savefig(PATH + "output/" + f"{label}_anomaly_per_second.png")
+    plt.savefig(PATH + "output/" + f"{LABEL}/{label}_anomaly_per_second.png")
     plt.clf()
 
     for n in glob.glob(PATH + "data/" + f'{label}_*_metrics.csv'):
@@ -196,6 +196,6 @@ for i in range(4,5):
             ax.set_title(metric)
 
         plt.tight_layout()
-        plt.savefig(PATH + 'output/' + f'{label}_{name}_metrics.png')
+        plt.savefig(PATH + 'output/' + f'{LABEL}/{label}_{name}_metrics.png')
         plt.clf()
 

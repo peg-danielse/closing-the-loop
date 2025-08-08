@@ -1,0 +1,69 @@
+# --- START: seq=0 ---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-autoscaler
+  namespace: knative-serving
+data:
+  max-scale-up-rate: "1000.0" # Default: 1000.0
+  max-scale-down-rate: "2.0" # Default: 2.0
+  scale-to-zero-pod-retention-period: "0s"
+  scale-to-zero-grace-period: "30s"
+  enable-scale-to-zero: "true" # true, false
+
+---
+
+{'max_throughput': 0, 'total_errors': 0, 'total_anomaly_count': 0, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.0, 'total_max_cpu_usage': 0.0}
+
+# --- END: seq=0 ---# --- START: seq=1 ---
+apiVersion: v1
+data:
+  enable-scale-to-zero: 'true'
+  max-scale-down-rate: '2.0'
+  max-scale-up-rate: '1000.0'
+  scale-to-zero-grace-period: 30s
+  scale-to-zero-pod-retention-period: 0s
+kind: ConfigMap
+metadata:
+  name: config-autoscaler
+  namespace: knative-serving
+
+---
+{'max_throughput': 485.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 4.99497834420368, 'total_max_cpu_usage': 5.785942132963827, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=1 ---
+
+# --- START: seq=2 ---
+apiVersion: v1
+data:
+  enable-scale-to-zero: 'true'
+  max-scale-down-rate: '2.0'
+  max-scale-up-rate: '1000.0'
+  scale-to-zero-grace-period: 30s
+  scale-to-zero-pod-retention-period: 0s
+kind: ConfigMap
+metadata:
+  name: config-autoscaler
+  namespace: knative-serving
+
+---
+{'max_throughput': 587.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.980865158510754}
+# --- END: seq=2 ---
+
+# --- START: seq=3 ---
+apiVersion: v1
+data:
+  enable-scale-to-zero: 'true'
+  max-scale-down-rate: '2.0'
+  max-scale-up-rate: '1000.0'
+  scale-to-zero-grace-period: 30s
+  scale-to-zero-pod-retention-period: 0s
+kind: ConfigMap
+metadata:
+  name: config-autoscaler
+  namespace: knative-serving
+
+---
+{'max_throughput': 542.5, 'total_errors': 0, 'total_anomaly_count': 17, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.9823768566645459}
+# --- END: seq=3 ---
+

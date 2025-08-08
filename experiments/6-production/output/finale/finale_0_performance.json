@@ -1,0 +1,110 @@
+# --- START: seq=4200 ---
+{'max_throughput': 500.9, 'total_errors': 2, 'total_anomaly_count': 34, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.8785687877871535}
+# --- END: seq=4200 ---
+
+# --- START: seq=4201 ---
+{'max_throughput': 500.9, 'total_errors': 2, 'total_anomaly_count': 34, 'changed_service_anomaly_count': 4, 'service_max_cpu_usage': 0.3029956107921372, 'total_max_cpu_usage': 1.8785687877871535}
+# --- END: seq=4201 ---
+
+# --- START: seq=4202 ---
+{'max_throughput': 500.9, 'total_errors': 2, 'total_anomaly_count': 34, 'changed_service_anomaly_count': 11, 'service_max_cpu_usage': 0.2117166664219797, 'total_max_cpu_usage': 1.8785687877871535}
+# --- END: seq=4202 ---
+
+# --- START: seq=4203 ---
+{'max_throughput': 500.9, 'total_errors': 2, 'total_anomaly_count': 34, 'changed_service_anomaly_count': 1, 'service_max_cpu_usage': 0.0097742693188237, 'total_max_cpu_usage': 1.8785687877871535}
+# --- END: seq=4203 ---
+
+# --- START: seq=4204 ---
+{'max_throughput': 500.9, 'total_errors': 2, 'total_anomaly_count': 34, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.1600145843977483, 'total_max_cpu_usage': 1.8785687877871535}
+# --- END: seq=4204 ---
+
+# --- START: seq=4205 ---
+{'max_throughput': 500.9, 'total_errors': 2, 'total_anomaly_count': 34, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.8785687877871535}
+# --- END: seq=4205 ---
+
+# --- START: seq=4206 ---
+{'max_throughput': 500.9, 'total_errors': 2, 'total_anomaly_count': 34, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.8785687877871535}
+# --- END: seq=4206 ---
+
+# --- START: seq=4207 ---
+{'max_throughput': 500.9, 'total_errors': 2, 'total_anomaly_count': 34, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.8785687877871535}
+# --- END: seq=4207 ---
+
+# --- START: seq=4208 ---
+{'max_throughput': 500.9, 'total_errors': 2, 'total_anomaly_count': 34, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.0895308294486908, 'total_max_cpu_usage': 1.8785687877871535}
+# --- END: seq=4208 ---
+
+# --- START: seq=4209 ---
+{'max_throughput': 500.9, 'total_errors': 2, 'total_anomaly_count': 34, 'changed_service_anomaly_count': 10, 'service_max_cpu_usage': 0.1035852192349318, 'total_max_cpu_usage': 1.8785687877871535}
+# --- END: seq=4209 ---
+
+# --- START: seq=4210 ---
+{'max_throughput': 500.9, 'total_errors': 2, 'total_anomaly_count': 34, 'changed_service_anomaly_count': 4, 'service_max_cpu_usage': 1.000951608172842, 'total_max_cpu_usage': 1.8785687877871535}
+# --- END: seq=4210 ---
+
+# --- START: seq=4211 ---
+{'max_throughput': 500.9, 'total_errors': 2, 'total_anomaly_count': 34, 'changed_service_anomaly_count': 4, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.8785687877871535}
+# --- END: seq=4211 ---
+
+# --- START: seq=765 ---
+{'max_throughput': 518.5, 'total_errors': 76466, 'total_anomaly_count': 31, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 3.173836298846905, 'service_names': ['memcached-rate']}
+# --- END: seq=765 ---
+
+# --- START: seq=39 ---
+{'max_throughput': 434.6, 'total_errors': 4958, 'total_anomaly_count': 24, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 8.666953844008884, 'service_names': ['memcached-rate']}
+# --- END: seq=39 ---
+
+# --- START: seq=898 ---
+{'max_throughput': 484.3, 'total_errors': 3916, 'total_anomaly_count': 21, 'changed_service_anomaly_count': 1, 'service_max_cpu_usage': 0.2750112973418999, 'total_max_cpu_usage': 4.168684450198367, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=898 ---
+
+# --- START: seq=1438 ---
+{'max_throughput': 408.0, 'total_errors': 3330, 'total_anomaly_count': 18, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.1726602153801737, 'total_max_cpu_usage': 3.843189843988329, 'service_names': ['srv-profile', 'config-autoscaler']}
+# --- END: seq=1438 ---
+
+# --- START: seq=348 ---
+{'max_throughput': 450.4, 'total_errors': 4612, 'total_anomaly_count': 20, 'changed_service_anomaly_count': 8, 'service_max_cpu_usage': 0.220272069427087, 'total_max_cpu_usage': 5.1052854639473875, 'service_names': ['srv-search']}
+# --- END: seq=348 ---
+
+# --- START: seq=780 ---
+{'max_throughput': 490.8, 'total_errors': 1405, 'total_anomaly_count': 27, 'changed_service_anomaly_count': 5, 'service_max_cpu_usage': 0.3146139354004804, 'total_max_cpu_usage': 6.647166335290762, 'service_names': ['srv-search']}
+# --- END: seq=780 ---
+
+# --- START: seq=157 ---
+{'max_throughput': 483.9, 'total_errors': 181, 'total_anomaly_count': 49, 'changed_service_anomaly_count': 3, 'service_max_cpu_usage': 0.2612023304101195, 'total_max_cpu_usage': 5.635560663698787, 'service_names': ['srv-search']}
+# --- END: seq=157 ---
+
+# --- START: seq=856 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '824ba21d-a78a-46c9-842a-ae39fd3cb820', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b7893084-19b7-431d-9ddc-f75ccbbac163', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'd5b7ccb8-eaf7-4ee2-b6f9-fdc0c0ff65cc', 'Date': 'Fri, 01 Aug 2025 18:01:45 GMT', 'Content-Length': '260'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"config.webhook.serving.knative.dev\" denied the request: validation failed: max-scale-down-rate = 1, must be greater than 1.0","reason":"BadRequest","code":400}
+
+
+# --- END: seq=856 ---
+
+# --- START: seq=1489 ---
+{'max_throughput': 507.1, 'total_errors': 500, 'total_anomaly_count': 35, 'changed_service_anomaly_count': 7, 'service_max_cpu_usage': 4.248714066709717, 'total_max_cpu_usage': 5.083278135981682, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=1489 ---
+
+# --- START: seq=1089 ---
+{'max_throughput': 502.1, 'total_errors': 1628, 'total_anomaly_count': 28, 'changed_service_anomaly_count': 10, 'service_max_cpu_usage': 5.025032677574073, 'total_max_cpu_usage': 5.875628991284136, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=1089 ---
+
+# --- START: seq=152 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '496d3d8a-afc2-4864-8917-1d01d2ae7bb9', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b7893084-19b7-431d-9ddc-f75ccbbac163', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'd5b7ccb8-eaf7-4ee2-b6f9-fdc0c0ff65cc', 'Date': 'Fri, 01 Aug 2025 18:35:16 GMT', 'Content-Length': '378'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"webhook.serving.knative.dev\" denied the request: mutation failed: cannot decode incoming new object: json: cannot unmarshal string into Go struct field Container.spec.ConfigurationSpec.template.spec.PodSpec.containers.command of type []string","reason":"BadRequest","code":400}
+
+
+# --- END: seq=152 ---
+
+# --- START: seq=940 ---
+{'max_throughput': 492.4, 'total_errors': 1074, 'total_anomaly_count': 30, 'changed_service_anomaly_count': 2, 'service_max_cpu_usage': 0.255625580329943, 'total_max_cpu_usage': 7.349069527273134, 'service_names': ['srv-profile']}
+# --- END: seq=940 ---
+
+# --- START: seq=1277 ---
+{'max_throughput': 499.6, 'total_errors': 167, 'total_anomaly_count': 44, 'changed_service_anomaly_count': 6, 'service_max_cpu_usage': 0.086182970630761, 'total_max_cpu_usage': 8.24848905670495, 'service_names': ['srv-reservation']}
+# --- END: seq=1277 ---
+

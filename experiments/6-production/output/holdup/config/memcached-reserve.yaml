@@ -1,0 +1,150 @@
+# --- START: seq=1 ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: memcached-reserve
+  name: memcached-reserve
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: memcached-reserve
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+        sidecar.istio.io/statsInclusionPrefixes: cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager
+        sidecar.istio.io/statsInclusionRegexps: http.*
+      creationTimestamp: null
+      labels:
+        io.kompose.service: memcached-reserve
+    spec:
+      containers:
+      - env:
+        - name: MEMCACHED_CACHE_SIZE
+          value: '128'
+        - name: MEMCACHED_THREADS
+          value: '2'
+        image: memcached
+        name: hotel-reserv-reservation-mmc
+        ports:
+        - containerPort: 11211
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+      restartPolicy: Always
+status: {}
+
+---
+{'max_throughput': 471.5, 'total_errors': 3, 'total_anomaly_count': 30, 'changed_service_anomaly_count': 1, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.8752896773127277}
+# --- END: seq=1 ---
+
+# --- START: seq=2 ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: memcached-reserve
+  name: memcached-reserve
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: memcached-reserve
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+        sidecar.istio.io/statsInclusionPrefixes: cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager
+        sidecar.istio.io/statsInclusionRegexps: http.*
+      creationTimestamp: null
+      labels:
+        io.kompose.service: memcached-reserve
+    spec:
+      containers:
+      - env:
+        - name: MEMCACHED_CACHE_SIZE
+          value: '128'
+        - name: MEMCACHED_THREADS
+          value: '2'
+        image: memcached
+        name: hotel-reserv-reservation-mmc
+        ports:
+        - containerPort: 11211
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+      restartPolicy: Always
+status: {}
+
+---
+{'max_throughput': 587.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.980865158510754}
+# --- END: seq=2 ---
+
+# --- START: seq=3 ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: memcached-reserve
+  name: memcached-reserve
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: memcached-reserve
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+        sidecar.istio.io/statsInclusionPrefixes: cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager
+        sidecar.istio.io/statsInclusionRegexps: http.*
+      creationTimestamp: null
+      labels:
+        io.kompose.service: memcached-reserve
+    spec:
+      containers:
+      - env:
+        - name: MEMCACHED_CACHE_SIZE
+          value: '128'
+        - name: MEMCACHED_THREADS
+          value: '2'
+        image: memcached
+        name: hotel-reserv-reservation-mmc
+        ports:
+        - containerPort: 11211
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+      restartPolicy: Always
+status: {}
+
+---
+{'max_throughput': 542.5, 'total_errors': 0, 'total_anomaly_count': 17, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.9823768566645459}
+# --- END: seq=3 ---
+

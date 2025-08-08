@@ -1,0 +1,161 @@
+# --- START: seq=4200 ---
+{'max_throughput': 542.5, 'total_errors': 0, 'total_anomaly_count': 17, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.9823768566645459}
+# --- END: seq=4200 ---
+
+# --- START: seq=4201 ---
+{'max_throughput': 542.5, 'total_errors': 0, 'total_anomaly_count': 17, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.3367407039277909, 'total_max_cpu_usage': 1.9823768566645459}
+# --- END: seq=4201 ---
+
+# --- START: seq=4202 ---
+{'max_throughput': 542.5, 'total_errors': 0, 'total_anomaly_count': 17, 'changed_service_anomaly_count': 2, 'service_max_cpu_usage': 0.241136656438792, 'total_max_cpu_usage': 1.9823768566645459}
+# --- END: seq=4202 ---
+
+# --- START: seq=4203 ---
+{'max_throughput': 542.5, 'total_errors': 0, 'total_anomaly_count': 17, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.0170127833288233, 'total_max_cpu_usage': 1.9823768566645459}
+# --- END: seq=4203 ---
+
+# --- START: seq=4204 ---
+{'max_throughput': 542.5, 'total_errors': 0, 'total_anomaly_count': 17, 'changed_service_anomaly_count': 1, 'service_max_cpu_usage': 0.1823859394410447, 'total_max_cpu_usage': 1.9823768566645459}
+# --- END: seq=4204 ---
+
+# --- START: seq=4205 ---
+{'max_throughput': 542.5, 'total_errors': 0, 'total_anomaly_count': 17, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.9823768566645459}
+# --- END: seq=4205 ---
+
+# --- START: seq=4206 ---
+{'max_throughput': 542.5, 'total_errors': 0, 'total_anomaly_count': 17, 'changed_service_anomaly_count': 1, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.9823768566645459}
+# --- END: seq=4206 ---
+
+# --- START: seq=4207 ---
+{'max_throughput': 542.5, 'total_errors': 0, 'total_anomaly_count': 17, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.9823768566645459}
+# --- END: seq=4207 ---
+
+# --- START: seq=4208 ---
+{'max_throughput': 542.5, 'total_errors': 0, 'total_anomaly_count': 17, 'changed_service_anomaly_count': 2, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.9823768566645459}
+# --- END: seq=4208 ---
+
+# --- START: seq=4209 ---
+{'max_throughput': 542.5, 'total_errors': 0, 'total_anomaly_count': 17, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.9823768566645459}
+# --- END: seq=4209 ---
+
+# --- START: seq=4210 ---
+{'max_throughput': 542.5, 'total_errors': 0, 'total_anomaly_count': 17, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.1017297987997667, 'total_max_cpu_usage': 1.9823768566645459}
+# --- END: seq=4210 ---
+
+# --- START: seq=4211 ---
+{'max_throughput': 542.5, 'total_errors': 0, 'total_anomaly_count': 17, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.9823768566645459}
+# --- END: seq=4211 ---
+
+# --- START: seq=4212 ---
+{'max_throughput': 542.5, 'total_errors': 0, 'total_anomaly_count': 17, 'changed_service_anomaly_count': 4, 'service_max_cpu_usage': 0.103076779357452, 'total_max_cpu_usage': 1.9823768566645459}
+# --- END: seq=4212 ---
+
+# --- START: seq=4213 ---
+{'max_throughput': 542.5, 'total_errors': 0, 'total_anomaly_count': 17, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.9823768566645459}
+# --- END: seq=4213 ---
+
+# --- START: seq=4214 ---
+{'max_throughput': 542.5, 'total_errors': 0, 'total_anomaly_count': 17, 'changed_service_anomaly_count': 3, 'service_max_cpu_usage': 1.0002941953708764, 'total_max_cpu_usage': 1.9823768566645459}
+# --- END: seq=4214 ---
+
+# --- START: seq=4215 ---
+{'max_throughput': 542.5, 'total_errors': 0, 'total_anomaly_count': 17, 'changed_service_anomaly_count': 4, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.9823768566645459}
+# --- END: seq=4215 ---
+
+# --- START: seq=977 ---
+(422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'b9a33b99-5758-4387-b740-f25c83b25be0', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b7893084-19b7-431d-9ddc-f75ccbbac163', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'd5b7ccb8-eaf7-4ee2-b6f9-fdc0c0ff65cc', 'Date': 'Sat, 02 Aug 2025 22:10:43 GMT', 'Transfer-Encoding': 'chunked'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":" \"\" is invalid: patch: Invalid value: \"map[apiVersion:apps/v1 kind:Deployment metadata:map[annotations:map[kompose.cmd:kompose convert kompose.version:1.22.0 (955b78124)] creationTimestamp:\u003cnil\u003e labels:map[io.kompose.service:frontend] name:frontend] spec:map[replicas:1 selector:map[matchLabels:map[io.kompose.service:frontend]] strategy:map[] template:map[creationTimestamp:\u003cnil\u003e labels:map[io.kompose.service:frontend] metadata:map[annotations:map[kompose.cmd:kompose convert kompose.version:1.22.0 (955b78124) sidecar.istio.io/statsInclusionPrefixes:cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager sidecar.istio.io/statsInclusionRegexps:http.*]] spec:map[containers:[map[command:frontend env:[map[name:DLOG value:DEBUG]] image:pag3r/hotel-reservations:latest name:hotel-reserv-frontend ports:[map[containerPort:5000]] resources:map[limits:map[cpu:5000m] requests:map[cpu:200m]]]] restartPolicy:Always]]] status:map[]]\": cannot restore slice from string","reason":"Invalid","details":{"causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"map[apiVersion:apps/v1 kind:Deployment metadata:map[annotations:map[kompose.cmd:kompose convert kompose.version:1.22.0 (955b78124)] creationTimestamp:\u003cnil\u003e labels:map[io.kompose.service:frontend] name:frontend] spec:map[replicas:1 selector:map[matchLabels:map[io.kompose.service:frontend]] strategy:map[] template:map[creationTimestamp:\u003cnil\u003e labels:map[io.kompose.service:frontend] metadata:map[annotations:map[kompose.cmd:kompose convert kompose.version:1.22.0 (955b78124) sidecar.istio.io/statsInclusionPrefixes:cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager sidecar.istio.io/statsInclusionRegexps:http.*]] spec:map[containers:[map[command:frontend env:[map[name:DLOG value:DEBUG]] image:pag3r/hotel-reservations:latest name:hotel-reserv-frontend ports:[map[containerPort:5000]] resources:map[limits:map[cpu:5000m] requests:map[cpu:200m]]]] restartPolicy:Always]]] status:map[]]\": cannot restore slice from string","field":"patch"}]},"code":422}
+
+
+# --- END: seq=977 ---
+
+# --- START: seq=95 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '29c25b61-1ef9-4c37-bea2-d3a3fac6cb48', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b7893084-19b7-431d-9ddc-f75ccbbac163', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'd5b7ccb8-eaf7-4ee2-b6f9-fdc0c0ff65cc', 'Date': 'Sat, 02 Aug 2025 22:11:44 GMT', 'Content-Length': '366'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"webhook.serving.knative.dev\" denied the request: mutation failed: cannot decode incoming new object: json: cannot unmarshal number into Go struct field ObjectMeta.spec.ConfigurationSpec.template.metadata.annotations of type string","reason":"BadRequest","code":400}
+
+
+# --- END: seq=95 ---
+
+# --- START: seq=136 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '5709c44a-9a30-4f75-b3ac-866747d548e6', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b7893084-19b7-431d-9ddc-f75ccbbac163', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'd5b7ccb8-eaf7-4ee2-b6f9-fdc0c0ff65cc', 'Date': 'Sat, 02 Aug 2025 22:13:03 GMT', 'Content-Length': '366'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"webhook.serving.knative.dev\" denied the request: mutation failed: cannot decode incoming new object: json: cannot unmarshal number into Go struct field ObjectMeta.spec.ConfigurationSpec.template.metadata.annotations of type string","reason":"BadRequest","code":400}
+
+
+# --- END: seq=136 ---
+
+# --- START: seq=381 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '58f7f73f-b754-4d00-9503-b2a0e0eb9be7', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b7893084-19b7-431d-9ddc-f75ccbbac163', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'd5b7ccb8-eaf7-4ee2-b6f9-fdc0c0ff65cc', 'Date': 'Sat, 02 Aug 2025 22:14:31 GMT', 'Content-Length': '366'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"webhook.serving.knative.dev\" denied the request: mutation failed: cannot decode incoming new object: json: cannot unmarshal number into Go struct field ObjectMeta.spec.ConfigurationSpec.template.metadata.annotations of type string","reason":"BadRequest","code":400}
+
+
+# --- END: seq=381 ---
+
+# --- START: seq=947 ---
+(422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '9206dc50-3eb9-43d0-9bd3-2802a8f69255', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b7893084-19b7-431d-9ddc-f75ccbbac163', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'd5b7ccb8-eaf7-4ee2-b6f9-fdc0c0ff65cc', 'Date': 'Sat, 02 Aug 2025 22:16:53 GMT', 'Transfer-Encoding': 'chunked'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":" \"\" is invalid: patch: Invalid value: \"map[apiVersion:apps/v1 kind:Deployment metadata:map[annotations:map[kompose.cmd:kompose convert kompose.version:1.22.0 (955b78124)] creationTimestamp:\u003cnil\u003e labels:map[io.kompose.service:frontend] name:frontend] spec:map[replicas:1 selector:map[matchLabels:map[io.kompose.service:frontend]] strategy:map[] template:map[creationTimestamp:\u003cnil\u003e labels:map[io.kompose.service:frontend] metadata:map[annotations:map[kompose.cmd:kompose convert kompose.version:1.22.0 (955b78124) sidecar.istio.io/statsInclusionPrefixes:cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager sidecar.istio.io/statsInclusionRegexps:http.*]] spec:map[containers:[map[command:frontend env:[map[name:DLOG value:DEBUG]] image:pag3r/hotel-reservations:latest name:hotel-reserv-frontend ports:[map[containerPort:5000]] resources:map[limits:map[cpu:5000m] requests:map[cpu:200m]]]] restartPolicy:Always]]] status:map[]]\": cannot restore slice from string","reason":"Invalid","details":{"causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"map[apiVersion:apps/v1 kind:Deployment metadata:map[annotations:map[kompose.cmd:kompose convert kompose.version:1.22.0 (955b78124)] creationTimestamp:\u003cnil\u003e labels:map[io.kompose.service:frontend] name:frontend] spec:map[replicas:1 selector:map[matchLabels:map[io.kompose.service:frontend]] strategy:map[] template:map[creationTimestamp:\u003cnil\u003e labels:map[io.kompose.service:frontend] metadata:map[annotations:map[kompose.cmd:kompose convert kompose.version:1.22.0 (955b78124) sidecar.istio.io/statsInclusionPrefixes:cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager sidecar.istio.io/statsInclusionRegexps:http.*]] spec:map[containers:[map[command:frontend env:[map[name:DLOG value:DEBUG]] image:pag3r/hotel-reservations:latest name:hotel-reserv-frontend ports:[map[containerPort:5000]] resources:map[limits:map[cpu:5000m] requests:map[cpu:200m]]]] restartPolicy:Always]]] status:map[]]\": cannot restore slice from string","field":"patch"}]},"code":422}
+
+
+# --- END: seq=947 ---
+
+# --- START: seq=346 ---
+(422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'c3f1dd66-116a-4d76-8a06-f26166ed182b', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "unknown field \\"spec.components\\""', 'X-Kubernetes-Pf-Flowschema-Uid': 'b7893084-19b7-431d-9ddc-f75ccbbac163', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'd5b7ccb8-eaf7-4ee2-b6f9-fdc0c0ff65cc', 'Date': 'Sat, 02 Aug 2025 22:19:00 GMT', 'Content-Length': '574'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Service.serving.knative.dev \"srv-reservation\" is invalid: spec.template.spec.containers: Invalid value: \"null\": spec.template.spec.containers in body must be of type array: \"null\"","reason":"Invalid","details":{"name":"srv-reservation","group":"serving.knative.dev","kind":"Service","causes":[{"reason":"FieldValueTypeInvalid","message":"Invalid value: \"null\": spec.template.spec.containers in body must be of type array: \"null\"","field":"spec.template.spec.containers"}]},"code":422}
+
+
+# --- END: seq=346 ---
+
+# --- START: seq=256 ---
+(422)
+Reason: Unprocessable Entity
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'fe634c11-e583-4653-8ac6-c765153a1391', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "unknown field \\"spec.components\\""', 'X-Kubernetes-Pf-Flowschema-Uid': 'b7893084-19b7-431d-9ddc-f75ccbbac163', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'd5b7ccb8-eaf7-4ee2-b6f9-fdc0c0ff65cc', 'Date': 'Sat, 02 Aug 2025 22:20:20 GMT', 'Content-Length': '574'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Service.serving.knative.dev \"srv-reservation\" is invalid: spec.template.spec.containers: Invalid value: \"null\": spec.template.spec.containers in body must be of type array: \"null\"","reason":"Invalid","details":{"name":"srv-reservation","group":"serving.knative.dev","kind":"Service","causes":[{"reason":"FieldValueTypeInvalid","message":"Invalid value: \"null\": spec.template.spec.containers in body must be of type array: \"null\"","field":"spec.template.spec.containers"}]},"code":422}
+
+
+# --- END: seq=256 ---
+
+# --- START: seq=733 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '791994a1-c646-48e4-bd48-4fc3d046eb98', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': 'b7893084-19b7-431d-9ddc-f75ccbbac163', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'd5b7ccb8-eaf7-4ee2-b6f9-fdc0c0ff65cc', 'Date': 'Sat, 02 Aug 2025 22:21:29 GMT', 'Content-Length': '306'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: invalid value: 1000.0: spec.template.metadata.annotations.autoscaling.knative.dev/max-scale","reason":"BadRequest","code":400}
+
+
+# --- END: seq=733 ---
+
+# --- START: seq=158 ---
+{'max_throughput': 529.9, 'total_errors': 0, 'total_anomaly_count': 16, 'changed_service_anomaly_count': 1, 'service_max_cpu_usage': 0.1201800589008277, 'total_max_cpu_usage': 2.005878731787809, 'service_names': ['srv-reservation']}
+# --- END: seq=158 ---
+
+# --- START: seq=416 ---
+{'max_throughput': 534.8, 'total_errors': 2, 'total_anomaly_count': 14, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.9621025289812135, 'service_names': ['memcached-rate']}
+# --- END: seq=416 ---
+
+# --- START: seq=689 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '6012caa1-93c4-416e-be4c-3183b07a46e4', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b7893084-19b7-431d-9ddc-f75ccbbac163', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'd5b7ccb8-eaf7-4ee2-b6f9-fdc0c0ff65cc', 'Date': 'Sat, 02 Aug 2025 22:51:58 GMT', 'Content-Length': '378'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"webhook.serving.knative.dev\" denied the request: mutation failed: cannot decode incoming new object: json: cannot unmarshal string into Go struct field Container.spec.ConfigurationSpec.template.spec.PodSpec.containers.command of type []string","reason":"BadRequest","code":400}
+
+
+# --- END: seq=689 ---
+
+# --- START: seq=18 ---
+{'max_throughput': 542.2, 'total_errors': 2, 'total_anomaly_count': 23, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 2.015943957630568, 'service_names': ['memcached-reserve']}
+# --- END: seq=18 ---
+
+# --- START: seq=833 ---
+{'max_throughput': 520.1, 'total_errors': 3, 'total_anomaly_count': 23, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.9615313929935008, 'service_names': ['frontend']}
+# --- END: seq=833 ---
+

@@ -1,0 +1,65 @@
+# --- START: seq=4200 ---
+{'max_throughput': 228.1, 'total_errors': 1, 'total_anomaly_count': 3, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.7211169135623943}
+# --- END: seq=4200 ---
+
+# --- START: seq=4201 ---
+{'max_throughput': 228.1, 'total_errors': 1, 'total_anomaly_count': 3, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.2541488282695692, 'total_max_cpu_usage': 1.7211169135623943}
+# --- END: seq=4201 ---
+
+# --- START: seq=4202 ---
+{'max_throughput': 228.1, 'total_errors': 1, 'total_anomaly_count': 3, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.1732310055803978, 'total_max_cpu_usage': 1.7211169135623943}
+# --- END: seq=4202 ---
+
+# --- START: seq=4203 ---
+{'max_throughput': 228.1, 'total_errors': 1, 'total_anomaly_count': 3, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.0089738573934368, 'total_max_cpu_usage': 1.7211169135623943}
+# --- END: seq=4203 ---
+
+# --- START: seq=4204 ---
+{'max_throughput': 228.1, 'total_errors': 1, 'total_anomaly_count': 3, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.1236191238015441, 'total_max_cpu_usage': 1.7211169135623943}
+# --- END: seq=4204 ---
+
+# --- START: seq=4205 ---
+{'max_throughput': 228.1, 'total_errors': 1, 'total_anomaly_count': 3, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.7211169135623943}
+# --- END: seq=4205 ---
+
+# --- START: seq=4206 ---
+{'max_throughput': 228.1, 'total_errors': 1, 'total_anomaly_count': 3, 'changed_service_anomaly_count': 1, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.7211169135623943}
+# --- END: seq=4206 ---
+
+# --- START: seq=4207 ---
+{'max_throughput': 228.1, 'total_errors': 1, 'total_anomaly_count': 3, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.7211169135623943}
+# --- END: seq=4207 ---
+
+# --- START: seq=4208 ---
+{'max_throughput': 228.1, 'total_errors': 1, 'total_anomaly_count': 3, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.0681653894233216, 'total_max_cpu_usage': 1.7211169135623943}
+# --- END: seq=4208 ---
+
+# --- START: seq=4209 ---
+{'max_throughput': 228.1, 'total_errors': 1, 'total_anomaly_count': 3, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.0916921813760329, 'total_max_cpu_usage': 1.7211169135623943}
+# --- END: seq=4209 ---
+
+# --- START: seq=4210 ---
+{'max_throughput': 228.1, 'total_errors': 1, 'total_anomaly_count': 3, 'changed_service_anomaly_count': 1, 'service_max_cpu_usage': 1.0012865277180918, 'total_max_cpu_usage': 1.7211169135623943}
+# --- END: seq=4210 ---
+
+# --- START: seq=4211 ---
+{'max_throughput': 228.1, 'total_errors': 1, 'total_anomaly_count': 3, 'changed_service_anomaly_count': 1, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.7211169135623943}
+# --- END: seq=4211 ---
+
+# --- START: seq=44 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': 'f8bb99ff-9ac1-441c-8934-caa9decc5587', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'X-Kubernetes-Pf-Flowschema-Uid': 'b7893084-19b7-431d-9ddc-f75ccbbac163', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'd5b7ccb8-eaf7-4ee2-b6f9-fdc0c0ff65cc', 'Date': 'Fri, 01 Aug 2025 22:16:22 GMT', 'Content-Length': '262'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"config.webhook.serving.knative.dev\" denied the request: validation failed: max-scale-down-rate = 0.5, must be greater than 1.0","reason":"BadRequest","code":400}
+
+
+# --- END: seq=44 ---
+
+# --- START: seq=11 ---
+{'max_throughput': 222.3, 'total_errors': 2, 'total_anomaly_count': 15, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 1.0011988447449989, 'total_max_cpu_usage': 1.696443890923476, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=11 ---
+
+# --- START: seq=574 ---
+{'max_throughput': 227.1, 'total_errors': 1, 'total_anomaly_count': 0, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.7302050206981248, 'service_names': ['memcached-rate', 'config-autoscaler']}
+# --- END: seq=574 ---
+

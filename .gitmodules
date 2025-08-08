@@ -1,3 +1,6 @@
 [submodule "ELBD"]
 	path = ELBD
 	url = git@github.com:AXinx/ELBD.git
+[submodule "ctl"]
+	path = ctl
+	url = git@github.com:peg-danielse/ctl

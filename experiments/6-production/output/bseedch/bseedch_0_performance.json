@@ -1,0 +1,15 @@
+# --- START: seq=692 ---
+while parsing a block collection
+  in "<unicode string>", line 24, column 11:
+              - geo
+              ^
+expected <block end>, but found '?'
+  in "<unicode string>", line 25, column 11:
+              env:
+              ^
+# --- END: seq=692 ---
+
+# --- START: seq=661 ---
+{'max_throughput': 233.8, 'total_errors': 1, 'total_anomaly_count': 38, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': nan, 'service_names': ['memcached-rate']}
+# --- END: seq=661 ---
+

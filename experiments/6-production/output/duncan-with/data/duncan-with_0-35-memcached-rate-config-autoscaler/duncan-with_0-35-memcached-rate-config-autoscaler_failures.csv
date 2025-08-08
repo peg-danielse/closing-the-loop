@@ -1,0 +1,10 @@
+Method,Name,Error,Occurrences
+GET,/hotels,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to 145.100.135.11 timed out. (connect timeout=None)')",863
+GET,/hotels,HTTPError('500 Server Error: Internal Server Error for url: /hotels'),472
+GET,/recommendations,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to 145.100.135.11 timed out. (connect timeout=None)')",567
+GET,/hotels,"ConnectionRefusedError(111, 'Connection refused')",370
+POST,/reservation,"ConnectionRefusedError(111, 'Connection refused')",7
+POST,/user,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to 145.100.135.11 timed out. (connect timeout=None)')",8
+POST,/user,"ConnectionRefusedError(111, 'Connection refused')",5
+POST,/reservation,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to 145.100.135.11 timed out. (connect timeout=None)')",20
+GET,/recommendations,"ConnectionRefusedError(111, 'Connection refused')",230

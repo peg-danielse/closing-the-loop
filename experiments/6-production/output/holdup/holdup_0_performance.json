@@ -1,0 +1,105 @@
+# --- START: seq=4200 ---
+{'max_throughput': 471.5, 'total_errors': 3, 'total_anomaly_count': 30, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.8752896773127277}
+# --- END: seq=4200 ---
+
+# --- START: seq=4201 ---
+{'max_throughput': 471.5, 'total_errors': 3, 'total_anomaly_count': 30, 'changed_service_anomaly_count': 10, 'service_max_cpu_usage': 0.2994789818557965, 'total_max_cpu_usage': 1.8752896773127277}
+# --- END: seq=4201 ---
+
+# --- START: seq=4202 ---
+{'max_throughput': 471.5, 'total_errors': 3, 'total_anomaly_count': 30, 'changed_service_anomaly_count': 1, 'service_max_cpu_usage': 0.2077134611738078, 'total_max_cpu_usage': 1.8752896773127277}
+# --- END: seq=4202 ---
+
+# --- START: seq=4203 ---
+{'max_throughput': 471.5, 'total_errors': 3, 'total_anomaly_count': 30, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.0157011843478578, 'total_max_cpu_usage': 1.8752896773127277}
+# --- END: seq=4203 ---
+
+# --- START: seq=4204 ---
+{'max_throughput': 471.5, 'total_errors': 3, 'total_anomaly_count': 30, 'changed_service_anomaly_count': 1, 'service_max_cpu_usage': 0.1622133733326447, 'total_max_cpu_usage': 1.8752896773127277}
+# --- END: seq=4204 ---
+
+# --- START: seq=4205 ---
+{'max_throughput': 471.5, 'total_errors': 3, 'total_anomaly_count': 30, 'changed_service_anomaly_count': 1, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.8752896773127277}
+# --- END: seq=4205 ---
+
+# --- START: seq=4206 ---
+{'max_throughput': 471.5, 'total_errors': 3, 'total_anomaly_count': 30, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.8752896773127277}
+# --- END: seq=4206 ---
+
+# --- START: seq=4207 ---
+{'max_throughput': 471.5, 'total_errors': 3, 'total_anomaly_count': 30, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.8752896773127277}
+# --- END: seq=4207 ---
+
+# --- START: seq=4208 ---
+{'max_throughput': 471.5, 'total_errors': 3, 'total_anomaly_count': 30, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.091487069825856, 'total_max_cpu_usage': 1.8752896773127277}
+# --- END: seq=4208 ---
+
+# --- START: seq=4209 ---
+{'max_throughput': 471.5, 'total_errors': 3, 'total_anomaly_count': 30, 'changed_service_anomaly_count': 1, 'service_max_cpu_usage': 0.0976341772197892, 'total_max_cpu_usage': 1.8752896773127277}
+# --- END: seq=4209 ---
+
+# --- START: seq=4210 ---
+{'max_throughput': 471.5, 'total_errors': 3, 'total_anomaly_count': 30, 'changed_service_anomaly_count': 12, 'service_max_cpu_usage': 1.0010614295569755, 'total_max_cpu_usage': 1.8752896773127277}
+# --- END: seq=4210 ---
+
+# --- START: seq=4211 ---
+{'max_throughput': 471.5, 'total_errors': 3, 'total_anomaly_count': 30, 'changed_service_anomaly_count': 4, 'service_max_cpu_usage': -1, 'total_max_cpu_usage': 1.8752896773127277}
+# --- END: seq=4211 ---
+
+# --- START: seq=1305 ---
+{'max_throughput': 489.3, 'total_errors': 0, 'total_anomaly_count': 10, 'changed_service_anomaly_count': 6, 'service_max_cpu_usage': 0.3324748921772682, 'total_max_cpu_usage': 1.9779495858497258, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=1305 ---
+
+# --- START: seq=945 ---
+(400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Audit-Id': '538bb700-33d0-41f1-8f8b-1906d652773b', 'Cache-Control': 'no-cache, private', 'Content-Type': 'application/json', 'Warning': '299 - "Kubernetes default value is insecure, Knative may default this to secure in a future release: spec.template.spec.containers[0].securityContext.allowPrivilegeEscalation, spec.template.spec.containers[0].securityContext.capabilities, spec.template.spec.containers[0].securityContext.runAsNonRoot, spec.template.spec.containers[0].securityContext.seccompProfile"', 'X-Kubernetes-Pf-Flowschema-Uid': 'b7893084-19b7-431d-9ddc-f75ccbbac163', 'X-Kubernetes-Pf-Prioritylevel-Uid': 'd5b7ccb8-eaf7-4ee2-b6f9-fdc0c0ff65cc', 'Date': 'Sat, 02 Aug 2025 18:56:32 GMT', 'Content-Length': '335'})
+HTTP response body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"admission webhook \"validation.webhook.serving.knative.dev\" denied the request: validation failed: max-scale=2 is less than activation-scale=5: spec.template.metadata.annotations.autoscaling.knative.dev/activation-scale","reason":"BadRequest","code":400}
+
+
+# --- END: seq=945 ---
+
+# --- START: seq=338 ---
+{'max_throughput': 481.8, 'total_errors': 1, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 4.03309765228731, 'total_max_cpu_usage': 4.912450105490459, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=338 ---
+
+# --- START: seq=700 ---
+{'max_throughput': 485.2, 'total_errors': 0, 'total_anomaly_count': 1, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 4.99497834420368, 'total_max_cpu_usage': 5.785942132963827, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=700 ---
+
+# --- START: seq=1037 ---
+{'max_throughput': 473.4, 'total_errors': 2, 'total_anomaly_count': 46, 'changed_service_anomaly_count': 5, 'service_max_cpu_usage': 1.999710942719073, 'total_max_cpu_usage': 2.910314459066074, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=1037 ---
+
+# --- START: seq=1150 ---
+{'max_throughput': 478.5, 'total_errors': 1, 'total_anomaly_count': 39, 'changed_service_anomaly_count': 4, 'service_max_cpu_usage': 0.3209334751203737, 'total_max_cpu_usage': 2.393524728088592, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=1150 ---
+
+# --- START: seq=515 ---
+{'max_throughput': 483.7, 'total_errors': 0, 'total_anomaly_count': 39, 'changed_service_anomaly_count': 20, 'service_max_cpu_usage': 0.3094793431624809, 'total_max_cpu_usage': 2.5477363263303174, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=515 ---
+
+# --- START: seq=1323 ---
+{'max_throughput': 472.7, 'total_errors': 2, 'total_anomaly_count': 55, 'changed_service_anomaly_count': 8, 'service_max_cpu_usage': 0.3440096946407346, 'total_max_cpu_usage': 2.6648723742736, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=1323 ---
+
+# --- START: seq=1093 ---
+{'max_throughput': 476.4, 'total_errors': 1, 'total_anomaly_count': 33, 'changed_service_anomaly_count': 13, 'service_max_cpu_usage': 1.0014527344607973, 'total_max_cpu_usage': 1.934808170354069, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=1093 ---
+
+# --- START: seq=435 ---
+{'max_throughput': 473.1, 'total_errors': 2, 'total_anomaly_count': 29, 'changed_service_anomaly_count': 8, 'service_max_cpu_usage': 1.9123978802480588, 'total_max_cpu_usage': 2.867534881489568, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=435 ---
+
+# --- START: seq=356 ---
+{'max_throughput': 481.6, 'total_errors': 1, 'total_anomaly_count': 45, 'changed_service_anomaly_count': 21, 'service_max_cpu_usage': 2.4239693210262567, 'total_max_cpu_usage': 3.3360057332169126, 'service_names': ['srv-rate', 'config-autoscaler']}
+# --- END: seq=356 ---
+
+# --- START: seq=1142 ---
+{'max_throughput': 470.1, 'total_errors': 7, 'total_anomaly_count': 46, 'changed_service_anomaly_count': 0, 'service_max_cpu_usage': 0.3117848031171126, 'total_max_cpu_usage': 2.939828472828979, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=1142 ---
+
+# --- START: seq=865 ---
+{'max_throughput': 482.5, 'total_errors': 2, 'total_anomaly_count': 60, 'changed_service_anomaly_count': 5, 'service_max_cpu_usage': 0.3289863363997333, 'total_max_cpu_usage': 3.021674618007734, 'service_names': ['srv-search', 'config-autoscaler']}
+# --- END: seq=865 ---
+
