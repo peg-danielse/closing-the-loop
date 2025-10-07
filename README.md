@@ -1,12 +1,6 @@
 # closing-the-loop
 a repository for researching and experimenting with applying large language model (LLM) based agents to cloud-edge orchestration tooling to resolve performance anomalies.
 
-TODO: add figure to illustrate the general concept.
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-
-TODO: add figure to give an overview of the causes and mitigation tactics for performance anomalies.
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-
 # background literature
 This is an overview of the project's background literature.
 
