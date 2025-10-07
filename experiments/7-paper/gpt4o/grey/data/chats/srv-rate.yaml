@@ -1,0 +1,180 @@
+Analyse the monitoring data and provide a revised configuration that aims to resolve the anomaly, respecting the constraints and using horizontal and vertical scaling using the provided keys and values
+knative_autoscaling:
+  max_scale:
+    example_values:
+    - 0
+    - 2
+    - 5
+    - 10
+    key: autoscaling.knative.dev/max-scale
+    notes:
+    - 0 means unlimited
+    scope: service
+  max_scale_down_rate:
+    default: 2.0
+    example_values:
+    - 1.5
+    - 2.0
+    - 4.0
+    key: max-scale-down-rate
+    scope: global
+    value_type: float
+  max_scale_up_rate:
+    default: 1000.0
+    example_values:
+    - 2.0
+    - 5.0
+    - 10.0
+    key: max-scale-up-rate
+    scope: global
+    value_type: float
+  metric:
+    key: autoscaling.knative.dev/metric
+    scope: service
+    values:
+    - concurrency
+    - rps
+  min_scale:
+    default: 0
+    example_values:
+    - 0
+    - 1
+    - 2
+    key: autoscaling.knative.dev/min-scale
+    scope: service
+  panic_threshold_percentage:
+    example_values:
+    - 150.0
+    - 200.0
+    - 400.0
+    key: autoscaling.knative.dev/panic-threshold-percentage
+    range:
+    - 110.0
+    - 1000.0
+    scope: service
+  panic_window_percentage:
+    example_values:
+    - 10.0
+    - 20.0
+    - 50.0
+    key: autoscaling.knative.dev/panic-window-percentage
+    range:
+    - 1.0
+    - 100.0
+    scope: service
+  requested_cpu:
+    default: 100m
+    example_values:
+    - 100m
+    - 200m
+    - 400m
+    key: requested_cpu
+    scope: service
+    value_type: milicores
+  scale_down_delay:
+    example_values:
+    - 0s
+    - 30s
+    - 1m
+    key: autoscaling.knative.dev/scale-down-delay
+    range:
+    - 0s
+    - 1h
+    scope: service
+    value_type: duration
+  stable_window:
+    example_values:
+    - 30s
+    - 60s
+    - 120s
+    key: autoscaling.knative.dev/window
+    range:
+    - 6s
+    - 1h
+    scope: service
+    value_type: duration
+  target:
+    example_values:
+    - 50
+    - 100
+    - 150
+    - 200
+    key: autoscaling.knative.dev/target
+    scope: service
+policy_constraints:
+- All services like "memcached" and "frontend" must remain at 1 replica.
+- These services are not autoscaled.
+- If performance issues are detected on fixed-replica services, recommend vertical
+  scaling (adjust CPU/memory requests/limits).
+
+assistant
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  annotations:
+    serving.knative.dev/creator: kubernetes-admin
+    serving.knative.dev/lastModifier: system:serviceaccount:default:default
+  name: srv-rate
+  resourceVersion: '35279035'
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/activation-scale: '3'
+        autoscaling.knative.dev/initial-scale: '1'
+        autoscaling.knative.dev/max-scale: '10'
+        autoscaling.knative.dev/metric: concurrency
+        autoscaling.knative.dev/min-scale: '1'
+        autoscaling.knative.dev/panic-threshold-percentage: '200.0'
+        autoscaling.knative.dev/panic-window-percentage: '10.0'
+        autoscaling.knative.dev/scale-down-delay: 30s
+        autoscaling.knative.dev/stable-window: 60s
+        autoscaling.knative.dev/target: '50'
+        autoscaling.knative.dev/window: 30s
+    spec:
+      containers:
+      - command:
+        - rate
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-rate
+        ports:
+        - containerPort: 8084
+          name: h2c
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 200m
+
+user
+"the configuration produced the performance indicators: \n\njson``` \n\n{'timestamp':\
+  \ datetime.datetime(2025, 10, 2, 18, 27, 36, 41403, tzinfo=datetime.timezone.utc),\
+  \ 'total_requests': 92, 'mean_response_time': np.float64(19033991.13043478), 'p90_response_time':\
+  \ np.float64(37248391.90000001), 'deadline_miss_rate': 0.0, 'patterns': {'101011000011':\
+  \ {'deadline_miss_rate': 0.0, 'mean_response_time': np.float64(11854473.027777778),\
+  \ 'p90_response_time': np.float64(20306208.5)}, '111111111111': {'deadline_miss_rate':\
+  \ 0.0, 'mean_response_time': np.float64(16157550.236842105), 'p90_response_time':\
+  \ np.float64(25793905.600000005)}, '111111110111': {'deadline_miss_rate': 0.0, 'mean_response_time':\
+  \ np.float64(860320.0), 'p90_response_time': np.float64(860320.0)}, '111111100111':\
+  \ {'deadline_miss_rate': 0.0, 'mean_response_time': np.float64(12452155.75), 'p90_response_time':\
+  \ np.float64(17847320.400000002)}, '101011010011': {'deadline_miss_rate': 0.0, 'mean_response_time':\
+  \ np.float64(35614267.75), 'p90_response_time': np.float64(49339315.5)}, '101111000011':\
+  \ {'deadline_miss_rate': 0.0, 'mean_response_time': np.float64(66177956.0), 'p90_response_time':\
+  \ np.float64(66177956.0)}, '101111010011': {'deadline_miss_rate': 0.0, 'mean_response_time':\
+  \ np.float64(69251603.2), 'p90_response_time': np.float64(78001551.0)}, '111111101111':\
+  \ {'deadline_miss_rate': 0.0, 'mean_response_time': np.float64(45231096.5), 'p90_response_time':\
+  \ np.float64(63519136.9)}, '111111111011': {'deadline_miss_rate': 0.0, 'mean_response_time':\
+  \ np.float64(14355067.0), 'p90_response_time': np.float64(14355067.0)}}, 'sum_cpu_utilization':\
+  \ np.float64(0.05215039755908692), 'anomaly_count': 92, 'anomaly_rate': 100.0, 'services':\
+  \ {'srv-geo': {'anomaly_count': 1, 'anomaly_rate': 1.0869565217391304, 'cpu_utilization':\
+  \ np.float64(0.022186037236778606)}, 'srv-rate': {'anomaly_count': 0, 'anomaly_rate':\
+  \ 0.0, 'cpu_utilization': np.float64(0.000867510607206202)}, 'srv-reservation':\
+  \ {'anomaly_count': 0, 'anomaly_rate': 0.0, 'cpu_utilization': np.float64(0.005726032963423618)},\
+  \ 'srv-search': {'anomaly_count': 13, 'anomaly_rate': 14.130434782608695, 'cpu_utilization':\
+  \ np.float64(0.023370816751678496)}}, 'phase': 'evaluation', 'subphase': 'configuration_evaluation',\
+  \ 'collection_start_time': '2025-10-02T18:17:34.267151+00:00', 'collection_end_time':\
+  \ '2025-10-02T18:17:44.267151+00:00'} \n\n```\n"
+

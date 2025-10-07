@@ -1,0 +1,183 @@
+Analyse the monitoring data and provide a revised configuration that aims to resolve the anomaly, respecting the constraints and using horizontal and vertical scaling using the provided keys and values
+knative_autoscaling:
+  max_scale:
+    example_values:
+    - 0
+    - 2
+    - 5
+    - 10
+    key: autoscaling.knative.dev/max-scale
+    notes:
+    - 0 means unlimited
+    scope: service
+  max_scale_down_rate:
+    default: 2.0
+    example_values:
+    - 1.5
+    - 2.0
+    - 4.0
+    key: max-scale-down-rate
+    scope: global
+    value_type: float
+  max_scale_up_rate:
+    default: 1000.0
+    example_values:
+    - 2.0
+    - 5.0
+    - 10.0
+    key: max-scale-up-rate
+    scope: global
+    value_type: float
+  metric:
+    key: autoscaling.knative.dev/metric
+    scope: service
+    values:
+    - concurrency
+    - rps
+  min_scale:
+    default: 0
+    example_values:
+    - 0
+    - 1
+    - 2
+    key: autoscaling.knative.dev/min-scale
+    scope: service
+  panic_threshold_percentage:
+    example_values:
+    - 150.0
+    - 200.0
+    - 400.0
+    key: autoscaling.knative.dev/panic-threshold-percentage
+    range:
+    - 110.0
+    - 1000.0
+    scope: service
+  panic_window_percentage:
+    example_values:
+    - 10.0
+    - 20.0
+    - 50.0
+    key: autoscaling.knative.dev/panic-window-percentage
+    range:
+    - 1.0
+    - 100.0
+    scope: service
+  requested_cpu:
+    default: 100m
+    example_values:
+    - 100m
+    - 200m
+    - 400m
+    key: requested_cpu
+    scope: service
+    value_type: milicores
+  scale_down_delay:
+    example_values:
+    - 0s
+    - 30s
+    - 1m
+    key: autoscaling.knative.dev/scale-down-delay
+    range:
+    - 0s
+    - 1h
+    scope: service
+    value_type: duration
+  stable_window:
+    example_values:
+    - 30s
+    - 60s
+    - 120s
+    key: autoscaling.knative.dev/window
+    range:
+    - 6s
+    - 1h
+    scope: service
+    value_type: duration
+  target:
+    example_values:
+    - 50
+    - 100
+    - 150
+    - 200
+    key: autoscaling.knative.dev/target
+    scope: service
+policy_constraints:
+- All services like "memcached" and "frontend" must remain at 1 replica.
+- These services are not autoscaled.
+- If performance issues are detected on fixed-replica services, recommend vertical
+  scaling (adjust CPU/memory requests/limits).
+
+assistant
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: memcached-rate
+  name: memcached-rate
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: memcached-rate
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+        sidecar.istio.io/statsInclusionPrefixes: cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager
+        sidecar.istio.io/statsInclusionRegexps: http.*
+      creationTimestamp: null
+      labels:
+        io.kompose.service: memcached-rate
+    spec:
+      containers:
+      - env:
+        - name: MEMCACHED_CACHE_SIZE
+          value: '128'
+        - name: MEMCACHED_THREADS
+          value: '2'
+        image: memcached
+        name: hotel-reserv-rate-mmc
+        ports:
+        - containerPort: 11211
+        resources:
+          limits:
+            cpu: 2000m
+          requests:
+            cpu: 200m
+            memory: 512Mi
+      restartPolicy: Always
+status: {}
+
+user
+"the configuration produced the performance indicators: \n\njson``` \n\n{'timestamp':\
+  \ datetime.datetime(2025, 10, 7, 7, 8, 27, 289371, tzinfo=datetime.timezone.utc),\
+  \ 'total_requests': 174, 'mean_response_time': np.float64(9479817.5), 'p90_response_time':\
+  \ np.float64(14681296.400000002), 'deadline_miss_rate': 0.0, 'patterns': {'111111111111':\
+  \ {'deadline_miss_rate': 0.0, 'mean_response_time': np.float64(9637846.222222222),\
+  \ 'p90_response_time': np.float64(15192985.1)}, '101111010011': {'deadline_miss_rate':\
+  \ 0.0, 'mean_response_time': np.float64(9259209.345454546), 'p90_response_time':\
+  \ np.float64(14195840.4)}, '101111110111': {'deadline_miss_rate': 0.0, 'mean_response_time':\
+  \ np.float64(11128198.375), 'p90_response_time': np.float64(12475555.4)}, '111111011011':\
+  \ {'deadline_miss_rate': 0.0, 'mean_response_time': np.float64(6326317.0), 'p90_response_time':\
+  \ np.float64(6326317.0)}, '101011010011': {'deadline_miss_rate': 0.0, 'mean_response_time':\
+  \ np.float64(2368004.0), 'p90_response_time': np.float64(2368004.0)}, '111111011111':\
+  \ {'deadline_miss_rate': 0.0, 'mean_response_time': np.float64(1624431.0), 'p90_response_time':\
+  \ np.float64(1624431.0)}}, 'sum_cpu_utilization': np.float64(2.705333968742385),\
+  \ 'anomaly_count': 174, 'anomaly_rate': 100.0, 'services': {'srv-geo': {'anomaly_count':\
+  \ 2, 'anomaly_rate': 1.1494252873563218, 'cpu_utilization': np.float64(0.21789747189121278)},\
+  \ 'srv-profile': {'anomaly_count': 0, 'anomaly_rate': 0.0, 'cpu_utilization': np.float64(0.1050238472323195)},\
+  \ 'srv-rate': {'anomaly_count': 0, 'anomaly_rate': 0.0, 'cpu_utilization': np.float64(1.6988261054998588)},\
+  \ 'srv-recommendation': {'anomaly_count': 0, 'anomaly_rate': 0.0, 'cpu_utilization':\
+  \ 0}, 'srv-reservation': {'anomaly_count': 0, 'anomaly_rate': 0.0, 'cpu_utilization':\
+  \ np.float64(0.10958845478268088)}, 'srv-search': {'anomaly_count': 4, 'anomaly_rate':\
+  \ 2.2988505747126435, 'cpu_utilization': np.float64(0.573998089336313)}, 'srv-user':\
+  \ {'anomaly_count': 0, 'anomaly_rate': 0.0, 'cpu_utilization': 0}}, 'phase': 'evaluation',\
+  \ 'subphase': 'configuration_evaluation', 'collection_start_time': '2025-10-07T06:58:25.218330+00:00',\
+  \ 'collection_end_time': '2025-10-07T06:58:35.218330+00:00'} \n\n```\n"
+

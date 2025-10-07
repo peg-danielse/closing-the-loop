@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  enable-scale-to-zero: 'true'
+  max-scale-down-rate: '2.0'
+  max-scale-up-rate: '10.0'
+  scale-to-zero-grace-period: 30s
+  scale-to-zero-pod-retention-period: 0s
+kind: ConfigMap
+metadata:
+  name: config-autoscaler
+  namespace: knative-serving
+  resourceVersion: '35738740'

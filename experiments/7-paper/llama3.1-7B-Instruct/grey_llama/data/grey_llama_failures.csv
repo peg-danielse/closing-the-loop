@@ -1,0 +1,4 @@
+Method,Name,Error,Occurrences
+GET,/hotels,RemoteDisconnected('Remote end closed connection without response'),15218
+GET,/hotels,HTTPError('500 Server Error: Internal Server Error for url: /hotels'),529986
+GET,/hotels,"ConnectionRefusedError(111, 'Connection refused')",3

@@ -1,0 +1,261 @@
+Analyse the monitoring data and provide a revised configuration that aims to resolve the anomaly, respecting the constraints and using horizontal and vertical scaling using the provided keys and values
+knative_autoscaling:
+  max_scale:
+    example_values:
+    - 0
+    - 2
+    - 5
+    - 10
+    key: autoscaling.knative.dev/max-scale
+    notes:
+    - 0 means unlimited
+    scope: service
+  max_scale_down_rate:
+    default: 2.0
+    example_values:
+    - 1.5
+    - 2.0
+    - 4.0
+    key: max-scale-down-rate
+    scope: global
+    value_type: float
+  max_scale_up_rate:
+    default: 1000.0
+    example_values:
+    - 2.0
+    - 5.0
+    - 10.0
+    key: max-scale-up-rate
+    scope: global
+    value_type: float
+  metric:
+    key: autoscaling.knative.dev/metric
+    scope: service
+    values:
+    - concurrency
+    - rps
+  min_scale:
+    default: 0
+    example_values:
+    - 0
+    - 1
+    - 2
+    key: autoscaling.knative.dev/min-scale
+    scope: service
+  panic_threshold_percentage:
+    example_values:
+    - 150.0
+    - 200.0
+    - 400.0
+    key: autoscaling.knative.dev/panic-threshold-percentage
+    range:
+    - 110.0
+    - 1000.0
+    scope: service
+  panic_window_percentage:
+    example_values:
+    - 10.0
+    - 20.0
+    - 50.0
+    key: autoscaling.knative.dev/panic-window-percentage
+    range:
+    - 1.0
+    - 100.0
+    scope: service
+  requested_cpu:
+    default: 100m
+    example_values:
+    - 100m
+    - 200m
+    - 400m
+    key: requested_cpu
+    scope: service
+    value_type: milicores
+  scale_down_delay:
+    example_values:
+    - 0s
+    - 30s
+    - 1m
+    key: autoscaling.knative.dev/scale-down-delay
+    range:
+    - 0s
+    - 1h
+    scope: service
+    value_type: duration
+  stable_window:
+    example_values:
+    - 30s
+    - 60s
+    - 120s
+    key: autoscaling.knative.dev/window
+    range:
+    - 6s
+    - 1h
+    scope: service
+    value_type: duration
+  target:
+    example_values:
+    - 50
+    - 100
+    - 150
+    - 200
+    key: autoscaling.knative.dev/target
+    scope: service
+policy_constraints:
+- All services like "memcached" and "frontend" must remain at 1 replica.
+- These services are not autoscaled.
+- If performance issues are detected on fixed-replica services, recommend vertical
+  scaling (adjust CPU/memory requests/limits).
+
+assistant
+apiVersion: v1
+data:
+  enable-scale-to-zero: 'true'
+  max-scale-down-rate: '2.0'
+  max-scale-up-rate: '5.0'
+  scale-to-zero-grace-period: 30s
+  scale-to-zero-pod-retention-period: 0s
+kind: ConfigMap
+metadata:
+  name: config-autoscaler
+  namespace: knative-serving
+  resourceVersion: '35718670'
+
+user
+"the configuration produced the performance indicators: \n\njson``` \n\n{'timestamp':\
+  \ datetime.datetime(2025, 10, 3, 17, 9, 48, 180157, tzinfo=datetime.timezone.utc),\
+  \ 'total_requests': 98, 'mean_response_time': np.float64(8808936.775510205), 'p90_response_time':\
+  \ np.float64(30458276.1), 'deadline_miss_rate': 24.489795918367346, 'patterns':\
+  \ {'111111': {'deadline_miss_rate': 24.489795918367346, 'mean_response_time': np.float64(8808936.775510205),\
+  \ 'p90_response_time': np.float64(30458276.1)}}, 'sum_cpu_utilization': np.float64(0.6137313321217133),\
+  \ 'anomaly_count': 69, 'anomaly_rate': 70.40816326530613, 'services': {'srv-geo':\
+  \ {'anomaly_count': 0, 'anomaly_rate': 0.0, 'cpu_utilization': 0}, 'srv-profile':\
+  \ {'anomaly_count': 0, 'anomaly_rate': 0.0, 'cpu_utilization': np.float64(0.3381310033867187)},\
+  \ 'srv-rate': {'anomaly_count': 0, 'anomaly_rate': 0.0, 'cpu_utilization': 0}, 'srv-recommendation':\
+  \ {'anomaly_count': 20, 'anomaly_rate': 20.408163265306122, 'cpu_utilization': np.float64(0.2756003287349946)},\
+  \ 'srv-reservation': {'anomaly_count': 0, 'anomaly_rate': 0.0, 'cpu_utilization':\
+  \ 0}, 'srv-search': {'anomaly_count': 0, 'anomaly_rate': 0.0, 'cpu_utilization':\
+  \ 0}}, 'phase': 'evaluation', 'subphase': 'configuration_evaluation', 'collection_start_time':\
+  \ '2025-10-03T16:59:45.866326+00:00', 'collection_end_time': '2025-10-03T16:59:55.866326+00:00'}\
+  \ \n\n```\n"
+
+assistant
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  annotations:
+    serving.knative.dev/creator: kubernetes-admin
+    serving.knative.dev/lastModifier: system:serviceaccount:default:default
+  name: srv-recommendation
+  resourceVersion: '35720352'
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/activation-scale: '3'
+        autoscaling.knative.dev/initial-scale: '1'
+        autoscaling.knative.dev/max-scale: '5'
+        autoscaling.knative.dev/metric: concurrency
+        autoscaling.knative.dev/min-scale: '1'
+        autoscaling.knative.dev/panic-threshold-percentage: '200.0'
+        autoscaling.knative.dev/panic-window-percentage: '10.0'
+        autoscaling.knative.dev/scale-down-delay: 30s
+        autoscaling.knative.dev/stable-window: 30s
+        autoscaling.knative.dev/target: '50'
+        autoscaling.knative.dev/window: 30s
+    spec:
+      containers:
+      - command:
+        - recommendation
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-recommendation
+        ports:
+        - containerPort: 8085
+          name: h2c
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 200m
+
+user
+"the configuration produced the performance indicators: \n\njson``` \n\n{'timestamp':\
+  \ datetime.datetime(2025, 10, 3, 17, 28, 50, 273671, tzinfo=datetime.timezone.utc),\
+  \ 'total_requests': 150, 'mean_response_time': np.float64(4600885.4), 'p90_response_time':\
+  \ np.float64(6669256.6), 'deadline_miss_rate': 4.0, 'patterns': {'111111': {'deadline_miss_rate':\
+  \ 4.0, 'mean_response_time': np.float64(4600885.4), 'p90_response_time': np.float64(6669256.6)}},\
+  \ 'sum_cpu_utilization': np.float64(0.7703002725290826), 'anomaly_count': 125, 'anomaly_rate':\
+  \ 83.33333333333334, 'services': {'srv-geo': {'anomaly_count': 0, 'anomaly_rate':\
+  \ 0.0, 'cpu_utilization': 0}, 'srv-profile': {'anomaly_count': 0, 'anomaly_rate':\
+  \ 0.0, 'cpu_utilization': np.float64(0.41532037374216707)}, 'srv-rate': {'anomaly_count':\
+  \ 0, 'anomaly_rate': 0.0, 'cpu_utilization': 0}, 'srv-recommendation': {'anomaly_count':\
+  \ 36, 'anomaly_rate': 24.0, 'cpu_utilization': np.float64(0.35497989878691555)},\
+  \ 'srv-reservation': {'anomaly_count': 0, 'anomaly_rate': 0.0, 'cpu_utilization':\
+  \ 0}, 'srv-search': {'anomaly_count': 0, 'anomaly_rate': 0.0, 'cpu_utilization':\
+  \ 0}}, 'phase': 'evaluation', 'subphase': 'configuration_evaluation', 'collection_start_time':\
+  \ '2025-10-03T17:18:48.279280+00:00', 'collection_end_time': '2025-10-03T17:18:58.279280+00:00'}\
+  \ \n\n```\n"
+
+assistant
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  annotations:
+    serving.knative.dev/creator: kubernetes-admin
+    serving.knative.dev/lastModifier: system:serviceaccount:default:default
+  name: srv-recommendation
+  resourceVersion: '35725954'
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/activation-scale: '3'
+        autoscaling.knative.dev/initial-scale: '1'
+        autoscaling.knative.dev/max-scale: '5'
+        autoscaling.knative.dev/metric: concurrency
+        autoscaling.knative.dev/min-scale: '1'
+        autoscaling.knative.dev/panic-threshold-percentage: '200.0'
+        autoscaling.knative.dev/panic-window-percentage: '10.0'
+        autoscaling.knative.dev/scale-down-delay: 30s
+        autoscaling.knative.dev/stable-window: 30s
+        autoscaling.knative.dev/target: '50'
+        autoscaling.knative.dev/window: 30s
+    spec:
+      containers:
+      - command:
+        - recommendation
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-recommendation
+        ports:
+        - containerPort: 8085
+          name: h2c
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 200m
+
+user
+"the configuration produced the performance indicators: \n\njson``` \n\n{'timestamp':\
+  \ datetime.datetime(2025, 10, 3, 17, 48, 19, 680672, tzinfo=datetime.timezone.utc),\
+  \ 'total_requests': 170, 'mean_response_time': np.float64(7564044.005882353), 'p90_response_time':\
+  \ np.float64(9132824.4), 'deadline_miss_rate': 2.941176470588235, 'patterns': {'111111':\
+  \ {'deadline_miss_rate': 2.941176470588235, 'mean_response_time': np.float64(7564044.005882353),\
+  \ 'p90_response_time': np.float64(9132824.4)}}, 'sum_cpu_utilization': np.float64(0.6597175397452579),\
+  \ 'anomaly_count': 155, 'anomaly_rate': 91.17647058823529, 'services': {'srv-geo':\
+  \ {'anomaly_count': 0, 'anomaly_rate': 0.0, 'cpu_utilization': 0}, 'srv-profile':\
+  \ {'anomaly_count': 0, 'anomaly_rate': 0.0, 'cpu_utilization': np.float64(0.39683529155883573)},\
+  \ 'srv-rate': {'anomaly_count': 0, 'anomaly_rate': 0.0, 'cpu_utilization': 0}, 'srv-recommendation':\
+  \ {'anomaly_count': 50, 'anomaly_rate': 29.411764705882355, 'cpu_utilization': np.float64(0.26288224818642214)},\
+  \ 'srv-reservation': {'anomaly_count': 0, 'anomaly_rate': 0.0, 'cpu_utilization':\
+  \ 0}, 'srv-search': {'anomaly_count': 0, 'anomaly_rate': 0.0, 'cpu_utilization':\
+  \ 0}}, 'phase': 'evaluation', 'subphase': 'configuration_evaluation', 'collection_start_time':\
+  \ '2025-10-03T17:38:16.570765+00:00', 'collection_end_time': '2025-10-03T17:38:26.570765+00:00'}\
+  \ \n\n```\n"
+

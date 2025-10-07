@@ -1,0 +1,6 @@
+Method,Name,Error,Occurrences
+GET,/hotels,RemoteDisconnected('Remote end closed connection without response'),13613
+GET,/hotels,"ConnectionResetError(104, 'Connection reset by peer')",2562
+GET,/hotels,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to 145.100.135.11 timed out. (connect timeout=None)')",199
+GET,/hotels,HTTPError('500 Server Error: Internal Server Error for url: /hotels'),947767
+GET,/hotels,"ConnectionRefusedError(111, 'Connection refused')",2422

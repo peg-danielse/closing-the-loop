@@ -1,0 +1,28 @@
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: frontend-hpa
+spec:
+  behavior:
+    scaleDown:
+      policies:
+      - periodSeconds: 300
+        type: Percent
+        value: 100
+      stabilizationWindowSeconds: 300
+  maxReplicas: 1
+  metrics:
+  - resource:
+      name: cpu
+      target:
+        averageUtilization: 50
+        type: Utilization
+    type: Resource
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: frontend
+  selector:
+    matchLabels:
+      io.kompose.service: frontend

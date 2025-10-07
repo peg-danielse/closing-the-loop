@@ -1,0 +1,13 @@
+apiVersion: autoscaling.knative.dev/v1alpha1
+kind: Configuration
+metadata:
+  name: frontend-autoscaler
+spec:
+  maxScale: 10
+  metric: concurrency
+  minScale: 1
+  panicThresholdPercentage: 200.0
+  panicWindowPercentage: 20.0
+  scaleDownDelay: 30s
+  stableWindow: 60s
+  target: 200

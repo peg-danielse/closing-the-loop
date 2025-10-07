@@ -1,0 +1,5376 @@
+[
+  {
+    "timestamp": "2025-10-07 06:06:54.154321+00:00",
+    "total_requests": 127,
+    "mean_response_time": 15324044.606299212,
+    "p90_response_time": 34319929.2,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 16194638.55670103,
+        "p90_response_time": 34319929.2
+      },
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 11723478.80952381,
+        "p90_response_time": 26194725.0
+      },
+      "111111101111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 16900645.0,
+        "p90_response_time": 33138987.400000002
+      },
+      "101011010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 19028255.0,
+        "p90_response_time": 23105043.6
+      },
+      "100011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1132857.5,
+        "p90_response_time": 1432833.1
+      }
+    },
+    "sum_cpu_utilization": 0.6297422138062497,
+    "anomaly_count": 116,
+    "anomaly_rate": 91.33858267716536,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 2,
+        "anomaly_rate": 1.574803149606299,
+        "cpu_utilization": 0.1475023780031375
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.028608207915700106
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.11208054675367712
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.16382634491427828
+      },
+      "srv-search": {
+        "anomaly_count": 13,
+        "anomaly_rate": 10.236220472440944,
+        "cpu_utilization": 0.1777247362194567
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:05:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:06:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search"
+    ],
+    "trace_count": 127,
+    "metrics_config_count": 6
+  },
+  {
+    "timestamp": "2025-10-07 06:07:53.976029+00:00",
+    "total_requests": 90,
+    "mean_response_time": 42576466.54444444,
+    "p90_response_time": 78503704.7,
+    "deadline_miss_rate": 4.5036764705882355,
+    "patterns": {
+      "100011000011": {
+        "deadline_miss_rate": 17.647058823529413,
+        "mean_response_time": 33588718.35294118,
+        "p90_response_time": 156952626.8
+      },
+      "101011000011": {
+        "deadline_miss_rate": 9.375,
+        "mean_response_time": 30532945.84375,
+        "p90_response_time": 118067454.80000001
+      },
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 29997445.636363637,
+        "p90_response_time": 62492881.0
+      },
+      "000011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 69778661.03703703,
+        "p90_response_time": 77856007.4
+      },
+      "101011010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 24214113.0,
+        "p90_response_time": 26131233.0
+      },
+      "111111011111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 21395534.0,
+        "p90_response_time": 21395534.0
+      }
+    },
+    "sum_cpu_utilization": 0.6192742282740211,
+    "anomaly_count": 79,
+    "anomaly_rate": 87.77777777777777,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 1,
+        "anomaly_rate": 1.1111111111111112,
+        "cpu_utilization": 0.1465823647240116
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.02055116173922463
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.14596210797057102
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0837989368705325
+      },
+      "srv-search": {
+        "anomaly_count": 43,
+        "anomaly_rate": 47.77777777777778,
+        "cpu_utilization": 0.22237965696968137
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:06:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:07:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search"
+    ],
+    "trace_count": 90,
+    "metrics_config_count": 6
+  },
+  {
+    "timestamp": "2025-10-07 06:08:53.839270+00:00",
+    "total_requests": 93,
+    "mean_response_time": 4898277.075268817,
+    "p90_response_time": 9628499.6,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4169932.0,
+        "p90_response_time": 9022567.0
+      },
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 5088419.704225352,
+        "p90_response_time": 9651341.0
+      },
+      "100011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 860471.5,
+        "p90_response_time": 864685.5
+      },
+      "111111101111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4212170.0,
+        "p90_response_time": 6398554.0
+      },
+      "101011010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 13227842.0,
+        "p90_response_time": 13227842.0
+      }
+    },
+    "sum_cpu_utilization": 0.3408736089129504,
+    "anomaly_count": 72,
+    "anomaly_rate": 77.41935483870968,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.06314242077309541
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0119914253331748
+      },
+      "srv-rate": {
+        "anomaly_count": 2,
+        "anomaly_rate": 2.1505376344086025,
+        "cpu_utilization": 0.09929657744637455
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.04270128438808682
+      },
+      "srv-search": {
+        "anomaly_count": 31,
+        "anomaly_rate": 33.33333333333333,
+        "cpu_utilization": 0.12374190097221877
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:07:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:08:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search"
+    ],
+    "trace_count": 93,
+    "metrics_config_count": 6
+  },
+  {
+    "timestamp": "2025-10-07 06:09:53.737078+00:00",
+    "total_requests": 46,
+    "mean_response_time": 63099412.56521739,
+    "p90_response_time": 294824460.0,
+    "deadline_miss_rate": 50.0,
+    "patterns": {
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6491083.068965517,
+        "p90_response_time": 22184207.4
+      },
+      "111111111111": {
+        "deadline_miss_rate": 50.0,
+        "mean_response_time": 151418942.4375,
+        "p90_response_time": 295383720.0
+      },
+      "111111101111": {
+        "deadline_miss_rate": 100.0,
+        "mean_response_time": 291628490.0,
+        "p90_response_time": 291628490.0
+      }
+    },
+    "sum_cpu_utilization": 0.2979044215271434,
+    "anomaly_count": 42,
+    "anomaly_rate": 91.30434782608695,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.06688906336333318
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.007434357186602029
+      },
+      "srv-rate": {
+        "anomaly_count": 1,
+        "anomaly_rate": 2.1739130434782608,
+        "cpu_utilization": 0.09471128106541968
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.04088547352912757
+      },
+      "srv-search": {
+        "anomaly_count": 14,
+        "anomaly_rate": 30.434782608695656,
+        "cpu_utilization": 0.08798424638266093
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:08:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:09:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search"
+    ],
+    "trace_count": 46,
+    "metrics_config_count": 6
+  },
+  {
+    "timestamp": "2025-10-07 06:10:54.069724+00:00",
+    "total_requests": 270,
+    "mean_response_time": 3205481.6074074074,
+    "p90_response_time": 8133360.899999995,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3576611.272727273,
+        "p90_response_time": 8906847.8
+      },
+      "001111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1854759.95,
+        "p90_response_time": 5153672.800000003
+      },
+      "101111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6682681.0,
+        "p90_response_time": 6682681.0
+      }
+    },
+    "sum_cpu_utilization": 0.6054920370635455,
+    "anomaly_count": 144,
+    "anomaly_rate": 53.333333333333336,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 4,
+        "anomaly_rate": 1.4814814814814816,
+        "cpu_utilization": 0.189868497580778
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.00847361345332921
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.09787576841665399
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.02681346126097467
+      },
+      "srv-search": {
+        "anomaly_count": 62,
+        "anomaly_rate": 22.962962962962962,
+        "cpu_utilization": 0.2824606963518097
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:09:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:10:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search"
+    ],
+    "trace_count": 270,
+    "metrics_config_count": 6
+  },
+  {
+    "timestamp": "2025-10-07 06:12:53.719891+00:00",
+    "total_requests": 96,
+    "mean_response_time": 25215062.96875,
+    "p90_response_time": 53268751.5,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "11011011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 26921413.64935065,
+        "p90_response_time": 55112598.4
+      },
+      "11010111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 16629749.6,
+        "p90_response_time": 37238998.9
+      },
+      "11011111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 29722722.25,
+        "p90_response_time": 32484862.3
+      },
+      "11111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 15326252.0,
+        "p90_response_time": 15326252.0
+      },
+      "11010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 5449831.0,
+        "p90_response_time": 7908014.2
+      },
+      "11111011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 30833064.0,
+        "p90_response_time": 30833064.0
+      }
+    },
+    "sum_cpu_utilization": 0.2253374935541548,
+    "anomaly_count": 87,
+    "anomaly_rate": 90.625,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.04397999194876086
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0010654804455554844
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.06685298873270702
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.016861618065851527
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-search": {
+        "anomaly_count": 18,
+        "anomaly_rate": 18.75,
+        "cpu_utilization": 0.0965774143612799
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:11:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:12:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search"
+    ],
+    "trace_count": 96,
+    "metrics_config_count": 6
+  },
+  {
+    "timestamp": "2025-10-07 06:13:53.446646+00:00",
+    "total_requests": 8,
+    "mean_response_time": 79849763.625,
+    "p90_response_time": 124694103.3,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 35913235.5,
+        "p90_response_time": 53750057.7
+      },
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 123394573.0,
+        "p90_response_time": 124398805.8
+      },
+      "111111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 124961448.0,
+        "p90_response_time": 124961448.0
+      }
+    },
+    "sum_cpu_utilization": 0.28441607699069493,
+    "anomaly_count": 8,
+    "anomaly_rate": 100.0,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.05006854478452845
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0030424615061143264
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.06817439563563707
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.009184910842547576
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.019376693022901514
+      },
+      "srv-search": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.11352692146037971
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.021042149738586334
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:12:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:13:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 8,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:14:54.235013+00:00",
+    "total_requests": 4,
+    "mean_response_time": 128150717.0,
+    "p90_response_time": 201236050.60000002,
+    "deadline_miss_rate": 50.0,
+    "patterns": {
+      "111111": {
+        "deadline_miss_rate": 50.0,
+        "mean_response_time": 128150717.0,
+        "p90_response_time": 201236050.60000002
+      }
+    },
+    "sum_cpu_utilization": 0.1762985210136157,
+    "anomaly_count": 4,
+    "anomaly_rate": 100.0,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.038089964531822666
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.003741046712576797
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.03859850929132601
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0001782058830543243
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.012252609731296897
+      },
+      "srv-search": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.07449377434970209
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.008944410513836933
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:13:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:14:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 4,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:15:53.870000+00:00",
+    "total_requests": 8,
+    "mean_response_time": 35916421.625,
+    "p90_response_time": 95700084.8,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 35916421.625,
+        "p90_response_time": 95700084.8
+      }
+    },
+    "sum_cpu_utilization": 0.18014999344823684,
+    "anomaly_count": 8,
+    "anomaly_rate": 100.0,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.041448329965517096
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0007339634439606219
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.03942030957298343
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.014086552880940987
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0009683215201232625
+      },
+      "srv-search": {
+        "anomaly_count": 3,
+        "anomaly_rate": 37.5,
+        "cpu_utilization": 0.08316321333451347
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0003293027301979991
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "stabilization",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:14:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:15:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 8,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:16:53.679810+00:00",
+    "total_requests": 9,
+    "mean_response_time": 82318496.1111111,
+    "p90_response_time": 120965181.2,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 82318496.1111111,
+        "p90_response_time": 120965181.2
+      }
+    },
+    "sum_cpu_utilization": 0.1268991196399423,
+    "anomaly_count": 9,
+    "anomaly_rate": 100.0,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.020093539379040896
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.04731238567789046
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.008382095059139892
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.00014729678701089175
+      },
+      "srv-search": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.05096380273686015
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "stabilization",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:15:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:16:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 9,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:17:54.159678+00:00",
+    "total_requests": 109,
+    "mean_response_time": 68911968.24770643,
+    "p90_response_time": 93734209.2,
+    "deadline_miss_rate": 12.5,
+    "patterns": {
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 60984778.97087379,
+        "p90_response_time": 93447984.4
+      },
+      "111111111111": {
+        "deadline_miss_rate": 50.0,
+        "mean_response_time": 287493762.25,
+        "p90_response_time": 524751084.7
+      },
+      "101011010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 78865587.0,
+        "p90_response_time": 78865587.0
+      },
+      "100010000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1131669.0,
+        "p90_response_time": 1131669.0
+      }
+    },
+    "sum_cpu_utilization": 0.22540586288459233,
+    "anomaly_count": 87,
+    "anomaly_rate": 79.81651376146789,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 3,
+        "anomaly_rate": 2.7522935779816518,
+        "cpu_utilization": 0.04641373085916783
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.005328167094696294
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.06369928743604983
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.011641220222608939
+      },
+      "srv-search": {
+        "anomaly_count": 1,
+        "anomaly_rate": 0.9174311926605505,
+        "cpu_utilization": 0.09832345727206945
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "stabilization",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:16:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:17:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 109,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:18:54.734746+00:00",
+    "total_requests": 302,
+    "mean_response_time": 5626547.281456954,
+    "p90_response_time": 14865007.100000003,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 5486792.781818182,
+        "p90_response_time": 14831875.399999999
+      },
+      "111111101111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6495283.2,
+        "p90_response_time": 15776080.600000001
+      },
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 7150310.578947368,
+        "p90_response_time": 14815752.799999999
+      },
+      "101111000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4683521.0,
+        "p90_response_time": 5130615.4
+      },
+      "101011010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 12649905.0,
+        "p90_response_time": 12649905.0
+      }
+    },
+    "sum_cpu_utilization": 0.9286924973624758,
+    "anomaly_count": 157,
+    "anomaly_rate": 51.98675496688742,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 2,
+        "anomaly_rate": 0.6622516556291391,
+        "cpu_utilization": 0.20497130907950398
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.021153491411165643
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.1835032971273645
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.06286122097402316
+      },
+      "srv-search": {
+        "anomaly_count": 42,
+        "anomaly_rate": 13.90728476821192,
+        "cpu_utilization": 0.4562031787704186
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "stabilization",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:17:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:18:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 302,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:19:54.097443+00:00",
+    "total_requests": 53,
+    "mean_response_time": 114166609.73584905,
+    "p90_response_time": 170746904.2,
+    "deadline_miss_rate": 48.1029810298103,
+    "patterns": {
+      "101011000011": {
+        "deadline_miss_rate": 60.97560975609756,
+        "mean_response_time": 117332484.97560975,
+        "p90_response_time": 170786488.0
+      },
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 63592543.833333336,
+        "p90_response_time": 111250139.5
+      },
+      "111111101111": {
+        "deadline_miss_rate": 83.33333333333334,
+        "mean_response_time": 143107194.83333334,
+        "p90_response_time": 170648717.0
+      }
+    },
+    "sum_cpu_utilization": 0.5528168150058923,
+    "anomaly_count": 50,
+    "anomaly_rate": 94.33962264150944,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.12125985549136985
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.011261169166883661
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.10144968245695737
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.055666916210494834
+      },
+      "srv-search": {
+        "anomaly_count": 1,
+        "anomaly_rate": 1.8867924528301887,
+        "cpu_utilization": 0.26317919168018655
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "stabilization",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:18:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:19:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 53,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:20:53.919438+00:00",
+    "total_requests": 11,
+    "mean_response_time": 64025858.45454545,
+    "p90_response_time": 88522629.0,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 64025858.45454545,
+        "p90_response_time": 88522629.0
+      }
+    },
+    "sum_cpu_utilization": 0.279174724193571,
+    "anomaly_count": 11,
+    "anomaly_rate": 100.0,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.04865011195847307
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.008177503216297467
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.06922326349474146
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.04053022406318756
+      },
+      "srv-search": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.11259362146087139
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:19:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:20:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 11,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:21:53.639502+00:00",
+    "total_requests": 16,
+    "mean_response_time": 87816239.5,
+    "p90_response_time": 326239777.0,
+    "deadline_miss_rate": 12.0,
+    "patterns": {
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 28355629.75,
+        "p90_response_time": 40542544.4
+      },
+      "111111101111": {
+        "deadline_miss_rate": 60.0,
+        "mean_response_time": 205924660.0,
+        "p90_response_time": 329431485.8
+      },
+      "000011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 32130317.0,
+        "p90_response_time": 32130317.0
+      },
+      "100011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 34537965.25,
+        "p90_response_time": 41666719.800000004
+      },
+      "101011010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 45865917.5,
+        "p90_response_time": 58089085.9
+      }
+    },
+    "sum_cpu_utilization": 0.2919530033179125,
+    "anomaly_count": 15,
+    "anomaly_rate": 93.75,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0500122689294468
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.005992879125805997
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.10105060122488632
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.019805883296768877
+      },
+      "srv-search": {
+        "anomaly_count": 7,
+        "anomaly_rate": 43.75,
+        "cpu_utilization": 0.11509137074100449
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:20:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:21:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 16,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:22:54.178657+00:00",
+    "total_requests": 84,
+    "mean_response_time": 107169.27380952382,
+    "p90_response_time": 306415.7,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 108658.18518518518,
+        "p90_response_time": 309992.0
+      },
+      "101111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 66968.66666666667,
+        "p90_response_time": 138941.4
+      }
+    },
+    "sum_cpu_utilization": 0.21432792374568166,
+    "anomaly_count": 0,
+    "anomaly_rate": 0.0,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0471007628495608
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.003544569013465506
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.05057103907942243
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.008690546717597426
+      },
+      "srv-search": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.1044210060856355
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:21:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:22:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 84,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:23:54.292589+00:00",
+    "total_requests": 389,
+    "mean_response_time": 769284.3933161953,
+    "p90_response_time": 317038.39999999997,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 613755.1372031663,
+        "p90_response_time": 291559.39999999997
+      },
+      "100011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6874423.0,
+        "p90_response_time": 6874423.0
+      },
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6640445.444444444,
+        "p90_response_time": 12318319.0
+      }
+    },
+    "sum_cpu_utilization": 0.9005605989477796,
+    "anomaly_count": 31,
+    "anomaly_rate": 7.969151670951156,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 1,
+        "anomaly_rate": 0.2570694087403599,
+        "cpu_utilization": 0.2594023481268552
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.005284024473473669
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.049416732461200895
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.023551821255976005
+      },
+      "srv-search": {
+        "anomaly_count": 6,
+        "anomaly_rate": 1.5424164524421593,
+        "cpu_utilization": 0.5629056726302739
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:22:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:23:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 389,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:24:54.597964+00:00",
+    "total_requests": 338,
+    "mean_response_time": 1168702.9763313609,
+    "p90_response_time": 2102202.000000005,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1026252.1501501502,
+        "p90_response_time": 1394165.0000000026
+      },
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6996721.25,
+        "p90_response_time": 11036584.4
+      },
+      "101011010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 25292755.0,
+        "p90_response_time": 25292755.0
+      }
+    },
+    "sum_cpu_utilization": 1.3269366252437387,
+    "anomaly_count": 39,
+    "anomaly_rate": 11.538461538461538,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.3939131715740303
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.008500957304664573
+      },
+      "srv-rate": {
+        "anomaly_count": 1,
+        "anomaly_rate": 0.2958579881656805,
+        "cpu_utilization": 0.06485926041797938
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.03999548879798713
+      },
+      "srv-search": {
+        "anomaly_count": 14,
+        "anomaly_rate": 4.142011834319527,
+        "cpu_utilization": 0.8196677471490774
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:23:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:24:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 338,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:25:53.753794+00:00",
+    "total_requests": 4,
+    "mean_response_time": 27203736.0,
+    "p90_response_time": 49264148.800000004,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 27203736.0,
+        "p90_response_time": 49264148.800000004
+      }
+    },
+    "sum_cpu_utilization": 0.660716172540042,
+    "anomaly_count": 4,
+    "anomaly_rate": 100.0,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.19665808089042366
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0013040471278458487
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.04804811430826631
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.003457285978202041
+      },
+      "srv-search": {
+        "anomaly_count": 1,
+        "anomaly_rate": 25.0,
+        "cpu_utilization": 0.41124864423530416
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:24:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:25:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 4,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:26:54.022249+00:00",
+    "total_requests": 2,
+    "mean_response_time": 119251448.0,
+    "p90_response_time": 146832882.4,
+    "deadline_miss_rate": 50.0,
+    "patterns": {
+      "111111": {
+        "deadline_miss_rate": 50.0,
+        "mean_response_time": 119251448.0,
+        "p90_response_time": 146832882.4
+      }
+    },
+    "sum_cpu_utilization": 0.09947954741771926,
+    "anomaly_count": 2,
+    "anomaly_rate": 100.0,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.015276020482911098
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.00019346229314421006
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.05524512844171115
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.00016529271375679395
+      },
+      "srv-search": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.028599643486196022
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:25:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:26:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 2,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:27:53.639088+00:00",
+    "total_requests": 6,
+    "mean_response_time": 69040241.83333333,
+    "p90_response_time": 103339084.5,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 69040241.83333333,
+        "p90_response_time": 103339084.5
+      }
+    },
+    "sum_cpu_utilization": 0.12424022722584688,
+    "anomaly_count": 6,
+    "anomaly_rate": 100.0,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.019721492907995096
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.05440614155150913
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-search": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.050112592766342653
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:26:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:27:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 6,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:28:53.861898+00:00",
+    "total_requests": 48,
+    "mean_response_time": 110152502.72916667,
+    "p90_response_time": 324896817.7000034,
+    "deadline_miss_rate": 60.0,
+    "patterns": {
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 19471862.0,
+        "p90_response_time": 64580884.599999994
+      },
+      "111111111111": {
+        "deadline_miss_rate": 80.0,
+        "mean_response_time": 715935045.4,
+        "p90_response_time": 891525393.8
+      },
+      "111111101111": {
+        "deadline_miss_rate": 100.0,
+        "mean_response_time": 889826700.0,
+        "p90_response_time": 889826700.0
+      }
+    },
+    "sum_cpu_utilization": 0.24983654949875284,
+    "anomaly_count": 48,
+    "anomaly_rate": 100.0,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.039082840363217804
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.009249892713082105
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.06395151355383738
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.051892007124417557
+      },
+      "srv-search": {
+        "anomaly_count": 15,
+        "anomaly_rate": 31.25,
+        "cpu_utilization": 0.085660295744198
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:27:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:28:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-reservation",
+      "srv-search"
+    ],
+    "trace_count": 48,
+    "metrics_config_count": 5
+  },
+  {
+    "timestamp": "2025-10-07 06:29:54.218805+00:00",
+    "total_requests": 125,
+    "mean_response_time": 66098147.208,
+    "p90_response_time": 169045489.2,
+    "deadline_miss_rate": 12.601626016260163,
+    "patterns": {
+      "101011000011": {
+        "deadline_miss_rate": 25.203252032520325,
+        "mean_response_time": 64940565.56097561,
+        "p90_response_time": 169052681.6
+      },
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 137289418.5,
+        "p90_response_time": 139023486.1
+      }
+    },
+    "sum_cpu_utilization": 0.4237698047410553,
+    "anomaly_count": 69,
+    "anomaly_rate": 55.2,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 2,
+        "anomaly_rate": 1.6,
+        "cpu_utilization": 0.0946220094741673
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.010836135000450688
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.07379719513500188
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0426809179379325
+      },
+      "srv-search": {
+        "anomaly_count": 1,
+        "anomaly_rate": 0.8,
+        "cpu_utilization": 0.2018335471935029
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:28:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:29:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-reservation",
+      "srv-search"
+    ],
+    "trace_count": 125,
+    "metrics_config_count": 5
+  },
+  {
+    "timestamp": "2025-10-07 06:30:59.700194+00:00",
+    "total_requests": 772,
+    "mean_response_time": 155966.84326424872,
+    "p90_response_time": 448424.1999999999,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 156509.73602080625,
+        "p90_response_time": 450298.4000000004
+      },
+      "101111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 10273.0,
+        "p90_response_time": 10273.0
+      },
+      "001111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 20071.5,
+        "p90_response_time": 27481.5
+      }
+    },
+    "sum_cpu_utilization": 1.0307856321406104,
+    "anomaly_count": 16,
+    "anomaly_rate": 2.072538860103627,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 5,
+        "anomaly_rate": 0.6476683937823834,
+        "cpu_utilization": 0.3253712238281411
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.003938000174979636
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.03042437434066895
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.011377487464810813
+      },
+      "srv-search": {
+        "anomaly_count": 1,
+        "anomaly_rate": 0.1295336787564767,
+        "cpu_utilization": 0.6596745463320097
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:29:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:30:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-reservation",
+      "srv-search"
+    ],
+    "trace_count": 772,
+    "metrics_config_count": 5
+  },
+  {
+    "timestamp": "2025-10-07 06:31:54.481142+00:00",
+    "total_requests": 508,
+    "mean_response_time": 1918025.6062992127,
+    "p90_response_time": 596223.6000000001,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1819505.641025641,
+        "p90_response_time": 588514.8000000003
+      },
+      "101111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 51867648.0,
+        "p90_response_time": 51867648.0
+      }
+    },
+    "sum_cpu_utilization": 1.5842934592215434,
+    "anomaly_count": 33,
+    "anomaly_rate": 6.496062992125983,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 3,
+        "anomaly_rate": 0.5905511811023622,
+        "cpu_utilization": 0.5478863691569251
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-rate": {
+        "anomaly_count": 1,
+        "anomaly_rate": 0.19685039370078738,
+        "cpu_utilization": 0.023442184068363806
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-search": {
+        "anomaly_count": 4,
+        "anomaly_rate": 0.7874015748031495,
+        "cpu_utilization": 1.0129649059962544
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:30:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:31:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-reservation",
+      "srv-search"
+    ],
+    "trace_count": 508,
+    "metrics_config_count": 5
+  },
+  {
+    "timestamp": "2025-10-07 06:32:54.719622+00:00",
+    "total_requests": 4,
+    "mean_response_time": 84884567.0,
+    "p90_response_time": 126161846.30000001,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 84884567.0,
+        "p90_response_time": 126161846.30000001
+      }
+    },
+    "sum_cpu_utilization": 0.34341869830523125,
+    "anomaly_count": 4,
+    "anomaly_rate": 100.0,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.1027399540396433
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.04804465055241458
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-search": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.19263409371317336
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:31:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:32:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-reservation",
+      "srv-search"
+    ],
+    "trace_count": 4,
+    "metrics_config_count": 5
+  },
+  {
+    "timestamp": "2025-10-07 06:33:54.128117+00:00",
+    "total_requests": 12,
+    "mean_response_time": 100241175.75,
+    "p90_response_time": 177100053.5,
+    "deadline_miss_rate": 59.09090909090909,
+    "patterns": {
+      "101011000011": {
+        "deadline_miss_rate": 18.181818181818183,
+        "mean_response_time": 59368928.72727273,
+        "p90_response_time": 168463820.0
+      },
+      "111111111111": {
+        "deadline_miss_rate": 100.0,
+        "mean_response_time": 549835893.0,
+        "p90_response_time": 549835893.0
+      }
+    },
+    "sum_cpu_utilization": 0.16284886726925732,
+    "anomaly_count": 12,
+    "anomaly_rate": 100.0,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.046321769709088266
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.05259886020183038
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-search": {
+        "anomaly_count": 1,
+        "anomaly_rate": 8.333333333333332,
+        "cpu_utilization": 0.06392823735833866
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:32:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:33:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 12,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:34:54.223136+00:00",
+    "total_requests": 76,
+    "mean_response_time": 43976574.64473684,
+    "p90_response_time": 148015758.0,
+    "deadline_miss_rate": 16.99346405228758,
+    "patterns": {
+      "101011000011": {
+        "deadline_miss_rate": 1.9607843137254901,
+        "mean_response_time": 16757039.509803921,
+        "p90_response_time": 77632297.0
+      },
+      "000011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 61820214.538461536,
+        "p90_response_time": 73549250.0
+      },
+      "111111110111": {
+        "deadline_miss_rate": 100.0,
+        "mean_response_time": 189548959.66666666,
+        "p90_response_time": 192326701.8
+      },
+      "101111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 86516537.0,
+        "p90_response_time": 86516537.0
+      },
+      "100011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 146839414.85714287,
+        "p90_response_time": 148424372.8
+      },
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 908549.0,
+        "p90_response_time": 908549.0
+      }
+    },
+    "sum_cpu_utilization": 0.19971687306164576,
+    "anomaly_count": 46,
+    "anomaly_rate": 60.526315789473685,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.07255052663753636
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0066611899645393725
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.05548342835437798
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.028977333232235076
+      },
+      "srv-search": {
+        "anomaly_count": 29,
+        "anomaly_rate": 38.15789473684211,
+        "cpu_utilization": 0.03604439487295696
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:33:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:34:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 76,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:35:54.739204+00:00",
+    "total_requests": 342,
+    "mean_response_time": 7141756.523391813,
+    "p90_response_time": 18377042.400000002,
+    "deadline_miss_rate": 1.515151515151515,
+    "patterns": {
+      "111111101111": {
+        "deadline_miss_rate": 16.666666666666664,
+        "mean_response_time": 41141901.833333336,
+        "p90_response_time": 109520511.0
+      },
+      "101111000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 23843355.6,
+        "p90_response_time": 27047921.2
+      },
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 8027023.703448276,
+        "p90_response_time": 17347845.0
+      },
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2945028.113207547,
+        "p90_response_time": 11712452.0
+      },
+      "101111110011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3699233.0,
+        "p90_response_time": 3699233.0
+      },
+      "101111010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 5897938.875,
+        "p90_response_time": 21522071.0
+      },
+      "101011010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 53782843.0,
+        "p90_response_time": 102499598.0
+      },
+      "101111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 5353261.0,
+        "p90_response_time": 5353261.0
+      },
+      "111111000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 391865.0,
+        "p90_response_time": 391865.0
+      },
+      "111111011011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 11148086.0,
+        "p90_response_time": 11148086.0
+      },
+      "111111111011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6578110.0,
+        "p90_response_time": 6578110.0
+      }
+    },
+    "sum_cpu_utilization": 1.5097564299963016,
+    "anomaly_count": 213,
+    "anomaly_rate": 62.28070175438597,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 5,
+        "anomaly_rate": 1.461988304093567,
+        "cpu_utilization": 0.1756691105033959
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.03935627501099384
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.7412547450938995
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 1,
+        "anomaly_rate": 0.29239766081871343,
+        "cpu_utilization": 0.14330358565727244
+      },
+      "srv-search": {
+        "anomaly_count": 23,
+        "anomaly_rate": 6.725146198830409,
+        "cpu_utilization": 0.4101727137307397
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "stabilization",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:34:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:35:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 342,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:36:54.996944+00:00",
+    "total_requests": 263,
+    "mean_response_time": 28356262.99239544,
+    "p90_response_time": 126605268.2,
+    "deadline_miss_rate": 11.914323962516734,
+    "patterns": {
+      "111111111111": {
+        "deadline_miss_rate": 7.228915662650602,
+        "mean_response_time": 26184302.610441767,
+        "p90_response_time": 123313169.80000006
+      },
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2180610.0,
+        "p90_response_time": 3701514.0
+      },
+      "101011010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 7975871.0,
+        "p90_response_time": 7975871.0
+      },
+      "111111111011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 11372831.0,
+        "p90_response_time": 11372831.0
+      },
+      "101110110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 48619556.0,
+        "p90_response_time": 87127021.6
+      },
+      "111111101111": {
+        "deadline_miss_rate": 100.0,
+        "mean_response_time": 236484772.0,
+        "p90_response_time": 261567682.8
+      },
+      "111111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2968253.0,
+        "p90_response_time": 2968253.0
+      },
+      "101010010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 176320.5,
+        "p90_response_time": 183066.5
+      },
+      "111110111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 52040786.5,
+        "p90_response_time": 92797323.7
+      }
+    },
+    "sum_cpu_utilization": 3.7115191426525604,
+    "anomaly_count": 224,
+    "anomaly_rate": 85.17110266159695,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 2,
+        "anomaly_rate": 0.7604562737642585,
+        "cpu_utilization": 0.17675790175633282
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.16212193499717698
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 1.4830179343149466
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 2,
+        "anomaly_rate": 0.7604562737642585,
+        "cpu_utilization": 1.121304457446164
+      },
+      "srv-search": {
+        "anomaly_count": 7,
+        "anomaly_rate": 2.6615969581749046,
+        "cpu_utilization": 0.7683169141379403
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "stabilization",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:35:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:36:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 263,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:37:54.973884+00:00",
+    "total_requests": 265,
+    "mean_response_time": 27843567.22264151,
+    "p90_response_time": 115672912.19999997,
+    "deadline_miss_rate": 0.16109544905356424,
+    "patterns": {
+      "111111111111": {
+        "deadline_miss_rate": 2.094240837696335,
+        "mean_response_time": 29667966.057591625,
+        "p90_response_time": 117182658.0
+      },
+      "101111010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 32088405.62857143,
+        "p90_response_time": 123508508.00000001
+      },
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 11143839.0,
+        "p90_response_time": 11143839.0
+      },
+      "101111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 29742444.666666668,
+        "p90_response_time": 59841448.20000002
+      },
+      "101110110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 19120335.6,
+        "p90_response_time": 49014179.800000004
+      },
+      "101111110011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 17022539.0,
+        "p90_response_time": 17022539.0
+      },
+      "101011010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3967046.0,
+        "p90_response_time": 3967046.0
+      },
+      "101010010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 9336075.375,
+        "p90_response_time": 29830055.0
+      },
+      "101010000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1564912.0,
+        "p90_response_time": 1564912.0
+      },
+      "101010110011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 483175.0,
+        "p90_response_time": 676583.8
+      },
+      "111110111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1230555.0,
+        "p90_response_time": 1230555.0
+      },
+      "101111000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 38697858.0,
+        "p90_response_time": 38697858.0
+      },
+      "101110010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1615615.0,
+        "p90_response_time": 1615615.0
+      }
+    },
+    "sum_cpu_utilization": 4.184049829408214,
+    "anomaly_count": 224,
+    "anomaly_rate": 84.52830188679246,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 1,
+        "anomaly_rate": 0.37735849056603776,
+        "cpu_utilization": 0.19289703648230458
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.17515240706448457
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 1.7324266512076094
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 1.2497058881238048
+      },
+      "srv-search": {
+        "anomaly_count": 9,
+        "anomaly_rate": 3.3962264150943398,
+        "cpu_utilization": 0.8338678465300104
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "stabilization",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:36:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:37:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 265,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:38:54.870934+00:00",
+    "total_requests": 276,
+    "mean_response_time": 21383863.608695652,
+    "p90_response_time": 54182690.0,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "101111010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 19144855.951612905,
+        "p90_response_time": 42805848.0
+      },
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 23345440.57142857,
+        "p90_response_time": 68979638.0
+      },
+      "111111011011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 14609100.57142857,
+        "p90_response_time": 20910237.400000002
+      },
+      "101010010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 9265410.1,
+        "p90_response_time": 34597553.199999996
+      },
+      "101111110011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 38092866.6,
+        "p90_response_time": 74471468.2
+      },
+      "111111111011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 40481328.5,
+        "p90_response_time": 66897428.900000006
+      },
+      "101111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 33150949.333333332,
+        "p90_response_time": 57060478.0
+      },
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3663642.0,
+        "p90_response_time": 3663642.0
+      }
+    },
+    "sum_cpu_utilization": 3.662206111292188,
+    "anomaly_count": 262,
+    "anomaly_rate": 94.92753623188406,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 4,
+        "anomaly_rate": 1.4492753623188406,
+        "cpu_utilization": 0.1661312712448645
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.12396489938295688
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 1.777964619671986
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.7789993559462578
+      },
+      "srv-search": {
+        "anomaly_count": 4,
+        "anomaly_rate": 1.4492753623188406,
+        "cpu_utilization": 0.8151459650461234
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "stabilization",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:37:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:38:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 276,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:39:54.093203+00:00",
+    "total_requests": 156,
+    "mean_response_time": 22921607.666666668,
+    "p90_response_time": 55636154.5,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "101111010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 27200824.164835166,
+        "p90_response_time": 59303164.0
+      },
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 21537007.5,
+        "p90_response_time": 43389648.9
+      },
+      "101111110011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 54419669.6,
+        "p90_response_time": 90595753.4
+      },
+      "101111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 8952902.0,
+        "p90_response_time": 8952902.0
+      },
+      "111111011011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 15223280.0,
+        "p90_response_time": 18101342.6
+      },
+      "101010010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 5792716.538461538,
+        "p90_response_time": 18876347.0
+      },
+      "100011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4904587.0,
+        "p90_response_time": 4904587.0
+      }
+    },
+    "sum_cpu_utilization": 3.028660981354689,
+    "anomaly_count": 138,
+    "anomaly_rate": 88.46153846153845,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 2,
+        "anomaly_rate": 1.282051282051282,
+        "cpu_utilization": 0.14360423526882796
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0351696668836806
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 1.8554584059257424
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.3092935326352137
+      },
+      "srv-search": {
+        "anomaly_count": 8,
+        "anomaly_rate": 5.128205128205128,
+        "cpu_utilization": 0.6851351406412243
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "stabilization",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:38:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:39:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 156,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:40:54.800005+00:00",
+    "total_requests": 61,
+    "mean_response_time": 30347690.393442623,
+    "p90_response_time": 73054055.0,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "101010010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3448088.3333333335,
+        "p90_response_time": 5516746.399999999
+      },
+      "101111010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 35972198.84615385,
+        "p90_response_time": 71533417.4
+      },
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 67311770.0,
+        "p90_response_time": 95214679.4
+      },
+      "101111110011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 53522330.0,
+        "p90_response_time": 53522330.0
+      },
+      "101010000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6490854.0,
+        "p90_response_time": 6490854.0
+      }
+    },
+    "sum_cpu_utilization": 2.0902848804983503,
+    "anomaly_count": 52,
+    "anomaly_rate": 85.24590163934425,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.1300619095266455
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.01367489102235399
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 1.4066673167742143
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.12878522401951087
+      },
+      "srv-search": {
+        "anomaly_count": 8,
+        "anomaly_rate": 13.114754098360656,
+        "cpu_utilization": 0.4110955391556258
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:39:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:40:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 61,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:41:54.906388+00:00",
+    "total_requests": 120,
+    "mean_response_time": 31188964.283333335,
+    "p90_response_time": 71430921.2,
+    "deadline_miss_rate": 0.8528784648187633,
+    "patterns": {
+      "101111010011": {
+        "deadline_miss_rate": 5.970149253731343,
+        "mean_response_time": 48130952.686567165,
+        "p90_response_time": 85780099.2
+      },
+      "101010010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4579475.534883721,
+        "p90_response_time": 14156137.200000014
+      },
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 8092549.0,
+        "p90_response_time": 8174013.8
+      },
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 37837541.0,
+        "p90_response_time": 41438769.8
+      },
+      "101110010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 31946835.5,
+        "p90_response_time": 40453625.5
+      },
+      "111111011011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 37474363.0,
+        "p90_response_time": 37474363.0
+      },
+      "101111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 52081140.0,
+        "p90_response_time": 52081140.0
+      }
+    },
+    "sum_cpu_utilization": 2.203074871858442,
+    "anomaly_count": 94,
+    "anomaly_rate": 78.33333333333333,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 3,
+        "anomaly_rate": 2.5,
+        "cpu_utilization": 0.09153607269483945
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.011160190900057784
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 1.4487685273469237
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.1251537175786538
+      },
+      "srv-search": {
+        "anomaly_count": 12,
+        "anomaly_rate": 10.0,
+        "cpu_utilization": 0.5264563633379672
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:40:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:41:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 120,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:42:53.980014+00:00",
+    "total_requests": 58,
+    "mean_response_time": 15752789.793103449,
+    "p90_response_time": 46089958.10000003,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "1010101011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 9287115.421052631,
+        "p90_response_time": 28751787.00000003
+      },
+      "1011111011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 26259485.266666666,
+        "p90_response_time": 64718927.99999999
+      },
+      "1010111011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 15703482.0,
+        "p90_response_time": 15703482.0
+      },
+      "1111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 67189678.5,
+        "p90_response_time": 85776478.1
+      },
+      "1000110011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2683201.0,
+        "p90_response_time": 2683201.0
+      },
+      "1010110011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 14093103.0,
+        "p90_response_time": 14093103.0
+      }
+    },
+    "sum_cpu_utilization": 1.1537308593556912,
+    "anomaly_count": 42,
+    "anomaly_rate": 72.41379310344827,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 1,
+        "anomaly_rate": 1.7241379310344827,
+        "cpu_utilization": 0.11596528202737007
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.005703682883335739
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.6148117135859372
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.07334227016606733
+      },
+      "srv-search": {
+        "anomaly_count": 15,
+        "anomaly_rate": 25.862068965517242,
+        "cpu_utilization": 0.34390791069298093
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:41:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:42:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 58,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:43:53.746709+00:00",
+    "total_requests": 73,
+    "mean_response_time": 23827808.93150685,
+    "p90_response_time": 47836049.39999999,
+    "deadline_miss_rate": 21.428571428571427,
+    "patterns": {
+      "101110010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 8952327.0,
+        "p90_response_time": 8999499.8
+      },
+      "101111010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 30222147.848484848,
+        "p90_response_time": 53605261.0
+      },
+      "101010010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 7851286.90625,
+        "p90_response_time": 19104707.200000007
+      },
+      "101011010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 18298235.5,
+        "p90_response_time": 29342496.7
+      },
+      "111111011011": {
+        "deadline_miss_rate": 50.0,
+        "mean_response_time": 103398396.5,
+        "p90_response_time": 161861557.7
+      },
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 17397556.0,
+        "p90_response_time": 17397556.0
+      },
+      "111111111111": {
+        "deadline_miss_rate": 100.0,
+        "mean_response_time": 212162518.0,
+        "p90_response_time": 212162518.0
+      }
+    },
+    "sum_cpu_utilization": 0.4172371075877413,
+    "anomaly_count": 58,
+    "anomaly_rate": 79.45205479452055,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 4,
+        "anomaly_rate": 5.47945205479452,
+        "cpu_utilization": 0.06700266518595158
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0009618103429903999
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.15915243553810735
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.06459845445272903
+      },
+      "srv-search": {
+        "anomaly_count": 12,
+        "anomaly_rate": 16.43835616438356,
+        "cpu_utilization": 0.12552174206796296
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:42:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:43:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 73,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:44:54.470908+00:00",
+    "total_requests": 105,
+    "mean_response_time": 76333209.6952381,
+    "p90_response_time": 169766559.20000002,
+    "deadline_miss_rate": 9.330985915492958,
+    "patterns": {
+      "111111011011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 24959993.25,
+        "p90_response_time": 25587348.4
+      },
+      "101111010011": {
+        "deadline_miss_rate": 18.30985915492958,
+        "mean_response_time": 90877958.08450705,
+        "p90_response_time": 170433182.0
+      },
+      "101010010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2588312.625,
+        "p90_response_time": 4697852.8
+      },
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 63452547.75,
+        "p90_response_time": 132585666.5
+      },
+      "111111111011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 28187571.0,
+        "p90_response_time": 28399868.6
+      },
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 13316963.75,
+        "p90_response_time": 22809488.9
+      },
+      "101111110011": {
+        "deadline_miss_rate": 75.0,
+        "mean_response_time": 161786119.5,
+        "p90_response_time": 203801407.0
+      },
+      "101111000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 84731520.0,
+        "p90_response_time": 95516779.2
+      },
+      "100011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3308897.0,
+        "p90_response_time": 3308897.0
+      },
+      "101011010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4925726.0,
+        "p90_response_time": 4925726.0
+      }
+    },
+    "sum_cpu_utilization": 1.3329532418161607,
+    "anomaly_count": 94,
+    "anomaly_rate": 89.52380952380953,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.07061996121914395
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.011112753909562702
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.6422122372469622
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.14025976605422777
+      },
+      "srv-search": {
+        "anomaly_count": 6,
+        "anomaly_rate": 5.714285714285714,
+        "cpu_utilization": 0.46874852338626416
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:43:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:44:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 105,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:45:53.946394+00:00",
+    "total_requests": 67,
+    "mean_response_time": 21864261.23880597,
+    "p90_response_time": 50361529.4,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "11010111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 15534710.92857143,
+        "p90_response_time": 46748771.0
+      },
+      "11111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 36550250.86363637,
+        "p90_response_time": 57110027.0
+      },
+      "11011011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 107454.0,
+        "p90_response_time": 107454.0
+      },
+      "10011011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3308945.0,
+        "p90_response_time": 3308945.0
+      },
+      "11011111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4925726.0,
+        "p90_response_time": 4925726.0
+      }
+    },
+    "sum_cpu_utilization": 0.9495905243297716,
+    "anomaly_count": 51,
+    "anomaly_rate": 76.11940298507463,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.04683528617412627
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.006454839501768967
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.3933376389150182
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.08461142889864512
+      },
+      "srv-search": {
+        "anomaly_count": 25,
+        "anomaly_rate": 37.3134328358209,
+        "cpu_utilization": 0.41835133084021303
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:44:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:45:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 67,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:46:54.106856+00:00",
+    "total_requests": 10,
+    "mean_response_time": 42552653.7,
+    "p90_response_time": 85439176.7,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "11111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 70404066.66666667,
+        "p90_response_time": 86101995.5
+      },
+      "11010111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 775534.25,
+        "p90_response_time": 1411754.2000000002
+      }
+    },
+    "sum_cpu_utilization": 0.4787890916667434,
+    "anomaly_count": 7,
+    "anomaly_rate": 70.0,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0254322809663298
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0004239699202874605
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.21326282906446734
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.05506716891316716
+      },
+      "srv-search": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.18460284280249162
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:45:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:46:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 10,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:47:53.857715+00:00",
+    "total_requests": 4,
+    "mean_response_time": 137156.25,
+    "p90_response_time": 205770.2,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 137156.25,
+        "p90_response_time": 205770.2
+      }
+    },
+    "sum_cpu_utilization": 0.20529578580129254,
+    "anomaly_count": 0,
+    "anomaly_rate": 0.0,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.011239031651897687
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.08873446334251245
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.052960004113469156
+      },
+      "srv-search": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.05236228669341326
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:46:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:47:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 4,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:48:54.199635+00:00",
+    "total_requests": 9,
+    "mean_response_time": 43797122.88888889,
+    "p90_response_time": 87799191.4,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "11111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 78380886.4,
+        "p90_response_time": 97528204.2
+      },
+      "11010111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 567418.5,
+        "p90_response_time": 1081812.6
+      }
+    },
+    "sum_cpu_utilization": 0.4171941830153868,
+    "anomaly_count": 5,
+    "anomaly_rate": 55.55555555555556,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.02438766335281924
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.2057200587691998
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.05735069806936396
+      },
+      "srv-search": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.1297357628240038
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:47:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:48:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 9,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:49:53.780717+00:00",
+    "total_requests": 66,
+    "mean_response_time": 117473952.39393939,
+    "p90_response_time": 494751390.0,
+    "deadline_miss_rate": 23.958333333333332,
+    "patterns": {
+      "111111111111": {
+        "deadline_miss_rate": 68.75,
+        "mean_response_time": 362574091.8125,
+        "p90_response_time": 512350606.0
+      },
+      "111111011011": {
+        "deadline_miss_rate": 25.0,
+        "mean_response_time": 136298800.125,
+        "p90_response_time": 451582316.29999995
+      },
+      "101111010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 11585707.166666666,
+        "p90_response_time": 17960464.5
+      },
+      "101110110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 11341475.0,
+        "p90_response_time": 20382714.2
+      },
+      "101111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 78028966.0,
+        "p90_response_time": 78754366.8
+      },
+      "101011010011": {
+        "deadline_miss_rate": 50.0,
+        "mean_response_time": 132939324.0,
+        "p90_response_time": 156177351.2
+      }
+    },
+    "sum_cpu_utilization": 0.8633430463834699,
+    "anomaly_count": 64,
+    "anomaly_rate": 96.96969696969697,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.04002149068931392
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.020027368277738312
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.4419675629551098
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.10173922109828429
+      },
+      "srv-search": {
+        "anomaly_count": 2,
+        "anomaly_rate": 3.0303030303030303,
+        "cpu_utilization": 0.2595874033630237
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:48:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:49:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-reservation",
+      "srv-search"
+    ],
+    "trace_count": 66,
+    "metrics_config_count": 5
+  },
+  {
+    "timestamp": "2025-10-07 06:50:54.484574+00:00",
+    "total_requests": 48,
+    "mean_response_time": 3838215.0833333335,
+    "p90_response_time": 8865800.3,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "101111010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2604615.1764705884,
+        "p90_response_time": 6590089.3
+      },
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6052444.2727272725,
+        "p90_response_time": 11214456.0
+      },
+      "111111011011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 15138456.0,
+        "p90_response_time": 15138456.0
+      },
+      "101111000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6981032.5,
+        "p90_response_time": 11547395.3
+      }
+    },
+    "sum_cpu_utilization": 0.383708879012996,
+    "anomaly_count": 34,
+    "anomaly_rate": 70.83333333333334,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 7,
+        "anomaly_rate": 14.583333333333334,
+        "cpu_utilization": 0.017622795695332264
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.01043186387135751
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.11054641516865366
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0720283507989272
+      },
+      "srv-search": {
+        "anomaly_count": 1,
+        "anomaly_rate": 2.083333333333333,
+        "cpu_utilization": 0.1730794534787254
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:49:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:50:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-reservation",
+      "srv-search"
+    ],
+    "trace_count": 48,
+    "metrics_config_count": 5
+  },
+  {
+    "timestamp": "2025-10-07 06:51:54.849530+00:00",
+    "total_requests": 191,
+    "mean_response_time": 1488604.052356021,
+    "p90_response_time": 2364695.0,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "11111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1404627.128342246,
+        "p90_response_time": 2069521.2000000016
+      },
+      "11111011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 605936.0,
+        "p90_response_time": 605936.0
+      },
+      "11011011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6222027.0,
+        "p90_response_time": 6222027.0
+      },
+      "11011111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 7415069.0,
+        "p90_response_time": 10573643.4
+      }
+    },
+    "sum_cpu_utilization": 2.222576302166548,
+    "anomaly_count": 52,
+    "anomaly_rate": 27.225130890052355,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 11,
+        "anomaly_rate": 5.7591623036649215,
+        "cpu_utilization": 0.1510331486140479
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.015153552641726504
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 1.0890229290223994
+      },
+      "srv-reservation": {
+        "anomaly_count": 2,
+        "anomaly_rate": 1.0471204188481675,
+        "cpu_utilization": 0.17699156390281587
+      },
+      "srv-search": {
+        "anomaly_count": 7,
+        "anomaly_rate": 3.664921465968586,
+        "cpu_utilization": 0.7903751079855582
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:50:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:51:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-reservation",
+      "srv-search"
+    ],
+    "trace_count": 191,
+    "metrics_config_count": 5
+  },
+  {
+    "timestamp": "2025-10-07 06:52:53.846845+00:00",
+    "total_requests": 128,
+    "mean_response_time": 18842817.3515625,
+    "p90_response_time": 67294942.8,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "11010111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 31813466.28846154,
+        "p90_response_time": 94180134.29999998
+      },
+      "11011011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 10851930.375,
+        "p90_response_time": 17394491.3
+      },
+      "11111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 5720195.175438597,
+        "p90_response_time": 13425824.6
+      },
+      "11011111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 34129641.85714286,
+        "p90_response_time": 53053765.4
+      },
+      "10011011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 9404779.0,
+        "p90_response_time": 9404779.0
+      },
+      "11010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 32133844.666666668,
+        "p90_response_time": 54989042.800000004
+      }
+    },
+    "sum_cpu_utilization": 2.194932310883349,
+    "anomaly_count": 76,
+    "anomaly_rate": 59.375,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 3,
+        "anomaly_rate": 2.34375,
+        "cpu_utilization": 0.15194218955681055
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0017544896540924938
+      },
+      "srv-rate": {
+        "anomaly_count": 1,
+        "anomaly_rate": 0.78125,
+        "cpu_utilization": 1.1495469258998752
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 1,
+        "anomaly_rate": 0.78125,
+        "cpu_utilization": 0.026159188048934634
+      },
+      "srv-search": {
+        "anomaly_count": 26,
+        "anomaly_rate": 20.3125,
+        "cpu_utilization": 0.8655295177236357
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:51:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:52:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 128,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:55:06.885682+00:00",
+    "total_requests": 136,
+    "mean_response_time": 8419244.06617647,
+    "p90_response_time": 19854786.5,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "11011011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 5488547.234234234,
+        "p90_response_time": 14811175.0
+      },
+      "11111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 5167737.416666667,
+        "p90_response_time": 7650916.0
+      },
+      "01011111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 33339724.5,
+        "p90_response_time": 33706684.1
+      },
+      "11011111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 46051391.666666664,
+        "p90_response_time": 56858826.0
+      },
+      "01011011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 34192499.666666664,
+        "p90_response_time": 35781992.6
+      },
+      "01111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 9257857.0,
+        "p90_response_time": 9257857.0
+      },
+      "11111011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 18952446.0,
+        "p90_response_time": 18952446.0
+      }
+    },
+    "sum_cpu_utilization": 0.858463065837711,
+    "anomaly_count": 117,
+    "anomaly_rate": 86.02941176470588,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 4,
+        "anomaly_rate": 2.941176470588235,
+        "cpu_utilization": 0.09299548335426894
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.4971281316293331
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.07636610893609644
+      },
+      "srv-search": {
+        "anomaly_count": 25,
+        "anomaly_rate": 18.38235294117647,
+        "cpu_utilization": 0.19197334191801266
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "stabilization",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:53:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:54:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 136,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:55:53.648325+00:00",
+    "total_requests": 232,
+    "mean_response_time": 24348996.521551725,
+    "p90_response_time": 79390131.40000007,
+    "deadline_miss_rate": 30.0,
+    "patterns": {
+      "1010110000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 7615709.44,
+        "p90_response_time": 22491380.6
+      },
+      "1011110100011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 5626611.404494382,
+        "p90_response_time": 13495653.400000008
+      },
+      "1111111111011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3481125.052631579,
+        "p90_response_time": 4356795.399999999
+      },
+      "1010110100011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 86772512.91304348,
+        "p90_response_time": 130538124.6
+      },
+      "1011110100111": {
+        "deadline_miss_rate": 100.0,
+        "mean_response_time": 267259091.42857143,
+        "p90_response_time": 283853051.8
+      },
+      "1111110111011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 5740312.0,
+        "p90_response_time": 5740312.0
+      },
+      "1111111111111": {
+        "deadline_miss_rate": 100.0,
+        "mean_response_time": 236561858.5,
+        "p90_response_time": 241471782.9
+      },
+      "1011101101011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1655345.0,
+        "p90_response_time": 1655345.0
+      },
+      "1000100000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 411047.0,
+        "p90_response_time": 411047.0
+      },
+      "1010110100111": {
+        "deadline_miss_rate": 100.0,
+        "mean_response_time": 221477320.0,
+        "p90_response_time": 221477320.0
+      }
+    },
+    "sum_cpu_utilization": 1.2206460825580048,
+    "anomaly_count": 201,
+    "anomaly_rate": 86.63793103448276,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 6,
+        "anomaly_rate": 2.586206896551724,
+        "cpu_utilization": 0.15835290243768216
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.02103036485172689
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.6347221001337066
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 3,
+        "anomaly_rate": 1.293103448275862,
+        "cpu_utilization": 0.01398344658891468
+      },
+      "srv-search": {
+        "anomaly_count": 17,
+        "anomaly_rate": 7.327586206896551,
+        "cpu_utilization": 0.3925572685459745
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "stabilization",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:54:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:55:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 232,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:56:53.686671+00:00",
+    "total_requests": 251,
+    "mean_response_time": 35989559.95219123,
+    "p90_response_time": 72259495.0,
+    "deadline_miss_rate": 16.666666666666668,
+    "patterns": {
+      "1011110100011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 5807058.746268657,
+        "p90_response_time": 6691793.799999996
+      },
+      "1010110000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 13988085.05882353,
+        "p90_response_time": 54193837.29999995
+      },
+      "1111111111011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 11974336.695652174,
+        "p90_response_time": 11809632.8
+      },
+      "1111111111111": {
+        "deadline_miss_rate": 100.0,
+        "mean_response_time": 610207461.4444444,
+        "p90_response_time": 667077336.0
+      },
+      "1011110100111": {
+        "deadline_miss_rate": 100.0,
+        "mean_response_time": 518622225.0,
+        "p90_response_time": 518622225.0
+      },
+      "0000110000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6656132.555555556,
+        "p90_response_time": 18853367.200000007
+      },
+      "1011111101011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 8029269.0,
+        "p90_response_time": 9782272.2
+      },
+      "1011101101011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2690719.3333333335,
+        "p90_response_time": 3496428.0
+      },
+      "1111111101011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4832224.0,
+        "p90_response_time": 4832224.0
+      },
+      "1010100000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1638717.0,
+        "p90_response_time": 1638717.0
+      },
+      "1000110000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 85874726.625,
+        "p90_response_time": 134785021.1
+      },
+      "1111110111011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3668979.0,
+        "p90_response_time": 3668979.0
+      }
+    },
+    "sum_cpu_utilization": 1.2827438974875296,
+    "anomaly_count": 229,
+    "anomaly_rate": 91.23505976095618,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 5,
+        "anomaly_rate": 1.9920318725099602,
+        "cpu_utilization": 0.11064180242289885
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.045327440620688574
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.7746205831816351
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 2,
+        "anomaly_rate": 0.796812749003984,
+        "cpu_utilization": 0.042179763206019794
+      },
+      "srv-search": {
+        "anomaly_count": 44,
+        "anomaly_rate": 17.52988047808765,
+        "cpu_utilization": 0.30997430805628734
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "stabilization",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:55:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:56:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 251,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:57:54.008767+00:00",
+    "total_requests": 555,
+    "mean_response_time": 8738697.072072072,
+    "p90_response_time": 14806620.2,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2820493.112359551,
+        "p90_response_time": 5295904.4
+      },
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 10142068.369085174,
+        "p90_response_time": 15687529.4
+      },
+      "101111010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 9725981.450819673,
+        "p90_response_time": 14602052.2
+      },
+      "111111101111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4436746.0,
+        "p90_response_time": 4906538.2
+      },
+      "100011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2802636.0,
+        "p90_response_time": 4447174.3
+      },
+      "101111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 10578305.083333334,
+        "p90_response_time": 15156770.9
+      },
+      "101010010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1173189.5,
+        "p90_response_time": 1195827.5
+      },
+      "101011010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 9469697.0,
+        "p90_response_time": 10882474.0
+      },
+      "100111000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1818220.0,
+        "p90_response_time": 1818220.0
+      },
+      "111110111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2339249.0,
+        "p90_response_time": 2339249.0
+      },
+      "111111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 10974196.0,
+        "p90_response_time": 10974196.0
+      }
+    },
+    "sum_cpu_utilization": 1.3208531274193345,
+    "anomaly_count": 536,
+    "anomaly_rate": 96.57657657657658,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 6,
+        "anomaly_rate": 1.0810810810810811,
+        "cpu_utilization": 0.19394503715268221
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.06975563173502998
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.4696598405367978
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.08037815521941273
+      },
+      "srv-search": {
+        "anomaly_count": 74,
+        "anomaly_rate": 13.333333333333334,
+        "cpu_utilization": 0.5071144627754117
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "stabilization",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:56:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:57:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 555,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:58:54.231222+00:00",
+    "total_requests": 564,
+    "mean_response_time": 8063383.730496454,
+    "p90_response_time": 12831273.299999999,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "101111010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 7477070.856382979,
+        "p90_response_time": 12036406.400000002
+      },
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 8582321.065868264,
+        "p90_response_time": 13579915.399999999
+      },
+      "111110111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6195814.666666667,
+        "p90_response_time": 7269467.0
+      },
+      "101111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 8604231.47368421,
+        "p90_response_time": 11689210.6
+      },
+      "101010010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 5667552.25,
+        "p90_response_time": 6600236.8
+      },
+      "111111011011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6326317.0,
+        "p90_response_time": 6326317.0
+      },
+      "100011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1269873.6666666667,
+        "p90_response_time": 1579756.6
+      },
+      "101011010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2368004.0,
+        "p90_response_time": 2368004.0
+      },
+      "101110110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 5560620.5,
+        "p90_response_time": 5709627.3
+      },
+      "111111011111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1624431.0,
+        "p90_response_time": 1624431.0
+      },
+      "101110010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4318549.0,
+        "p90_response_time": 4318549.0
+      }
+    },
+    "sum_cpu_utilization": 2.562034624907548,
+    "anomaly_count": 554,
+    "anomaly_rate": 98.22695035460993,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.2188803116905635
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.10497850134595427
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 1.5560868702318431
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.11561711633704988
+      },
+      "srv-search": {
+        "anomaly_count": 30,
+        "anomaly_rate": 5.319148936170213,
+        "cpu_utilization": 0.5664718253021375
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:57:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:58:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 564,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 06:59:54.441502+00:00",
+    "total_requests": 581,
+    "mean_response_time": 7409587.354561102,
+    "p90_response_time": 11188536.0,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 7595257.9791183295,
+        "p90_response_time": 11344196.0
+      },
+      "101111010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 7041139.120967742,
+        "p90_response_time": 10644434.0
+      },
+      "101111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 10400238.4,
+        "p90_response_time": 13462865.2
+      },
+      "111110111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4094660.6666666665,
+        "p90_response_time": 4432954.8
+      },
+      "101011010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 5305784.0,
+        "p90_response_time": 6384914.4
+      },
+      "100011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1656518.0,
+        "p90_response_time": 1656518.0
+      },
+      "101110110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4458370.285714285,
+        "p90_response_time": 5139534.6
+      },
+      "101010010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4270567.666666667,
+        "p90_response_time": 5757330.8
+      },
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 7038546.0,
+        "p90_response_time": 7038546.0
+      },
+      "111111011111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6962096.0,
+        "p90_response_time": 6962096.0
+      },
+      "111111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 7912872.0,
+        "p90_response_time": 8948919.0
+      }
+    },
+    "sum_cpu_utilization": 4.248736604459161,
+    "anomaly_count": 572,
+    "anomaly_rate": 98.45094664371773,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 1,
+        "anomaly_rate": 0.17211703958691912,
+        "cpu_utilization": 0.19199703801727808
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.08749316669486129
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 3.3876110199144027
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0912029708947507
+      },
+      "srv-search": {
+        "anomaly_count": 34,
+        "anomaly_rate": 5.851979345955249,
+        "cpu_utilization": 0.49043240893786866
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:58:52.254251+00:00",
+    "collection_end_time": "2025-10-07T06:59:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 581,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 07:00:54.959794+00:00",
+    "total_requests": 493,
+    "mean_response_time": 8292371.870182556,
+    "p90_response_time": 13050894.6,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 8409838.607675906,
+        "p90_response_time": 13089252.6
+      },
+      "101011010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4142481.0,
+        "p90_response_time": 4142481.0
+      },
+      "111111011111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 9838859.5,
+        "p90_response_time": 14146448.0
+      },
+      "111111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 7301072.333333333,
+        "p90_response_time": 10947101.8
+      },
+      "111110111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1739167.0,
+        "p90_response_time": 1739167.0
+      },
+      "101111010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2954465.0,
+        "p90_response_time": 3371409.8
+      },
+      "101110110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2978270.5,
+        "p90_response_time": 3048703.7
+      },
+      "100010000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 946841.0,
+        "p90_response_time": 946841.0
+      },
+      "101110010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2901686.0,
+        "p90_response_time": 2917545.2
+      },
+      "111111111011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 9984480.0,
+        "p90_response_time": 9984480.0
+      },
+      "101111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 5240083.0,
+        "p90_response_time": 5240083.0
+      },
+      "100110100111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 739770.0,
+        "p90_response_time": 739770.0
+      },
+      "100011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2849267.0,
+        "p90_response_time": 2849267.0
+      }
+    },
+    "sum_cpu_utilization": 6.223864596796754,
+    "anomaly_count": 489,
+    "anomaly_rate": 99.18864097363083,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 1,
+        "anomaly_rate": 0.2028397565922921,
+        "cpu_utilization": 0.15747271765897072
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.08808413434487597
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 5.488008787524728
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.09412381705450629
+      },
+      "srv-search": {
+        "anomaly_count": 23,
+        "anomaly_rate": 4.665314401622718,
+        "cpu_utilization": 0.3961751402136728
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T06:59:52.254251+00:00",
+    "collection_end_time": "2025-10-07T07:00:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 493,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 07:01:54.735736+00:00",
+    "total_requests": 567,
+    "mean_response_time": 7677360.08994709,
+    "p90_response_time": 11803892.8,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 7758310.361663653,
+        "p90_response_time": 11858513.200000001
+      },
+      "100011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3044488.3333333335,
+        "p90_response_time": 4998537.2
+      },
+      "111111011111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3975410.5,
+        "p90_response_time": 4774008.5
+      },
+      "101111010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2433284.0,
+        "p90_response_time": 2433284.0
+      },
+      "111110111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2323500.0,
+        "p90_response_time": 2763971.2
+      },
+      "101110110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3697966.5,
+        "p90_response_time": 3701514.1
+      },
+      "111111111011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 11170599.0,
+        "p90_response_time": 11170599.0
+      },
+      "101111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6193518.0,
+        "p90_response_time": 6193518.0
+      },
+      "101110010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2541340.0,
+        "p90_response_time": 2541340.0
+      },
+      "111111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 11251581.0,
+        "p90_response_time": 11251581.0
+      }
+    },
+    "sum_cpu_utilization": 7.18381839764488,
+    "anomaly_count": 563,
+    "anomaly_rate": 99.29453262786596,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 2,
+        "anomaly_rate": 0.3527336860670194,
+        "cpu_utilization": 0.156399240451949
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.09174871491253024
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 6.45570817590294
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.09768766945084582
+      },
+      "srv-search": {
+        "anomaly_count": 19,
+        "anomaly_rate": 3.3509700176366843,
+        "cpu_utilization": 0.3822745969266155
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T07:00:52.254251+00:00",
+    "collection_end_time": "2025-10-07T07:01:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 567,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 07:02:55.242733+00:00",
+    "total_requests": 513,
+    "mean_response_time": 7313859.504873294,
+    "p90_response_time": 11363305.4,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 7423957.040650407,
+        "p90_response_time": 11408107.9
+      },
+      "111111111011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 9591755.0,
+        "p90_response_time": 10127435.8
+      },
+      "101110100111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4345825.0,
+        "p90_response_time": 4345825.0
+      },
+      "111111011111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4846980.5,
+        "p90_response_time": 4948322.5
+      },
+      "111110111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3995864.0,
+        "p90_response_time": 5142447.3
+      },
+      "101110110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3880742.0,
+        "p90_response_time": 5212004.7
+      },
+      "111111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 5359079.0,
+        "p90_response_time": 5965294.2
+      }
+    },
+    "sum_cpu_utilization": 7.6051800111164445,
+    "anomaly_count": 505,
+    "anomaly_rate": 98.44054580896686,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 1,
+        "anomaly_rate": 0.1949317738791423,
+        "cpu_utilization": 0.15306542607500864
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.09020288856645482
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 6.867515350002515
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.10242516450534642
+      },
+      "srv-search": {
+        "anomaly_count": 24,
+        "anomaly_rate": 4.678362573099415,
+        "cpu_utilization": 0.3919711819671192
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T07:01:52.254251+00:00",
+    "collection_end_time": "2025-10-07T07:02:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 513,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 07:03:55.066153+00:00",
+    "total_requests": 503,
+    "mean_response_time": 7935909.596421471,
+    "p90_response_time": 12296269.0,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 7988220.818367347,
+        "p90_response_time": 12338345.0
+      },
+      "100010000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1683909.0,
+        "p90_response_time": 1683909.0
+      },
+      "111111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 8595549.0,
+        "p90_response_time": 9979546.6
+      },
+      "101111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 8144848.0,
+        "p90_response_time": 10234012.8
+      },
+      "101011010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3150777.0,
+        "p90_response_time": 3150777.0
+      },
+      "111111011111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 7912251.0,
+        "p90_response_time": 11286107.0
+      },
+      "101110110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3659593.5,
+        "p90_response_time": 4151948.3
+      },
+      "101010010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1746834.0,
+        "p90_response_time": 1746834.0
+      },
+      "100011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4066967.0,
+        "p90_response_time": 4066967.0
+      },
+      "111111111011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 10261356.0,
+        "p90_response_time": 10261356.0
+      }
+    },
+    "sum_cpu_utilization": 7.622151329163656,
+    "anomaly_count": 495,
+    "anomaly_rate": 98.40954274353876,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 1,
+        "anomaly_rate": 0.19880715705765406,
+        "cpu_utilization": 0.1532376280610395
+      },
+      "srv-profile": {
+        "anomaly_count": 1,
+        "anomaly_rate": 0.19880715705765406,
+        "cpu_utilization": 0.08886357156854513
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 6.911123933911794
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.09633484166829386
+      },
+      "srv-search": {
+        "anomaly_count": 21,
+        "anomaly_rate": 4.174950298210735,
+        "cpu_utilization": 0.3725913539539837
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T07:02:52.254251+00:00",
+    "collection_end_time": "2025-10-07T07:03:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 503,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 07:04:54.728470+00:00",
+    "total_requests": 483,
+    "mean_response_time": 8348999.0621118015,
+    "p90_response_time": 13663881.600000003,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 8498148.688311689,
+        "p90_response_time": 13748857.3
+      },
+      "101110110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4639157.25,
+        "p90_response_time": 6607130.6
+      },
+      "111111011111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 7661972.25,
+        "p90_response_time": 12959058.700000001
+      },
+      "101110010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4403626.0,
+        "p90_response_time": 4403626.0
+      },
+      "101011010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 5238182.666666667,
+        "p90_response_time": 8300612.2
+      },
+      "111111111011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 5351112.0,
+        "p90_response_time": 5351112.0
+      },
+      "101110000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3889621.0,
+        "p90_response_time": 3889621.0
+      },
+      "111110111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3185742.0,
+        "p90_response_time": 3185742.0
+      },
+      "101010010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3279163.5,
+        "p90_response_time": 3426645.5
+      },
+      "111111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6751434.5,
+        "p90_response_time": 8001117.3
+      },
+      "101111010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3795082.0,
+        "p90_response_time": 3795082.0
+      },
+      "100011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 816408.0,
+        "p90_response_time": 816408.0
+      }
+    },
+    "sum_cpu_utilization": 7.608121298171832,
+    "anomaly_count": 478,
+    "anomaly_rate": 98.9648033126294,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 2,
+        "anomaly_rate": 0.4140786749482402,
+        "cpu_utilization": 0.15205521077540093
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0882190490323152
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 6.9033597041910335
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.09602712190013703
+      },
+      "srv-search": {
+        "anomaly_count": 16,
+        "anomaly_rate": 3.3126293995859215,
+        "cpu_utilization": 0.3684602122729451
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T07:03:52.254251+00:00",
+    "collection_end_time": "2025-10-07T07:04:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 483,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 07:05:54.959174+00:00",
+    "total_requests": 482,
+    "mean_response_time": 10816090.545643153,
+    "p90_response_time": 15523461.700000001,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "111111111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 11067744.504366811,
+        "p90_response_time": 15901197.100000001
+      },
+      "111111011011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 10378127.0,
+        "p90_response_time": 10378127.0
+      },
+      "000010000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 999148.0,
+        "p90_response_time": 999148.0
+      },
+      "101010010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4640124.8,
+        "p90_response_time": 7581725.2
+      },
+      "111111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 10509949.0,
+        "p90_response_time": 10509949.0
+      },
+      "101111110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 7670672.0,
+        "p90_response_time": 7670672.0
+      },
+      "101110110111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4094045.0,
+        "p90_response_time": 4094045.0
+      },
+      "101011010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6435730.25,
+        "p90_response_time": 7078097.0
+      },
+      "111110111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6347219.0,
+        "p90_response_time": 6347219.0
+      },
+      "101110010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6950881.0,
+        "p90_response_time": 8990487.4
+      },
+      "100010000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 3284031.0,
+        "p90_response_time": 3358215.0
+      },
+      "100011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2338747.5,
+        "p90_response_time": 2455680.7
+      },
+      "101111010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 12536363.0,
+        "p90_response_time": 12536363.0
+      },
+      "101011000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 4032679.0,
+        "p90_response_time": 4032679.0
+      },
+      "111111011111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 13669594.0,
+        "p90_response_time": 13669594.0
+      }
+    },
+    "sum_cpu_utilization": 7.882868004430294,
+    "anomaly_count": 476,
+    "anomaly_rate": 98.7551867219917,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.14850613116809913
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.08395361747838812
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 7.220781763075296
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.09382448990789784
+      },
+      "srv-search": {
+        "anomaly_count": 13,
+        "anomaly_rate": 2.6970954356846475,
+        "cpu_utilization": 0.33580200280061273
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "grey_llama",
+    "collection_start_time": "2025-10-07T07:04:52.254251+00:00",
+    "collection_end_time": "2025-10-07T07:05:52.254251+00:00",
+    "traces_csv": "grey_llama_traces.csv",
+    "total_metrics_csv": "grey_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 482,
+    "metrics_config_count": 7
+  }
+]

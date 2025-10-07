@@ -292,6 +292,7 @@ df = pd.DataFrame(data)
 # plt.ylabel('Errors')
 # plt.savefig("./errors.pdf")
 
+from matplotlib.ticker import MaxNLocator
 
 
 # Assuming df is already defined and includes 'gen_error' and 'total_anomaly_count'
@@ -320,9 +321,10 @@ axs[2].set_ylabel('Errors')
 # sns.lineplot(data=df, x='iteration', y='p50', hue='config', marker='o', ax=axs[3])
 sns.lineplot(data=df, x='iteration', y='p99', hue='config', marker='s', ax=axs[3])
 
-axs[3].set_title('p99 Latency over Iterations')
+axs[3].set_title('p99 execution time over Iterations')
 axs[3].set_ylabel('Latency (s)')
-
+axs[3].xaxis.set_major_locator(MaxNLocator(integer=True))
+axs[2].xaxis.set_major_locator(MaxNLocator(integer=True))
 
 # Move legend to bottom or remove from subplots if it's duplicated
 handles, labels = axs[0].get_legend_handles_labels()
@@ -330,6 +332,7 @@ for ax in axs:
     ax.get_legend().remove()
 
 fig.legend(handles, labels, loc='upper center', ncol=4)
+
 
 # Save figure
 plt.tight_layout(rect=[0, 0, 1, 0.95])  # Leave space for the legend

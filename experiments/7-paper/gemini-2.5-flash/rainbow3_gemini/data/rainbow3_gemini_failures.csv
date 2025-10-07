@@ -1,0 +1,11 @@
+Method,Name,Error,Occurrences
+GET,/recommendations,HTTPError('500 Server Error: Internal Server Error for url: /recommendations'),41229
+GET,/recommendations,"ConnectionResetError(104, 'Connection reset by peer')",44
+GET,/hotels,RemoteDisconnected('Remote end closed connection without response'),4623
+GET,/hotels,"ConnectionResetError(104, 'Connection reset by peer')",63
+GET,/hotels,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to 145.100.135.11 timed out. (connect timeout=None)')",139
+GET,/recommendations,RemoteDisconnected('Remote end closed connection without response'),2607
+GET,/hotels,HTTPError('500 Server Error: Internal Server Error for url: /hotels'),920437
+GET,/recommendations,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to 145.100.135.11 timed out. (connect timeout=None)')",131
+GET,/hotels,"ConnectionRefusedError(111, 'Connection refused')",224
+GET,/recommendations,"ConnectionRefusedError(111, 'Connection refused')",262

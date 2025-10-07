@@ -1,0 +1,26 @@
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: memcached-profile-hpa
+spec:
+  behavior:
+    scaleDown:
+      stabilizationWindowSeconds: 30
+    scaleUp:
+      stabilizationWindowSeconds: 30
+  maxReplicas: 2
+  metrics:
+  - resource:
+      name: concurrency
+      target:
+        averageUtilization: 50
+        type: Utilization
+    type: Resource
+  minReplicas: 2
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: memcached-profile
+  selector:
+    matchLabels:
+      io.kompose.service: memcached-profile

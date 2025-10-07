@@ -1,0 +1,355 @@
+[
+  {
+    "timestamp": "2025-10-07 12:17:21.701839+00:00",
+    "total_requests": 144,
+    "mean_response_time": 4244120.451388889,
+    "p90_response_time": 10203212.200000009,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "10100110010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 30319526.25,
+        "p90_response_time": 64195789.599999994
+      },
+      "11101110111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 2431078.7959183673,
+        "p90_response_time": 6067669.000000001
+      },
+      "01010001001011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1329838.6296296297,
+        "p90_response_time": 2559677.0
+      },
+      "10100110000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 7914823.25,
+        "p90_response_time": 14990490.200000003
+      },
+      "10000110010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 55049026.0,
+        "p90_response_time": 85440417.2
+      }
+    },
+    "sum_cpu_utilization": 0.6850451454392169,
+    "anomaly_count": 96,
+    "anomaly_rate": 66.66666666666666,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0991479826884473
+      },
+      "srv-profile": {
+        "anomaly_count": 2,
+        "anomaly_rate": 1.3888888888888888,
+        "cpu_utilization": 0.07006045385463738
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.3390536607597551
+      },
+      "srv-recommendation": {
+        "anomaly_count": 23,
+        "anomaly_rate": 15.972222222222221,
+        "cpu_utilization": 0.07562842022937301
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.02290241041493832
+      },
+      "srv-search": {
+        "anomaly_count": 6,
+        "anomaly_rate": 4.166666666666666,
+        "cpu_utilization": 0.07825221749206576
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "rainbow_llama",
+    "collection_start_time": "2025-10-07T12:16:19.750753+00:00",
+    "collection_end_time": "2025-10-07T12:17:19.750753+00:00",
+    "traces_csv": "rainbow_llama_traces.csv",
+    "total_metrics_csv": "rainbow_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 144,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 12:18:20.465612+00:00",
+    "total_requests": 10,
+    "mean_response_time": 24740667.6,
+    "p90_response_time": 77177565.1,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "01010001001011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1089246.3333333333,
+        "p90_response_time": 1178741.5
+      },
+      "00000110000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 83331885.5,
+        "p90_response_time": 89486205.9
+      },
+      "00010001000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 72964705.0,
+        "p90_response_time": 72964705.0
+      },
+      "11101110111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 1242722.0,
+        "p90_response_time": 1242722.0
+      }
+    },
+    "sum_cpu_utilization": 1.0968774970708906,
+    "anomaly_count": 7,
+    "anomaly_rate": 70.0,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.07584954990118074
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.07385206446704082
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.7717153339403909
+      },
+      "srv-recommendation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.05938612412229449
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.021774412613976238
+      },
+      "srv-search": {
+        "anomaly_count": 2,
+        "anomaly_rate": 20.0,
+        "cpu_utilization": 0.09430001202600738
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "rainbow_llama",
+    "collection_start_time": "2025-10-07T12:17:19.750753+00:00",
+    "collection_end_time": "2025-10-07T12:18:19.750753+00:00",
+    "traces_csv": "rainbow_llama_traces.csv",
+    "total_metrics_csv": "rainbow_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 10,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 12:19:20.762753+00:00",
+    "total_requests": 135,
+    "mean_response_time": 460346.81481481483,
+    "p90_response_time": 674606.2000000002,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "01010001001011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 236528.64406779662,
+        "p90_response_time": 658294.6
+      },
+      "10100110000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 300248.44444444444,
+        "p90_response_time": 474901.39999999985
+      },
+      "11101110111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 6175247.333333333,
+        "p90_response_time": 12090841.200000001
+      },
+      "10100110010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 8048000.0,
+        "p90_response_time": 8048000.0
+      }
+    },
+    "sum_cpu_utilization": 0.3387540963421261,
+    "anomaly_count": 25,
+    "anomaly_rate": 18.51851851851852,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 1,
+        "anomaly_rate": 0.7407407407407408,
+        "cpu_utilization": 0.013649812999585436
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.019898692139338488
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.2626048989370769
+      },
+      "srv-recommendation": {
+        "anomaly_count": 5,
+        "anomaly_rate": 3.7037037037037033,
+        "cpu_utilization": 0.011631036772673251
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0013421184322692475
+      },
+      "srv-search": {
+        "anomaly_count": 1,
+        "anomaly_rate": 0.7407407407407408,
+        "cpu_utilization": 0.029627537061182818
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "rainbow_llama",
+    "collection_start_time": "2025-10-07T12:18:19.750753+00:00",
+    "collection_end_time": "2025-10-07T12:19:19.750753+00:00",
+    "traces_csv": "rainbow_llama_traces.csv",
+    "total_metrics_csv": "rainbow_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 135,
+    "metrics_config_count": 7
+  },
+  {
+    "timestamp": "2025-10-07 12:20:21.190677+00:00",
+    "total_requests": 225,
+    "mean_response_time": 1854311.7822222223,
+    "p90_response_time": 3996531.9999999953,
+    "deadline_miss_rate": 0.0,
+    "patterns": {
+      "11101110111111": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 7649191.459459459,
+        "p90_response_time": 22356601.599999998
+      },
+      "01010001001011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 564030.8636363636,
+        "p90_response_time": 1456917.0000000002
+      },
+      "10100110000011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 779654.2037037037,
+        "p90_response_time": 380143.3000000001
+      },
+      "10100110010011": {
+        "deadline_miss_rate": 0.0,
+        "mean_response_time": 8823333.0,
+        "p90_response_time": 9911364.2
+      }
+    },
+    "sum_cpu_utilization": 0.6304250876993478,
+    "anomaly_count": 103,
+    "anomaly_rate": 45.77777777777778,
+    "services": {
+      "srv-geo": {
+        "anomaly_count": 1,
+        "anomaly_rate": 0.4444444444444444,
+        "cpu_utilization": 0.0848560286011091
+      },
+      "srv-profile": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.11944870200362799
+      },
+      "srv-rate": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.19770311643252417
+      },
+      "srv-recommendation": {
+        "anomaly_count": 23,
+        "anomaly_rate": 10.222222222222223,
+        "cpu_utilization": 0.06920492621134591
+      },
+      "srv-reservation": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0.0032211291239581646
+      },
+      "srv-search": {
+        "anomaly_count": 3,
+        "anomaly_rate": 1.3333333333333335,
+        "cpu_utilization": 0.15599118532678252
+      },
+      "srv-user": {
+        "anomaly_count": 0,
+        "anomaly_rate": 0.0,
+        "cpu_utilization": 0
+      }
+    },
+    "phase": "adaptation",
+    "subphase": "normal",
+    "collection_label": "rainbow_llama",
+    "collection_start_time": "2025-10-07T12:19:19.750753+00:00",
+    "collection_end_time": "2025-10-07T12:20:19.750753+00:00",
+    "traces_csv": "rainbow_llama_traces.csv",
+    "total_metrics_csv": "rainbow_llama_total_metrics.csv",
+    "configurations": [
+      "srv-geo",
+      "srv-profile",
+      "srv-rate",
+      "srv-recommendation",
+      "srv-reservation",
+      "srv-search",
+      "srv-user"
+    ],
+    "trace_count": 225,
+    "metrics_config_count": 7
+  }
+]

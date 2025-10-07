@@ -2,5 +2,5 @@
 	path = ELBD
 	url = git@github.com:AXinx/ELBD.git
 [submodule "ctl"]
-	path = ctl
+	path = ctl-0.1
 	url = git@github.com:peg-danielse/ctl

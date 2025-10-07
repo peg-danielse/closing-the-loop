@@ -25,3 +25,8 @@
     - name: copy kubectl config to local config file
       command: cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
       become: yes
+
+      sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+      kubeadm join 145.100.135.32:6443 --token q6asdz.mbs8988l2ljr1pua \
+        --discovery-token-ca-cert-hash sha256:9fb7a822e6a3231f3847eeaf15dfca67269266343813de92ebb23b8d4c632a94

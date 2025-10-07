@@ -1,0 +1,40 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  annotations:
+    serving.knative.dev/creator: kubernetes-admin
+    serving.knative.dev/lastModifier: system:serviceaccount:default:default
+  name: srv-rate
+  resourceVersion: '37640714'
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/activation-scale: '3'
+        autoscaling.knative.dev/initial-scale: '1'
+        autoscaling.knative.dev/max-scale: '3'
+        autoscaling.knative.dev/metric: concurrency
+        autoscaling.knative.dev/min-scale: '0'
+        autoscaling.knative.dev/panic-threshold-percentage: '500.0'
+        autoscaling.knative.dev/panic-window-percentage: '1.0'
+        autoscaling.knative.dev/scale-down-delay: 0s
+        autoscaling.knative.dev/stable-window: 6s
+        autoscaling.knative.dev/target: '10'
+        autoscaling.knative.dev/window: 6s
+    spec:
+      containers:
+      - command:
+        - rate
+        env:
+        - name: DLOG
+          value: DEBUG
+        image: pag3r/hotel-reservations:latest
+        name: hotel-reserv-rate
+        ports:
+        - containerPort: 8084
+          name: h2c
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 50m
